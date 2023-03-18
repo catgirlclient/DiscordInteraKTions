@@ -1,3 +1,4 @@
+/*
 package com.mrpowergamerbr.nicolebot
 
 import kotlinx.coroutines.runBlocking
@@ -24,3 +25,4 @@ object NicoleBotWebServerLauncher {
         }
     }
 }
+ */

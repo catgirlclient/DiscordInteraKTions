@@ -1,0 +1,9 @@
+[versions]
+kotlin = "1.8.10"
+kord = "0.8.x-SNAPSHOT"
+
+[libraries]
+kord-core = { module = "dev.kord:kord-core", version.ref = "kord"}
+kord-rest = { module = "dev.kord:kord-rest", version.ref = "kord"}
+kord-common = { module = "dev.kord:kord-common", version.ref = "kord"}
+kord-gateway = { module = "dev.kord:kord-gateway", version.ref = "kord"}

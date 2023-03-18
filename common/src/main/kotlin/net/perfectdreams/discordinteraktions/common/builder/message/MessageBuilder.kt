@@ -5,6 +5,8 @@ import dev.kord.rest.builder.component.ActionRowBuilder
 import dev.kord.rest.builder.component.MessageComponentBuilder
 import dev.kord.rest.builder.message.AllowedMentionsBuilder
 import dev.kord.rest.builder.message.EmbedBuilder
+import io.ktor.client.request.forms.*
+import io.ktor.utils.io.jvm.javaio.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.InputStream
@@ -49,7 +51,7 @@ interface MessageBuilder {
      */
     fun addFile(name: String, content: InputStream) {
         val files = this.files ?: mutableListOf()
-        files += NamedFile(name, content)
+        files += NamedFile(name, ChannelProvider { content.toByteReadChannel() })
         this.files = files
     }
 

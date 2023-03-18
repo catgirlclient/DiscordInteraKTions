@@ -109,6 +109,7 @@ class KordComponentChecker(val kord: Kord, val interactionsManager: Interactions
                 }
             }
             ComponentType.TextInput -> TODO() // As far as I know this should NEVER happen here!
+            else -> error("what")
         }
     }
 

@@ -19,15 +19,6 @@ dependencies {
     implementation("io.github.microutils:kotlin-logging:2.1.23")
 }
 
-tasks {
-    compileKotlin {
-        kotlinOptions.jvmTarget = "1.8"
-    }
-    compileTestKotlin {
-        kotlinOptions.jvmTarget = "1.8"
-    }
-}
-
 publishing {
     publications {
         register("PerfectDreams", MavenPublication::class.java) {

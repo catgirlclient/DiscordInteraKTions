@@ -36,7 +36,7 @@ open class ComponentContext(
         // Check if state matches what we expect
         if (message.files?.isNotEmpty() == true && !isDeferred) {
             // If the message has files and our current bridge state is "NOT_REPLIED_YET", then it means that we need to defer before sending the file!
-            // (Because currently you can only send files by editing the original interaction message or with a follow up message
+            // (Because currently you can only send files by editing the original interaction message or with a follow-up message
             deferUpdateMessage()
         }
 
