@@ -79,7 +79,9 @@ class KordComponentChecker(val kord: Kord, val interactionsManager: Interactions
                     )
                 }
             }
-            ComponentType.SelectMenu -> {
+            // If I am wrong then these should follow the same concepts eitherway
+            ComponentType.ChannelSelect, ComponentType.StringSelect, ComponentType.MentionableSelect,
+            ComponentType.RoleSelect, ComponentType.UserSelect -> {
                 val executorDeclaration = interactionsManager.componentExecutorDeclarations
                     .asSequence()
                     .filter {
@@ -108,7 +110,7 @@ class KordComponentChecker(val kord: Kord, val interactionsManager: Interactions
                     )
                 }
             }
-            ComponentType.TextInput -> TODO() // As far as I know this should NEVER happen here!
+            ComponentType.TextInput -> error("Text inputs are only allowed inside of modals!")
             else -> error("what")
         }
     }

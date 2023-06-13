@@ -23,6 +23,7 @@ class SlashCommandDeclarationBuilder(
     // Only root commands can have permissions and dmPermission
     var defaultMemberPermissions: Permissions? = null
     var dmPermission: Boolean? = null
+    var nsfw: Boolean? = null
 
     fun subcommand(name: String, description: String, block: SlashCommandDeclarationBuilder.() -> (Unit)) {
         subcommands += SlashCommandDeclarationBuilder(name, description).apply(block)
@@ -42,7 +43,8 @@ class SlashCommandDeclarationBuilder(
             defaultMemberPermissions,
             dmPermission,
             subcommands.map { it.build() },
-            subcommandGroups.map { it.build() }
+            subcommandGroups.map { it.build() },
+            nsfw
         )
     }
 }
@@ -56,6 +58,7 @@ class SlashCommandGroupDeclarationBuilder(
     var descriptionLocalizations: Map<Locale, String>? = null
     // Groups can't have executors!
     val subcommands = mutableListOf<SlashCommandDeclarationBuilder>()
+    var nsfw: Boolean? = null
 
     fun subcommand(name: String, description: String, block: SlashCommandDeclarationBuilder.() -> (Unit)) {
         subcommands += SlashCommandDeclarationBuilder(name, description).apply(block)
@@ -67,7 +70,8 @@ class SlashCommandGroupDeclarationBuilder(
             nameLocalizations,
             description,
             descriptionLocalizations,
-            subcommands.map { it.build() }
+            subcommands.map { it.build() },
+            nsfw
         )
     }
 }
@@ -80,6 +84,7 @@ class UserCommandDeclarationBuilder(val name: String, val executor: UserCommandE
     var nameLocalizations: Map<Locale, String>? = null
     var defaultMemberPermissions: Permissions? = null
     var dmPermission: Boolean? = null
+    var nsfw: Boolean? = null
 
     fun build(): UserCommandDeclaration {
         return InteraKTionsUserCommandDeclaration(
@@ -87,7 +92,8 @@ class UserCommandDeclarationBuilder(val name: String, val executor: UserCommandE
             nameLocalizations,
             executor,
             defaultMemberPermissions,
-            dmPermission
+            dmPermission,
+            nsfw
         )
     }
 }
@@ -100,6 +106,7 @@ class MessageCommandDeclarationBuilder(val name: String, val executor: MessageCo
     var nameLocalizations: Map<Locale, String>? = null
     var defaultMemberPermissions: Permissions? = null
     var dmPermission: Boolean? = null
+    var nsfw: Boolean? = null
 
     fun build(): MessageCommandDeclaration {
         return InteraKTionsMessageCommandDeclaration(
@@ -107,7 +114,8 @@ class MessageCommandDeclarationBuilder(val name: String, val executor: MessageCo
             nameLocalizations,
             executor,
             defaultMemberPermissions,
-            dmPermission
+            dmPermission,
+            nsfw
         )
     }
 }

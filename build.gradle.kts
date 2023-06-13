@@ -1,12 +1,11 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
-    kotlin("jvm") version "1.8.10" apply false
-    kotlin("plugin.serialization") version "1.8.10" apply false
+    kotlin("jvm") version "1.8.21" apply false
+    kotlin("plugin.serialization") version "1.8.21" apply false
+    id("org.jetbrains.dokka") version "1.8.20"
     `maven-publish`
 }
 
-val discordInteraKTionsVersion = "0.0.17"
+val discordInteraKTionsVersion = "0.0.18"
 group = "net.perfectdreams.discordinteraktions"
 version = discordInteraKTionsVersion
 
@@ -18,7 +17,6 @@ allprojects {
     repositories {
         mavenCentral()
         maven("https://oss.sonatype.org/content/repositories/snapshots")
-        maven("https://repo.perfectdreams.net")
     }
 }
 

@@ -54,17 +54,12 @@ object CommandDeclarationUtils {
     private fun findAllSubcommandDeclarationNames(commandLabels: MutableList<CommandLabel>, options: List<Option>?): List<CommandLabel> {
         val firstOption = options?.firstOrNull()
 
-        if (firstOption is SubCommand) {
-            commandLabels.add(SubCommandLabel(firstOption.name))
-
-            findAllSubcommandDeclarationNames(commandLabels, firstOption.options.value)
-        } else if (firstOption is CommandGroup) {
-            commandLabels.add(CommandGroupLabel(firstOption.name))
-
-            findAllSubcommandDeclarationNames(commandLabels, firstOption.options.value)
-        } else {
-            return commandLabels
+        when (firstOption) {
+            is SubCommand -> commandLabels.add(SubCommandLabel(firstOption.name))
+            is CommandGroup -> commandLabels.add(CommandGroupLabel(firstOption.name))
+            else -> return commandLabels
         }
+
         return commandLabels
     }
 

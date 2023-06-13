@@ -5,7 +5,7 @@ import net.perfectdreams.discordinteraktions.common.builder.message.actionRow
 import net.perfectdreams.discordinteraktions.common.commands.ApplicationCommandContext
 import net.perfectdreams.discordinteraktions.common.commands.SlashCommandExecutor
 import net.perfectdreams.discordinteraktions.common.commands.options.SlashCommandArguments
-import net.perfectdreams.discordinteraktions.common.components.interactiveButton
+import net.perfectdreams.discordinteraktions.common.components.interactionButton
 
 class ButtonsExecutor : SlashCommandExecutor() {
     override suspend fun execute(
@@ -16,13 +16,14 @@ class ButtonsExecutor : SlashCommandExecutor() {
             content = "Click on a button!"
 
             actionRow {
-                interactiveButton(
+                interactionButton(
                     ButtonStyle.Primary,
                     FancyButtonClickExecutor,
                     "lori is so cute!! :3"
                 ) {
                     label = "Fancy Button!"
                 }
+
             }
         }
     }

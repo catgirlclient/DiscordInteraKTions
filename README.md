@@ -2,7 +2,7 @@
 
 ## This project is forked!
 This project is a maintained version of Discord InteraKTions, one that is used within our bot. Since we love the design 
-of Discord InteraKTion, we decided to fork it and use it within our bot. Keep in mind that there are some challenges, and 
+of Discord InteraKTions, we decided to fork it and use it within our bot. Keep in mind that there are some challenges, and 
 eventually, we will need to rewrite some files. Don't worry though! We are planning on integrating some parts in our 
 up-and-coming framework. It'll probably be out never.
 

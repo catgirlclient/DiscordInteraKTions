@@ -7,7 +7,7 @@ import dev.kord.core.entity.Member
 import dev.kord.core.entity.User
 import net.perfectdreams.discordinteraktions.common.interactions.InteractionData
 
-open class GuildAutocompleteContext(
+open class  GuildAutocompleteContext(
     sender: User,
     channelId: Snowflake,
     data: InteractionData,
