@@ -1,6 +1,5 @@
 [versions]
-kotlin = "1.8.21"
-kord = "0.9.x-SNAPSHOT"
+kord = "0.10.0-SNAPSHOT"
 
 [libraries]
 kord-core = { module = "dev.kord:kord-core", version.ref = "kord"}
