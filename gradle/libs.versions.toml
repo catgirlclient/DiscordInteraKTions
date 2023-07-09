@@ -1,5 +1,5 @@
 [versions]
-kord = "0.10.0-SNAPSHOT"
+kord = "0.10.0"
 
 [libraries]
 kord-core = { module = "dev.kord:kord-core", version.ref = "kord"}

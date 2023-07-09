@@ -5,7 +5,7 @@ plugins {
     `maven-publish`
 }
 
-val discordInteraKTionsVersion = "0.0.18"
+val discordInteraKTionsVersion = "0.0.19"
 group = "net.perfectdreams.discordinteraktions"
 version = discordInteraKTionsVersion
 
