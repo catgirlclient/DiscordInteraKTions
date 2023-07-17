@@ -8,7 +8,8 @@ up-and-coming framework. It'll probably be out never.
 
 Some things to note:
 
-* Interactions over HTTP is dead
+* There is currently NO documentation for almost anything related to Discord InteraKTions. 
+* This is still incredibly early in development, and some aspects are subject to change.
 
 **🚧 Experiemental Project 🚧** / **Not finished yet so you shouldn't use it!!**
 
