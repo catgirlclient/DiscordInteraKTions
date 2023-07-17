@@ -4,5 +4,7 @@ rootProject.name = "DiscordInteraKTions"
 include(
     ":sample",
     ":common",
-    ":platforms:gateway-kord"
+    ":requests-verifier",
+    ":platforms:gateway-kord",
+    ":platforms:webserver-ktor-kord"
 )

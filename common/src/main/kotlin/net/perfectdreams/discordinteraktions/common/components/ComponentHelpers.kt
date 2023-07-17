@@ -6,6 +6,12 @@ import kotlin.contracts.ExperimentalContracts
 import kotlin.contracts.InvocationKind
 import kotlin.contracts.contract
 
+/**
+ *
+ *
+ * @param executor
+ * @param data
+ */
 @OptIn(ExperimentalContracts::class)
 fun ActionRowBuilder.channelSelect(
     executor: SelectMenuExecutorDeclaration,

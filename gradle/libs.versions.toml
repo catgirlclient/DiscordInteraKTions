@@ -1,8 +1,10 @@
 [versions]
 kord = "0.10.0"
+ktor = "2.3.2"
 
 [libraries]
-kord-core = { module = "dev.kord:kord-core", version.ref = "kord"}
-kord-rest = { module = "dev.kord:kord-rest", version.ref = "kord"}
-kord-common = { module = "dev.kord:kord-common", version.ref = "kord"}
-kord-gateway = { module = "dev.kord:kord-gateway", version.ref = "kord"}
+kord-core = { module = "dev.kord:kord-core", version.ref = "kord" }
+kord-rest = { module = "dev.kord:kord-rest", version.ref = "kord" }
+kord-common = { module = "dev.kord:kord-common", version.ref = "kord" }
+kord-gateway = { module = "dev.kord:kord-gateway", version.ref = "kord" }
+ktor-server-netty = { module = "io.ktor:ktor-server-netty", version.ref = "ktor" }

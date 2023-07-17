@@ -73,6 +73,7 @@ class DiscordInteraKTions(
                 return builder.user(declaration.name) {
                     nameLocalizations = declaration.nameLocalizations?.toMutableMap()
                     defaultMemberPermissions = declaration.defaultMemberPermissions
+                    nsfw = declaration.nsfw
 
                     if (builder is GlobalMultiApplicationCommandBuilder)
                         (this as GlobalUserCommandCreateBuilder).dmPermission = declaration.dmPermission
@@ -83,6 +84,7 @@ class DiscordInteraKTions(
                 return builder.message(declaration.name) {
                     nameLocalizations = declaration.nameLocalizations?.toMutableMap()
                     defaultMemberPermissions = declaration.defaultMemberPermissions
+                    nsfw = declaration.nsfw
 
                     if (builder is GlobalMultiApplicationCommandBuilder)
                         (this as GlobalMessageCommandCreateBuilder).dmPermission = declaration.dmPermission
@@ -94,6 +96,7 @@ class DiscordInteraKTions(
                     nameLocalizations = declaration.nameLocalizations?.toMutableMap()
                     descriptionLocalizations = declaration.descriptionLocalizations?.toMutableMap()
                     defaultMemberPermissions = declaration.defaultMemberPermissions
+                    nsfw = declaration.nsfw
 
                     if (builder is GlobalMultiApplicationCommandBuilder)
                         (this as GlobalChatInputCreateBuilder).dmPermission = declaration.dmPermission
