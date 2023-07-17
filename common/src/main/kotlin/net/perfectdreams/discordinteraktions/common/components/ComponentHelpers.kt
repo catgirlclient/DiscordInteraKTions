@@ -294,11 +294,17 @@ fun ActionRowBuilder.stringSelect(
     }
 }
 
+@OptIn(ExperimentalContracts::class)
 fun ActionRowBuilder.stringSelect(
     executor: SelectMenuExecutorDeclaration,
     data: String,
     builder: SelectMenuBuilder.() -> Unit = {}
 ) {
+
+    contract {
+        callsInPlace(builder, InvocationKind.EXACTLY_ONCE)
+    }
+
     stringSelect(
         "${executor.id}:$data"
     ) {
