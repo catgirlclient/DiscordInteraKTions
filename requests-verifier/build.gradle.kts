@@ -1,6 +1,7 @@
 plugins {
     kotlin("jvm")
     `maven-publish`
+    java
 }
 
 group = "net.perfectdreams.discordinteraktions"
