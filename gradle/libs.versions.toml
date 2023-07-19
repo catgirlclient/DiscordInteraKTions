@@ -1,6 +1,6 @@
 [versions]
 kord = "0.10.0"
-ktor = "2.3.2"
+ktor = "2.3.0"
 
 [libraries]
 kord-core = { module = "dev.kord:kord-core", version.ref = "kord" }
