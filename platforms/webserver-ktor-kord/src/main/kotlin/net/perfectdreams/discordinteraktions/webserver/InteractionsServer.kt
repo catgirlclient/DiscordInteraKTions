@@ -28,7 +28,7 @@ class InteractionsServer(
 ) {
     companion object {
         val json = Json {
-            // If there're any unknown keys, we'll ignore them instead of throwing an exception.
+            // If there's any unknown keys, we'll ignore them instead of throwing an exception.
             this.ignoreUnknownKeys = true
         }
         private val logger = KotlinLogging.logger {}

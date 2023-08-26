@@ -1,6 +1,6 @@
 plugins {
-    kotlin("jvm") version "1.8.22" apply false
-    kotlin("plugin.serialization") version "1.8.22" apply false
+    kotlin("jvm") version "1.9.10" apply false
+    kotlin("plugin.serialization") version "1.9.10" apply false
     id("org.jetbrains.dokka") version "1.8.20"
     `maven-publish`
 }

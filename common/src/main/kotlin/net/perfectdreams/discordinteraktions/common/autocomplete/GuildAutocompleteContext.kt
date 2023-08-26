@@ -3,13 +3,14 @@ package net.perfectdreams.discordinteraktions.common.autocomplete
 import dev.kord.common.entity.CommandArgument
 import dev.kord.common.entity.DiscordInteraction
 import dev.kord.common.entity.Snowflake
+import dev.kord.common.entity.optional.OptionalSnowflake
 import dev.kord.core.entity.Member
 import dev.kord.core.entity.User
 import net.perfectdreams.discordinteraktions.common.interactions.InteractionData
 
 open class  GuildAutocompleteContext(
     sender: User,
-    channelId: Snowflake,
+    channelId: OptionalSnowflake,
     data: InteractionData,
     arguments: List<CommandArgument<*>>,
     discordInteractionData: DiscordInteraction,

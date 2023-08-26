@@ -2,7 +2,7 @@ package net.perfectdreams.discordinteraktions.common.autocomplete
 
 import dev.kord.common.entity.CommandArgument
 import dev.kord.common.entity.DiscordInteraction
-import dev.kord.common.entity.Snowflake
+import dev.kord.common.entity.optional.OptionalSnowflake
 import dev.kord.core.entity.User
 import net.perfectdreams.discordinteraktions.common.commands.options.DiscordCommandOption
 import net.perfectdreams.discordinteraktions.common.commands.options.OptionReference
@@ -11,7 +11,7 @@ import net.perfectdreams.discordinteraktions.common.interactions.InteractionData
 // This doesn't inherit from InteractionContext because we can't send messages on a autocomplete request
 open class AutocompleteContext(
     val sender: User,
-    val channelId: Snowflake,
+    val channelId: OptionalSnowflake,
     val data: InteractionData,
     val arguments: List<CommandArgument<*>>,
 
