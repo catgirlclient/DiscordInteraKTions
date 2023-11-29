@@ -111,7 +111,7 @@ class KordAutocompleteChecker(val kord: Kord, val interactionsManager: Interacti
                                 for ((name, value) in autocompleteResult) {
                                     choice(name, value)
                                 }
-                            }.choices ?: listOf()) as List<Choice<String>>
+                            }.choices ?: listOf()) as List<Choice.StringChoice>
                     )
                 }
 
@@ -125,7 +125,7 @@ class KordAutocompleteChecker(val kord: Kord, val interactionsManager: Interacti
                                 for ((name, value) in autocompleteResult) {
                                     choice(name, value)
                                 }
-                            }.choices ?: listOf()) as List<Choice<Long>>
+                            }.choices ?: listOf()) as List<Choice.IntegerChoice>
                     )
                 }
 
@@ -139,7 +139,7 @@ class KordAutocompleteChecker(val kord: Kord, val interactionsManager: Interacti
                                 for ((name, value) in autocompleteResult) {
                                     choice(name, value)
                                 }
-                            }.choices as List<Choice<Double>>
+                            }.choices as List<Choice.NumberChoice>
                     )
                 }
 

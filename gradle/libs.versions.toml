@@ -1,6 +1,9 @@
 [versions]
-kord = "0.11.0-SNAPSHOT"
-ktor = "2.3.2"
+kord = "0.13.0-SNAPSHOT"
+ktor = "2.3.6"
+serialization = "1.6.0"
+coroutines = "1.7.3"
+kotlin-logging = "5.1.0"
 
 [libraries]
 kord-core = { module = "dev.kord:kord-core", version.ref = "kord" }
@@ -8,3 +11,8 @@ kord-rest = { module = "dev.kord:kord-rest", version.ref = "kord" }
 kord-common = { module = "dev.kord:kord-common", version.ref = "kord" }
 kord-gateway = { module = "dev.kord:kord-gateway", version.ref = "kord" }
 ktor-server-netty = { module = "io.ktor:ktor-server-netty", version.ref = "ktor" }
+
+serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization" }
+coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+
+kotlin-logging = { module = "io.github.oshai:kotlin-logging-jvm", version.ref = "kotlin-logging" }

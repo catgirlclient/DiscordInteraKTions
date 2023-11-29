@@ -196,7 +196,7 @@ class InitialHttpRequestManager(
         )
     }
 
-    override suspend fun sendStringAutocomplete(list: List<Choice<String>>) {
+    override suspend fun sendStringAutocomplete(list: List<Choice.StringChoice>) {
         kord.rest.interaction.createAutoCompleteInteractionResponse(
             interactionId,
             interactionToken,
@@ -204,7 +204,7 @@ class InitialHttpRequestManager(
         )
     }
 
-    override suspend fun sendIntegerAutocomplete(list: List<Choice<Long>>) {
+    override suspend fun sendIntegerAutocomplete(list: List<Choice.IntegerChoice>) {
         kord.rest.interaction.createAutoCompleteInteractionResponse(
             interactionId,
             interactionToken,
@@ -212,7 +212,7 @@ class InitialHttpRequestManager(
         )
     }
 
-    override suspend fun sendNumberAutocomplete(list: List<Choice<Double>>) {
+    override suspend fun sendNumberAutocomplete(list: List<Choice.NumberChoice>) {
         kord.rest.interaction.createAutoCompleteInteractionResponse(
             interactionId,
             interactionToken,

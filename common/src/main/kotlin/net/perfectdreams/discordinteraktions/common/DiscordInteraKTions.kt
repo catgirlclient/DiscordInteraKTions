@@ -131,10 +131,10 @@ class DiscordInteraKTions(
         val commandData = SubCommandBuilder(declaration.name, declaration.description).apply {
             nameLocalizations = declaration.nameLocalizations?.toMutableMap()
             descriptionLocalizations = declaration.descriptionLocalizations?.toMutableMap()
-            options = mutableListOf() // Initialize a empty list so we can use it
+            options = mutableListOf() // Initialize an empty list so we can use it
         }
 
-        // This is a subcommand, so we SHOUlD have an non-null executor
+        // This is a subcommand, so we SHOUlD have a non-null executor
         val executor = declaration.executor
 
         require(executor != null) { "Subcommand without a executor!" }
@@ -150,9 +150,9 @@ class DiscordInteraKTions(
         val commandData = GroupCommandBuilder(declaration.name, declaration.description).apply {
             nameLocalizations = declaration.nameLocalizations?.toMutableMap()
             descriptionLocalizations = declaration.descriptionLocalizations?.toMutableMap()
-            options = mutableListOf() // Initialize a empty list so we can use it
+            options = mutableListOf() // Initialize an empty list so we can use it
         }
-        commandData.options = mutableListOf() // Initialize a empty list so we can use it
+        commandData.options = mutableListOf() // Initialize an empty list so we can use it
 
         declaration.subcommands.forEach {
             commandData.options?.add(convertSubcommandDeclarationToKord(it))

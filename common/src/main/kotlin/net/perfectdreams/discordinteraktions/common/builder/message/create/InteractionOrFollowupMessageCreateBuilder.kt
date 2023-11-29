@@ -10,7 +10,7 @@ import dev.kord.rest.builder.message.create.InteractionResponseCreateBuilder
 /**
  * Message builder for publicly responding to an interaction.
  */
-// From Kord, however this is a interaction OR followup create builder
+// From Kord, however this is an interaction OR followup create builder
 class InteractionOrFollowupMessageCreateBuilder(val ephemeral: Boolean) : MessageCreateBuilder {
     override var content: String? = null
 
@@ -29,8 +29,8 @@ class InteractionOrFollowupMessageCreateBuilder(val ephemeral: Boolean) : Messag
             this.content = this@InteractionOrFollowupMessageCreateBuilder.content
             this.tts = this@InteractionOrFollowupMessageCreateBuilder.tts
             this.allowedMentions = this@InteractionOrFollowupMessageCreateBuilder.allowedMentions
-            this@InteractionOrFollowupMessageCreateBuilder.components?.let { this.components.addAll(it) }
-            this@InteractionOrFollowupMessageCreateBuilder.embeds?.let { this.embeds.addAll(it) }
+            this@InteractionOrFollowupMessageCreateBuilder.components?.let { this.components?.addAll(it) }
+            this@InteractionOrFollowupMessageCreateBuilder.embeds?.let { this.embeds?.addAll(it) }
             this@InteractionOrFollowupMessageCreateBuilder.files?.let { this.files.addAll(it) }
         }
     }
@@ -40,8 +40,8 @@ class InteractionOrFollowupMessageCreateBuilder(val ephemeral: Boolean) : Messag
             this.content = this@InteractionOrFollowupMessageCreateBuilder.content
             this.tts = this@InteractionOrFollowupMessageCreateBuilder.tts
             this.allowedMentions = this@InteractionOrFollowupMessageCreateBuilder.allowedMentions
-            this@InteractionOrFollowupMessageCreateBuilder.components?.let { this.components.addAll(it) }
-            this@InteractionOrFollowupMessageCreateBuilder.embeds?.let { this.embeds.addAll(it) }
+            this@InteractionOrFollowupMessageCreateBuilder.components?.let { this.components?.addAll(it) }
+            this@InteractionOrFollowupMessageCreateBuilder.embeds?.let { this.embeds?.addAll(it) }
             this@InteractionOrFollowupMessageCreateBuilder.files?.let { this.files.addAll(it) }
         }
     }

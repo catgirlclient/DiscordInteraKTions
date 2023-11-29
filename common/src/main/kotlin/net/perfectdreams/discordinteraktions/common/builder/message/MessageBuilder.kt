@@ -68,6 +68,7 @@ inline fun MessageBuilder.embed(block: EmbedBuilder.() -> Unit) {
     contract {
         callsInPlace(block, InvocationKind.EXACTLY_ONCE)
     }
+
     embeds = (embeds ?: mutableListOf()).also {
         it.add(EmbedBuilder().apply(block))
     }
@@ -83,6 +84,7 @@ inline fun MessageBuilder.allowedMentions(block: AllowedMentionsBuilder.() -> Un
     contract {
         callsInPlace(block, InvocationKind.EXACTLY_ONCE)
     }
+
     allowedMentions = (allowedMentions ?: AllowedMentionsBuilder()).apply(block)
 }
 
@@ -92,6 +94,7 @@ inline fun MessageBuilder.actionRow(builder: ActionRowBuilder.() -> Unit) {
     contract {
         callsInPlace(builder, InvocationKind.EXACTLY_ONCE)
     }
+
     components = (components ?: mutableListOf()).also {
         it.add(ActionRowBuilder().apply(builder))
     }

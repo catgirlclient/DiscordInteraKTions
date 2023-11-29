@@ -1,11 +1,11 @@
 package net.perfectdreams.discordinteraktions.common.builder.message.modify
 
-import dev.kord.common.entity.DiscordAttachment
 import dev.kord.common.entity.MessageFlags
 import dev.kord.common.entity.optional.Optional
 import dev.kord.rest.NamedFile
 import dev.kord.rest.builder.component.MessageComponentBuilder
 import dev.kord.rest.builder.message.AllowedMentionsBuilder
+import dev.kord.rest.builder.message.AttachmentBuilder
 import dev.kord.rest.builder.message.EmbedBuilder
 
 /**
@@ -24,7 +24,7 @@ class MessageModifyStateHolder {
 
     var allowedMentions: Optional<AllowedMentionsBuilder> = Optional.Missing()
 
-    var attachments: Optional<MutableList<DiscordAttachment>> = Optional.Missing()
+    var attachments: Optional<MutableList<AttachmentBuilder>> = Optional.Missing()
 
     var components: Optional<MutableList<MessageComponentBuilder>> = Optional.Missing()
 

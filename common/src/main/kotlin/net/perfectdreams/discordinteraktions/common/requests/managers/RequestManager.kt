@@ -47,11 +47,11 @@ abstract class RequestManager(val bridge: RequestBridge) {
      */
     abstract suspend fun updateMessage(message: InteractionOrFollowupMessageModifyBuilder): EditableMessage
 
-    abstract suspend fun sendStringAutocomplete(list: List<Choice<String>>)
+    abstract suspend fun sendStringAutocomplete(list: List<Choice.StringChoice>)
 
-    abstract suspend fun sendIntegerAutocomplete(list: List<Choice<Long>>)
+    abstract suspend fun sendIntegerAutocomplete(list: List<Choice.IntegerChoice>)
 
-    abstract suspend fun sendNumberAutocomplete(list: List<Choice<Double>>)
+    abstract suspend fun sendNumberAutocomplete(list: List<Choice.NumberChoice>)
 
     abstract suspend fun sendModal(title: String, customId: String, builder: ModalBuilder.() -> Unit)
 }

@@ -92,11 +92,11 @@ class HttpRequestManager(
         return newMessage
     }
 
-    override suspend fun sendStringAutocomplete(list: List<Choice<String>>) = error("Can't send a autocomplete request via the HttpRequestManager!")
+    override suspend fun sendStringAutocomplete(list: List<Choice.StringChoice>) = error("Can't send a autocomplete request via the HttpRequestManager!")
 
-    override suspend fun sendIntegerAutocomplete(list: List<Choice<Long>>) = error("Can't send a autocomplete request via the HttpRequestManager!")
+    override suspend fun sendIntegerAutocomplete(list: List<Choice.IntegerChoice>) = error("Can't send a autocomplete request via the HttpRequestManager!")
 
-    override suspend fun sendNumberAutocomplete(list: List<Choice<Double>>) = error("Can't send a autocomplete request via the HttpRequestManager!")
+    override suspend fun sendNumberAutocomplete(list: List<Choice.NumberChoice>) = error("Can't send a autocomplete request via the HttpRequestManager!")
 
     override suspend fun sendModal(title: String, customId: String, builder: ModalBuilder.() -> Unit) = error("Can't send a form to a interaction that was already deferred!")
 }

@@ -171,7 +171,10 @@ object CommandDeclarationUtils {
      * @param commandLabels  the command labels
      * @return the matched declaration
      */
-    inline fun <reified T : ApplicationCommandDeclaration> getApplicationCommandDeclarationFromLabel(interactionsManager: InteractionsManager, commandLabels: List<CommandLabel>): T? = interactionsManager.applicationCommandsDeclarations
+    inline fun <reified T : ApplicationCommandDeclaration> getApplicationCommandDeclarationFromLabel(
+        interactionsManager: InteractionsManager,
+        commandLabels: List<CommandLabel>
+    ): T? = interactionsManager.applicationCommandsDeclarations
         .asSequence()
         .filterIsInstance<T>()
         .mapNotNull {

@@ -79,7 +79,7 @@ class KordComponentChecker(val kord: Kord, val interactionsManager: Interactions
                     )
                 }
             }
-            // If I am wrong then these should follow the same concepts eitherway
+            // If I am wrong then these should follow the same concepts either way
             ComponentType.ChannelSelect, ComponentType.StringSelect, ComponentType.MentionableSelect,
             ComponentType.RoleSelect, ComponentType.UserSelect -> {
                 val executorDeclaration = interactionsManager.componentExecutorDeclarations

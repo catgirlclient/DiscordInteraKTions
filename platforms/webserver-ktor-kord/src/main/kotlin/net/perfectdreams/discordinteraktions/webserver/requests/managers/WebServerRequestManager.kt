@@ -8,7 +8,6 @@ import dev.kord.rest.json.request.AutoCompleteResponseCreateRequest
 import dev.kord.rest.json.request.InteractionApplicationCommandCallbackData
 import dev.kord.rest.json.request.InteractionResponseCreateRequest
 import dev.kord.rest.json.request.ModalResponseCreateRequest
-import dev.kord.rest.service.RestClient
 import io.ktor.http.*
 import io.ktor.server.application.*
 import io.ktor.server.response.*
@@ -219,7 +218,7 @@ class WebServerRequestManager(
         )
     }
 
-    override suspend fun sendStringAutocomplete(list: List<Choice<String>>) {
+    override suspend fun sendStringAutocomplete(list: List<Choice.StringChoice>) {
         call.respondText(
             Json.encodeToString(
                 AutoCompleteResponseCreateRequest(
@@ -233,7 +232,7 @@ class WebServerRequestManager(
         bridge.state.value = InteractionRequestState.ALREADY_REPLIED
     }
 
-    override suspend fun sendIntegerAutocomplete(list: List<Choice<Long>>) {
+    override suspend fun sendIntegerAutocomplete(list: List<Choice.IntegerChoice>) {
         call.respondText(
             Json.encodeToString(
                 AutoCompleteResponseCreateRequest(
@@ -247,7 +246,7 @@ class WebServerRequestManager(
         bridge.state.value = InteractionRequestState.ALREADY_REPLIED
     }
 
-    override suspend fun sendNumberAutocomplete(list: List<Choice<Double>>) {
+    override suspend fun sendNumberAutocomplete(list: List<Choice.NumberChoice>) {
         call.respondText(
             Json.encodeToString(
                 AutoCompleteResponseCreateRequest(

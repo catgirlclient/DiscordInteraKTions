@@ -1,7 +1,5 @@
 package net.perfectdreams.discordinteraktions.webserver
 
-import dev.kord.common.entity.Snowflake
-import dev.kord.rest.service.RestClient
 import io.ktor.server.application.*
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
@@ -13,7 +11,7 @@ import net.perfectdreams.discordinteraktions.common.DiscordInteraKTions
 import net.perfectdreams.discordinteraktions.common.commands.InteractionsManager
 
 /**
- * Class represents an Rest Interactions Server, which'll connect
+ * Class represents a Rest Interactions Server, which connects
  * to the Discord API and wrap your requests.
  *
  * @param applicationId Your bot ID/Client ID (https://i.imgur.com/075OBWk.png)
