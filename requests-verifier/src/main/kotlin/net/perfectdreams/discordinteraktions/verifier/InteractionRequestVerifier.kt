@@ -54,20 +54,14 @@ class InteractionRequestVerifier(publicKey: String) {
     // https://stackoverflow.com/questions/65780235/ed25519-in-jdk-15-parse-public-key-from-byte-array-and-verify
     private fun generateKeySpec(publicKeyAsByteArray: ByteArray): EdECPublicKeySpec {
         // Key is already converted from hex string to a byte array. (with the hex(...) method)
-        var byteArray = publicKeyAsByteArray
+        val byteArray = publicKeyAsByteArray.apply {
+            // Make sure most significant bit will be 0 - after reversing.
+            this[size - 1] = this[size - 1] and 127
+        }.reversedArray()
 
         // Determine if x was odd.
-        var xisodd = false
-        val lastbyteInt = byteArray[byteArray.size - 1].toInt()
-        if (lastbyteInt and 255 shr 7 == 1) {
-            xisodd = true
-        }
+        val xisodd = byteArray[byteArray.size - 1].toInt() and 255 shr 7 == 1
 
-        // Make sure most significant bit will be 0 - after reversing.
-        byteArray[byteArray.size - 1] = byteArray[byteArray.size - 1] and 127
-
-        // Apparently we must reverse the byte array...
-        byteArray = byteArray.reversedArray()
         val y = BigInteger(1, byteArray)
         val paramSpec = NamedParameterSpec(INTERACTIONS_ALGORITHM)
         val ep = EdECPoint(xisodd, y)
