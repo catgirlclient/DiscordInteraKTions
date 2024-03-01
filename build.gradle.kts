@@ -1,3 +1,4 @@
+import live.shuuyu.scripts.utils.Project
 import org.jetbrains.dokka.base.DokkaBase
 import org.jetbrains.dokka.base.DokkaBaseConfiguration
 import org.jetbrains.dokka.gradle.AbstractDokkaTask
@@ -13,9 +14,8 @@ buildscript {
     }
 }
 
-val discordInteraKTionsVersion = "0.1.0"
-group = "net.perfectdreams.discordinteraktions"
-version = discordInteraKTionsVersion
+group = Project.GROUP
+version = Project.VERSION
 
 allprojects {
     tasks.withType<AbstractDokkaTask> {
