@@ -11,9 +11,9 @@ import dev.kord.rest.builder.message.modify.InteractionResponseModifyBuilder
 import net.perfectdreams.discordinteraktions.platforms.kord.utils.runIfNotMissing
 
 // From Kord, however this is an interaction OR followup modify builder
-class InteractionOrFollowupMessageModifyBuilder : MessageModifyBuilder {
+public class InteractionOrFollowupMessageModifyBuilder : MessageModifyBuilder {
     // We need to access the delegated stuff ourselves
-    var state = MessageModifyStateHolder()
+    public var state: MessageModifyStateHolder = MessageModifyStateHolder()
 
     override var files: MutableList<NamedFile>? by state::files.delegate()
 

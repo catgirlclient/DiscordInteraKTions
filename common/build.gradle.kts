@@ -1,10 +1,7 @@
 plugins {
-    kotlin("jvm")
-    kotlin("plugin.serialization")
-    `maven-publish`
+    live.shuuyu.scripts.`interaktions-module`
+    live.shuuyu.scripts.`interaktions-publishing`
 }
-
-group = "net.perfectdreams.discordinteraktions"
 
 dependencies {
     implementation(kotlin("stdlib"))
@@ -17,12 +14,4 @@ dependencies {
     implementation(libs.serialization.json)
     implementation(libs.coroutines.core)
     implementation(libs.kotlin.logging)
-}
-
-publishing {
-    publications {
-        register("PerfectDreams", MavenPublication::class.java) {
-            from(components["java"])
-        }
-    }
 }

@@ -10,39 +10,42 @@ import net.perfectdreams.discordinteraktions.common.entities.messages.Message
  * This is the class that should be inherited if you
  * want to create an Application Command.
  */
-sealed class ApplicationCommandExecutor {
+public sealed class ApplicationCommandExecutor {
     /**
      * Used by the [ApplicationCommandDeclaration] to match declarations to executors.
      *
-     * By default the class of the executor is used, but this may cause issues when using anonymous classes!
+     * By default, the class of the executor is used, but this may cause issues when using anonymous classes!
      *
      * To avoid this issue, you can replace the signature with another unique identifier
      */
-    open fun signature(): Any = this::class
+    public open fun signature(): Any = this::class
 }
 
 /**
- * This is the class that should be inherited if you
- * want to create an Slash Command.
+ * Creates the executor for a [slashCommand]. To declare it, you'll want to use [SlashCommandDeclarationWrapper].
+ *
+ * @see SlashCommandDeclarationWrapper
+ * @see ApplicationCommandOptions
  */
-abstract class SlashCommandExecutor : ApplicationCommandExecutor() {
-    open val options: ApplicationCommandOptions = ApplicationCommandOptions.NO_OPTIONS
+public abstract class SlashCommandExecutor : ApplicationCommandExecutor() {
+    public open val options: ApplicationCommandOptions = ApplicationCommandOptions.NO_OPTIONS
 
-    abstract suspend fun execute(context: ApplicationCommandContext, args: SlashCommandArguments)
+    public abstract suspend fun execute(context: ApplicationCommandContext, args: SlashCommandArguments)
 }
 
 /**
- * This is the class that should be inherited if you
- * want to create an User Command.
+ * Creates the executor for a [userCommand]. To declare it, you'll want to use [UserCommandDeclarationWrapper]
+ *
+ * @see UserCommandDeclarationWrapper
  */
-abstract class UserCommandExecutor : ApplicationCommandExecutor() {
-    abstract suspend fun execute(context: ApplicationCommandContext, targetUser: User, targetMember: Member?)
+public abstract class UserCommandExecutor : ApplicationCommandExecutor() {
+    public abstract suspend fun execute(context: ApplicationCommandContext, targetUser: User, targetMember: Member?)
 }
 
 /**
  * This is the class that should be inherited if you
  * want to create an Message Command.
  */
-abstract class MessageCommandExecutor : ApplicationCommandExecutor() {
-    abstract suspend fun execute(context: ApplicationCommandContext, targetMessage: Message)
+public abstract class MessageCommandExecutor : ApplicationCommandExecutor() {
+    public abstract suspend fun execute(context: ApplicationCommandContext, targetMessage: Message)
 }

@@ -12,20 +12,19 @@ import dev.kord.rest.builder.message.EmbedBuilder
  * Utility container for message modify builder. This class contains
  * all possible fields as optionals.
  */
-class MessageModifyStateHolder {
+public class MessageModifyStateHolder {
 
-    var files: Optional<MutableList<NamedFile>> = Optional.Missing()
+    public var files: Optional<MutableList<NamedFile>> = Optional.Missing()
 
-    var content: Optional<String?> = Optional.Missing()
+    public var content: Optional<String?> = Optional.Missing()
 
-    var embeds: Optional<MutableList<EmbedBuilder>> = Optional.Missing()
+    public var embeds: Optional<MutableList<EmbedBuilder>> = Optional.Missing()
 
-    var flags: Optional<MessageFlags?> = Optional.Missing()
+    public var flags: Optional<MessageFlags?> = Optional.Missing()
 
-    var allowedMentions: Optional<AllowedMentionsBuilder> = Optional.Missing()
+    public var allowedMentions: Optional<AllowedMentionsBuilder> = Optional.Missing()
 
-    var attachments: Optional<MutableList<AttachmentBuilder>> = Optional.Missing()
+    public var attachments: Optional<MutableList<AttachmentBuilder>> = Optional.Missing()
 
-    var components: Optional<MutableList<MessageComponentBuilder>> = Optional.Missing()
-
+    public var components: Optional<MutableList<MessageComponentBuilder>> = Optional.Missing()
 }

@@ -2,6 +2,7 @@ package net.perfectdreams.discordinteraktions.common.autocomplete
 
 import dev.kord.common.entity.CommandArgument
 import dev.kord.common.entity.DiscordInteraction
+import dev.kord.common.entity.Snowflake
 import dev.kord.common.entity.optional.OptionalSnowflake
 import dev.kord.core.entity.User
 import net.perfectdreams.discordinteraktions.common.commands.options.DiscordCommandOption
@@ -9,16 +10,16 @@ import net.perfectdreams.discordinteraktions.common.commands.options.OptionRefer
 import net.perfectdreams.discordinteraktions.common.interactions.InteractionData
 
 // This doesn't inherit from InteractionContext because we can't send messages on a autocomplete request
-open class AutocompleteContext(
-    val sender: User,
-    val channelId: OptionalSnowflake,
-    val data: InteractionData,
-    val arguments: List<CommandArgument<*>>,
+public open class AutocompleteContext(
+    public val sender: User,
+    public val channelId: Snowflake,
+    public val data: InteractionData,
+    public val arguments: List<CommandArgument<*>>,
 
     /**
      * The interaction data object from Discord, useful if you need to use data that is not exposed directly via Discord InteraKTions
      */
-    val discordInteraction: DiscordInteraction
+    public val discordInteraction: DiscordInteraction
 ) {
     /**
      * Gets the filled argument from the [arguments] map, matching it via the [DiscordCommandOption].
@@ -31,7 +32,7 @@ open class AutocompleteContext(
      *
      * @param option the command option
      */
-    fun <T> getArgument(option: OptionReference<T>): T? {
+    public fun <T> getArgument(option: OptionReference<T>): T? {
         val matchedArgument = arguments.firstOrNull { it.name == option.name }
 
         if (matchedArgument is CommandArgument.AutoCompleteArgument)

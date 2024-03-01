@@ -11,10 +11,10 @@ import net.perfectdreams.discordinteraktions.common.commands.*
 import net.perfectdreams.discordinteraktions.common.commands.options.OptionReference
 import kotlin.reflect.KClass
 
-object CommandDeclarationUtils {
+public object CommandDeclarationUtils {
     private val logger = KotlinLogging.logger {}
 
-    fun getParentClass(thiz: Any): KClass<out Any> {
+    public fun getParentClass(thiz: Any): KClass<out Any> {
         val clazz = thiz::class
         val javaClazz = clazz.java
         val fullClassName = javaClazz.name
@@ -45,7 +45,7 @@ object CommandDeclarationUtils {
      * @param request the command interaction
      * @return a list with all of the labels
      */
-    fun findAllSubcommandDeclarationNames(request: DiscordInteraction): List<CommandLabel> {
+    public fun findAllSubcommandDeclarationNames(request: DiscordInteraction): List<CommandLabel> {
         val commandLabels = mutableListOf<CommandLabel>(RootCommandLabel(request.data.name.value!!))
         val result = findAllSubcommandDeclarationNames(commandLabels, request.data.options.value)
         return result
@@ -71,7 +71,7 @@ object CommandDeclarationUtils {
      * @param options the interaction options
      * @return the nested options
      */
-    fun getNestedOptions(options: List<Option>?): List<Option>? {
+    public fun getNestedOptions(options: List<Option>?): List<Option>? {
         val firstOption = options?.firstOrNull()
 
         if (firstOption is SubCommand) {
@@ -93,7 +93,7 @@ object CommandDeclarationUtils {
      * @param declaration     the declaration that must be found
      * @return the matched declaration
      */
-    fun getLabelsConnectedToCommandDeclaration(labels: List<CommandLabel>, declaration: ApplicationCommandDeclaration): ApplicationCommandDeclaration? {
+    public fun getLabelsConnectedToCommandDeclaration(labels: List<CommandLabel>, declaration: ApplicationCommandDeclaration): ApplicationCommandDeclaration? {
         if (declaration is SlashCommandDeclaration)
             return getLabelsConnectedToSlashCommandDeclaration(labels, declaration)
 
@@ -171,7 +171,7 @@ object CommandDeclarationUtils {
      * @param commandLabels  the command labels
      * @return the matched declaration
      */
-    inline fun <reified T : ApplicationCommandDeclaration> getApplicationCommandDeclarationFromLabel(
+    public inline fun <reified T : ApplicationCommandDeclaration> getApplicationCommandDeclarationFromLabel(
         interactionsManager: InteractionsManager,
         commandLabels: List<CommandLabel>
     ): T? = interactionsManager.applicationCommandsDeclarations
@@ -185,12 +185,12 @@ object CommandDeclarationUtils {
         }
         .firstOrNull() as T? // I don't know why this cast is needed
 
-    open class CommandLabel(val label: String)
-    class RootCommandLabel(label: String) : CommandLabel(label)
-    class SubCommandLabel(label: String) : CommandLabel(label)
-    class CommandGroupLabel(label: String) : CommandLabel(label)
+    public open class CommandLabel(public val label: String)
+    public class RootCommandLabel(label: String) : CommandLabel(label)
+    public class SubCommandLabel(label: String) : CommandLabel(label)
+    public class CommandGroupLabel(label: String) : CommandLabel(label)
 
-    fun convertOptions(
+    public fun convertOptions(
         kord: Kord,
         request: DiscordInteraction,
         executor: SlashCommandExecutor,

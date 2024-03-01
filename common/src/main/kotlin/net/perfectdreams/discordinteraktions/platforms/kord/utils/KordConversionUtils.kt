@@ -15,7 +15,10 @@ import net.perfectdreams.discordinteraktions.platforms.kord.entities.messages.Ko
 /**
  * Converts Kord's Resolved Objects to Discord InteraKTions's Resolved Objects
  */
-fun ResolvedObjects.toDiscordInteraKTionsResolvedObjects(kord: Kord, guildId: Snowflake?): net.perfectdreams.discordinteraktions.common.interactions.ResolvedObjects {
+public fun ResolvedObjects.toDiscordInteraKTionsResolvedObjects(
+    kord: Kord,
+    guildId: Snowflake?
+): net.perfectdreams.discordinteraktions.common.interactions.ResolvedObjects {
     val channels = this.channels.value?.map {
         it.key to ResolvedChannel(
             ChannelData.from(it.value),
@@ -78,7 +81,7 @@ fun ResolvedObjects.toDiscordInteraKTionsResolvedObjects(kord: Kord, guildId: Sn
     )
 }
 
-fun <T> runIfNotMissing(optional: Optional<T>, callback: (T?) -> (Unit)) {
+public fun <T> runIfNotMissing(optional: Optional<T>, callback: (T?) -> (Unit)) {
     if (optional !is Optional.Missing)
         callback.invoke(optional.value)
 }

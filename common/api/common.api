@@ -1,0 +1,1599 @@
+public class net/perfectdreams/discordinteraktions/common/BarebonesInteractionContext {
+	public fun <init> (Lnet/perfectdreams/discordinteraktions/common/requests/RequestBridge;)V
+	public final fun deferChannelMessage (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun deferChannelMessageEphemerally (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun getBridge ()Lnet/perfectdreams/discordinteraktions/common/requests/RequestBridge;
+	public final fun getWasInitiallyDeferredEphemerally ()Z
+	public final fun isDeferred ()Z
+	public final fun sendEphemeralMessage (Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun sendEphemeralMessage (Lnet/perfectdreams/discordinteraktions/common/builder/message/create/InteractionOrFollowupMessageCreateBuilder;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun sendMessage (Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun sendModal (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun sendModal (Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun sendModal (Lnet/perfectdreams/discordinteraktions/common/modals/ModalExecutorDeclaration;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun sendModal (Lnet/perfectdreams/discordinteraktions/common/modals/ModalExecutorDeclaration;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun sendPublicMessage (Lnet/perfectdreams/discordinteraktions/common/builder/message/create/InteractionOrFollowupMessageCreateBuilder;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun setBridge (Lnet/perfectdreams/discordinteraktions/common/requests/RequestBridge;)V
+	public final fun setWasInitiallyDeferredEphemerally (Z)V
+}
+
+public final class net/perfectdreams/discordinteraktions/common/BarebonesInteractionContextKt {
+	public static final fun BarebonesInteractionContext (Ldev/kord/core/Kord;Ldev/kord/common/entity/Snowflake;Ljava/lang/String;Lnet/perfectdreams/discordinteraktions/common/requests/InteractionRequestState;)Lnet/perfectdreams/discordinteraktions/common/BarebonesInteractionContext;
+	public static synthetic fun BarebonesInteractionContext$default (Ldev/kord/core/Kord;Ldev/kord/common/entity/Snowflake;Ljava/lang/String;Lnet/perfectdreams/discordinteraktions/common/requests/InteractionRequestState;ILjava/lang/Object;)Lnet/perfectdreams/discordinteraktions/common/BarebonesInteractionContext;
+}
+
+public final class net/perfectdreams/discordinteraktions/common/DiscordInteraKTions {
+	public fun <init> (Ldev/kord/core/Kord;Ldev/kord/common/entity/Snowflake;)V
+	public final fun createGlobalApplicationCommandCreateRequests ()Ljava/util/List;
+	public final fun createGuildApplicationCommandCreateRequests ()Ljava/util/List;
+	public final fun getApplicationId ()Ldev/kord/common/entity/Snowflake;
+	public final fun getAutocompleteChecker ()Lnet/perfectdreams/discordinteraktions/platforms/kord/utils/KordAutocompleteChecker;
+	public final fun getCommandChecker ()Lnet/perfectdreams/discordinteraktions/platforms/kord/utils/KordCommandChecker;
+	public final fun getComponentChecker ()Lnet/perfectdreams/discordinteraktions/platforms/kord/utils/KordComponentChecker;
+	public final fun getKord ()Ldev/kord/core/Kord;
+	public final fun getManager ()Lnet/perfectdreams/discordinteraktions/common/commands/InteractionsManager;
+	public final fun getModalChecker ()Lnet/perfectdreams/discordinteraktions/platforms/kord/utils/KordModalChecker;
+	public final fun getRest ()Ldev/kord/rest/service/RestClient;
+	public final fun updateAllCommandsInGuild (Ldev/kord/common/entity/Snowflake;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun updateAllGlobalCommands (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class net/perfectdreams/discordinteraktions/common/DiscordInteraKTionsKt {
+	public static final fun DiscordInteraKTions (Ljava/lang/String;Ldev/kord/common/entity/Snowflake;)Lnet/perfectdreams/discordinteraktions/common/DiscordInteraKTions;
+}
+
+public class net/perfectdreams/discordinteraktions/common/InteractionContext : net/perfectdreams/discordinteraktions/common/BarebonesInteractionContext {
+	public fun <init> (Lnet/perfectdreams/discordinteraktions/common/requests/RequestBridge;Ldev/kord/core/entity/User;Ldev/kord/common/entity/Snowflake;Lnet/perfectdreams/discordinteraktions/common/interactions/InteractionData;Ldev/kord/common/entity/DiscordInteraction;)V
+	public final fun getChannelId ()Ldev/kord/common/entity/Snowflake;
+	public final fun getDiscordInteraction ()Ldev/kord/common/entity/DiscordInteraction;
+	public final fun getInteractionData ()Lnet/perfectdreams/discordinteraktions/common/interactions/InteractionData;
+	public final fun getSender ()Ldev/kord/core/entity/User;
+}
+
+public abstract interface annotation class net/perfectdreams/discordinteraktions/common/annotations/InteraKTionsDsl : java/lang/annotation/Annotation {
+}
+
+public abstract interface annotation class net/perfectdreams/discordinteraktions/common/annotations/InteraKTionsExperimental : java/lang/annotation/Annotation {
+}
+
+public class net/perfectdreams/discordinteraktions/common/autocomplete/AutocompleteContext {
+	public fun <init> (Ldev/kord/core/entity/User;Ldev/kord/common/entity/Snowflake;Lnet/perfectdreams/discordinteraktions/common/interactions/InteractionData;Ljava/util/List;Ldev/kord/common/entity/DiscordInteraction;)V
+	public final fun getArgument (Lnet/perfectdreams/discordinteraktions/common/commands/options/OptionReference;)Ljava/lang/Object;
+	public final fun getArguments ()Ljava/util/List;
+	public final fun getChannelId ()Ldev/kord/common/entity/Snowflake;
+	public final fun getData ()Lnet/perfectdreams/discordinteraktions/common/interactions/InteractionData;
+	public final fun getDiscordInteraction ()Ldev/kord/common/entity/DiscordInteraction;
+	public final fun getSender ()Ldev/kord/core/entity/User;
+}
+
+public abstract interface class net/perfectdreams/discordinteraktions/common/autocomplete/AutocompleteHandler {
+	public abstract fun handle (Lnet/perfectdreams/discordinteraktions/common/autocomplete/AutocompleteContext;Lnet/perfectdreams/discordinteraktions/common/autocomplete/FocusedCommandOption;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class net/perfectdreams/discordinteraktions/common/autocomplete/FocusedCommandOption {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;)Lnet/perfectdreams/discordinteraktions/common/autocomplete/FocusedCommandOption;
+	public static synthetic fun copy$default (Lnet/perfectdreams/discordinteraktions/common/autocomplete/FocusedCommandOption;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lnet/perfectdreams/discordinteraktions/common/autocomplete/FocusedCommandOption;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getName ()Ljava/lang/String;
+	public final fun getValue ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public class net/perfectdreams/discordinteraktions/common/autocomplete/GuildAutocompleteContext : net/perfectdreams/discordinteraktions/common/autocomplete/AutocompleteContext {
+	public fun <init> (Ldev/kord/core/entity/User;Ldev/kord/common/entity/Snowflake;Lnet/perfectdreams/discordinteraktions/common/interactions/InteractionData;Ljava/util/List;Ldev/kord/common/entity/DiscordInteraction;Ldev/kord/common/entity/Snowflake;Ldev/kord/core/entity/Member;)V
+	public final fun getAppPermissions ()Ldev/kord/common/entity/Permissions;
+	public final fun getGuildId ()Ldev/kord/common/entity/Snowflake;
+	public final fun getMember ()Ldev/kord/core/entity/Member;
+}
+
+public abstract interface class net/perfectdreams/discordinteraktions/common/builder/message/MessageBuilder {
+	public abstract fun addFile (Ljava/lang/String;Ljava/io/InputStream;)V
+	public abstract fun addFile (Ljava/nio/file/Path;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun getAllowedMentions ()Ldev/kord/rest/builder/message/AllowedMentionsBuilder;
+	public abstract fun getComponents ()Ljava/util/List;
+	public abstract fun getContent ()Ljava/lang/String;
+	public abstract fun getEmbeds ()Ljava/util/List;
+	public abstract fun getFiles ()Ljava/util/List;
+	public abstract fun setAllowedMentions (Ldev/kord/rest/builder/message/AllowedMentionsBuilder;)V
+	public abstract fun setComponents (Ljava/util/List;)V
+	public abstract fun setContent (Ljava/lang/String;)V
+	public abstract fun setEmbeds (Ljava/util/List;)V
+	public abstract fun setFiles (Ljava/util/List;)V
+}
+
+public final class net/perfectdreams/discordinteraktions/common/builder/message/MessageBuilder$DefaultImpls {
+	public static fun addFile (Lnet/perfectdreams/discordinteraktions/common/builder/message/MessageBuilder;Ljava/lang/String;Ljava/io/InputStream;)V
+	public static fun addFile (Lnet/perfectdreams/discordinteraktions/common/builder/message/MessageBuilder;Ljava/nio/file/Path;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class net/perfectdreams/discordinteraktions/common/builder/message/MessageBuilderKt {
+	public static final fun actionRow (Lnet/perfectdreams/discordinteraktions/common/builder/message/MessageBuilder;Lkotlin/jvm/functions/Function1;)V
+	public static final fun allowedMentions (Lnet/perfectdreams/discordinteraktions/common/builder/message/MessageBuilder;Lkotlin/jvm/functions/Function1;)V
+	public static synthetic fun allowedMentions$default (Lnet/perfectdreams/discordinteraktions/common/builder/message/MessageBuilder;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+	public static final fun embed (Lnet/perfectdreams/discordinteraktions/common/builder/message/MessageBuilder;Lkotlin/jvm/functions/Function1;)V
+}
+
+public final class net/perfectdreams/discordinteraktions/common/builder/message/create/InteractionOrFollowupMessageCreateBuilder : net/perfectdreams/discordinteraktions/common/builder/message/create/MessageCreateBuilder {
+	public fun <init> (Z)V
+	public fun addFile (Ljava/lang/String;Ljava/io/InputStream;)V
+	public fun addFile (Ljava/nio/file/Path;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun getAllowedMentions ()Ldev/kord/rest/builder/message/AllowedMentionsBuilder;
+	public fun getComponents ()Ljava/util/List;
+	public fun getContent ()Ljava/lang/String;
+	public fun getEmbeds ()Ljava/util/List;
+	public final fun getEphemeral ()Z
+	public fun getFiles ()Ljava/util/List;
+	public fun getTts ()Ljava/lang/Boolean;
+	public fun setAllowedMentions (Ldev/kord/rest/builder/message/AllowedMentionsBuilder;)V
+	public fun setComponents (Ljava/util/List;)V
+	public fun setContent (Ljava/lang/String;)V
+	public fun setEmbeds (Ljava/util/List;)V
+	public fun setFiles (Ljava/util/List;)V
+	public fun setTts (Ljava/lang/Boolean;)V
+	public fun toFollowupMessageCreateBuilder ()Ldev/kord/rest/builder/message/create/FollowupMessageCreateBuilder;
+	public fun toInteractionMessageResponseCreateBuilder ()Ldev/kord/rest/builder/message/create/InteractionResponseCreateBuilder;
+}
+
+public abstract interface class net/perfectdreams/discordinteraktions/common/builder/message/create/MessageCreateBuilder : net/perfectdreams/discordinteraktions/common/builder/message/MessageBuilder {
+	public abstract fun getTts ()Ljava/lang/Boolean;
+	public abstract fun setTts (Ljava/lang/Boolean;)V
+	public abstract fun toFollowupMessageCreateBuilder ()Ldev/kord/rest/builder/message/create/FollowupMessageCreateBuilder;
+	public abstract fun toInteractionMessageResponseCreateBuilder ()Ldev/kord/rest/builder/message/create/InteractionResponseCreateBuilder;
+}
+
+public final class net/perfectdreams/discordinteraktions/common/builder/message/create/MessageCreateBuilder$DefaultImpls {
+	public static fun addFile (Lnet/perfectdreams/discordinteraktions/common/builder/message/create/MessageCreateBuilder;Ljava/lang/String;Ljava/io/InputStream;)V
+	public static fun addFile (Lnet/perfectdreams/discordinteraktions/common/builder/message/create/MessageCreateBuilder;Ljava/nio/file/Path;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class net/perfectdreams/discordinteraktions/common/builder/message/modify/InteractionOrFollowupMessageModifyBuilder : net/perfectdreams/discordinteraktions/common/builder/message/modify/MessageModifyBuilder {
+	public fun <init> ()V
+	public fun addFile (Ljava/lang/String;Ljava/io/InputStream;)V
+	public fun addFile (Ljava/nio/file/Path;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun getAllowedMentions ()Ldev/kord/rest/builder/message/AllowedMentionsBuilder;
+	public fun getAttachments ()Ljava/util/List;
+	public fun getComponents ()Ljava/util/List;
+	public fun getContent ()Ljava/lang/String;
+	public fun getEmbeds ()Ljava/util/List;
+	public fun getFiles ()Ljava/util/List;
+	public final fun getState ()Lnet/perfectdreams/discordinteraktions/common/builder/message/modify/MessageModifyStateHolder;
+	public fun setAllowedMentions (Ldev/kord/rest/builder/message/AllowedMentionsBuilder;)V
+	public fun setAttachments (Ljava/util/List;)V
+	public fun setComponents (Ljava/util/List;)V
+	public fun setContent (Ljava/lang/String;)V
+	public fun setEmbeds (Ljava/util/List;)V
+	public fun setFiles (Ljava/util/List;)V
+	public final fun setState (Lnet/perfectdreams/discordinteraktions/common/builder/message/modify/MessageModifyStateHolder;)V
+	public fun toFollowupMessageModifyBuilder ()Ldev/kord/rest/builder/message/modify/FollowupMessageModifyBuilder;
+	public fun toInteractionMessageResponseModifyBuilder ()Ldev/kord/rest/builder/message/modify/InteractionResponseModifyBuilder;
+}
+
+public abstract interface class net/perfectdreams/discordinteraktions/common/builder/message/modify/MessageModifyBuilder : net/perfectdreams/discordinteraktions/common/builder/message/MessageBuilder {
+	public abstract fun getAttachments ()Ljava/util/List;
+	public abstract fun setAttachments (Ljava/util/List;)V
+	public abstract fun toFollowupMessageModifyBuilder ()Ldev/kord/rest/builder/message/modify/FollowupMessageModifyBuilder;
+	public abstract fun toInteractionMessageResponseModifyBuilder ()Ldev/kord/rest/builder/message/modify/InteractionResponseModifyBuilder;
+}
+
+public final class net/perfectdreams/discordinteraktions/common/builder/message/modify/MessageModifyBuilder$DefaultImpls {
+	public static fun addFile (Lnet/perfectdreams/discordinteraktions/common/builder/message/modify/MessageModifyBuilder;Ljava/lang/String;Ljava/io/InputStream;)V
+	public static fun addFile (Lnet/perfectdreams/discordinteraktions/common/builder/message/modify/MessageModifyBuilder;Ljava/nio/file/Path;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class net/perfectdreams/discordinteraktions/common/builder/message/modify/MessageModifyStateHolder {
+	public fun <init> ()V
+	public final fun getAllowedMentions ()Ldev/kord/common/entity/optional/Optional;
+	public final fun getAttachments ()Ldev/kord/common/entity/optional/Optional;
+	public final fun getComponents ()Ldev/kord/common/entity/optional/Optional;
+	public final fun getContent ()Ldev/kord/common/entity/optional/Optional;
+	public final fun getEmbeds ()Ldev/kord/common/entity/optional/Optional;
+	public final fun getFiles ()Ldev/kord/common/entity/optional/Optional;
+	public final fun getFlags ()Ldev/kord/common/entity/optional/Optional;
+	public final fun setAllowedMentions (Ldev/kord/common/entity/optional/Optional;)V
+	public final fun setAttachments (Ldev/kord/common/entity/optional/Optional;)V
+	public final fun setComponents (Ldev/kord/common/entity/optional/Optional;)V
+	public final fun setContent (Ldev/kord/common/entity/optional/Optional;)V
+	public final fun setEmbeds (Ldev/kord/common/entity/optional/Optional;)V
+	public final fun setFiles (Ldev/kord/common/entity/optional/Optional;)V
+	public final fun setFlags (Ldev/kord/common/entity/optional/Optional;)V
+}
+
+public class net/perfectdreams/discordinteraktions/common/commands/ApplicationCommandContext : net/perfectdreams/discordinteraktions/common/InteractionContext {
+	public fun <init> (Lnet/perfectdreams/discordinteraktions/common/requests/RequestBridge;Ldev/kord/core/entity/User;Ldev/kord/common/entity/Snowflake;Lnet/perfectdreams/discordinteraktions/common/interactions/InteractionData;Ldev/kord/common/entity/DiscordInteraction;Lnet/perfectdreams/discordinteraktions/common/commands/ApplicationCommandDeclaration;)V
+	public final fun getApplicationCommandDeclaration ()Lnet/perfectdreams/discordinteraktions/common/commands/ApplicationCommandDeclaration;
+}
+
+public abstract class net/perfectdreams/discordinteraktions/common/commands/ApplicationCommandDeclaration {
+	public abstract fun getName ()Ljava/lang/String;
+	public abstract fun getNameLocalizations ()Ljava/util/Map;
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/ApplicationCommandDeclarationBuildersKt {
+	public static final fun messageCommand (Ljava/lang/String;Lnet/perfectdreams/discordinteraktions/common/commands/MessageCommandExecutor;)Lnet/perfectdreams/discordinteraktions/common/commands/MessageCommandDeclarationBuilder;
+	public static final fun slashCommand (Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)Lnet/perfectdreams/discordinteraktions/common/commands/SlashCommandDeclarationBuilder;
+	public static final fun userCommand (Ljava/lang/String;Lnet/perfectdreams/discordinteraktions/common/commands/UserCommandExecutor;)Lnet/perfectdreams/discordinteraktions/common/commands/UserCommandDeclarationBuilder;
+}
+
+public abstract interface class net/perfectdreams/discordinteraktions/common/commands/ApplicationCommandDeclarationWrapper {
+}
+
+public abstract class net/perfectdreams/discordinteraktions/common/commands/ApplicationCommandExecutor {
+	public fun signature ()Ljava/lang/Object;
+}
+
+public class net/perfectdreams/discordinteraktions/common/commands/GuildApplicationCommandContext : net/perfectdreams/discordinteraktions/common/commands/ApplicationCommandContext {
+	public fun <init> (Lnet/perfectdreams/discordinteraktions/common/requests/RequestBridge;Ldev/kord/core/entity/User;Ldev/kord/common/entity/Snowflake;Lnet/perfectdreams/discordinteraktions/common/interactions/InteractionData;Ldev/kord/common/entity/DiscordInteraction;Lnet/perfectdreams/discordinteraktions/common/commands/ApplicationCommandDeclaration;Ldev/kord/common/entity/Snowflake;Ldev/kord/core/entity/Member;)V
+	public final fun getAppPermissions ()Ldev/kord/common/entity/Permissions;
+	public final fun getGuildId ()Ldev/kord/common/entity/Snowflake;
+	public final fun getMember ()Ldev/kord/core/entity/Member;
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/InteraKTionsMessageCommandDeclaration : net/perfectdreams/discordinteraktions/common/commands/MessageCommandDeclaration {
+	public fun <init> (Ljava/lang/String;Ljava/util/Map;Lnet/perfectdreams/discordinteraktions/common/commands/MessageCommandExecutor;Ldev/kord/common/entity/Permissions;Ljava/lang/Boolean;Ljava/lang/Boolean;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/util/Map;Lnet/perfectdreams/discordinteraktions/common/commands/MessageCommandExecutor;Ldev/kord/common/entity/Permissions;Ljava/lang/Boolean;Ljava/lang/Boolean;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun getDefaultMemberPermissions ()Ldev/kord/common/entity/Permissions;
+	public fun getDmPermission ()Ljava/lang/Boolean;
+	public fun getExecutor ()Lnet/perfectdreams/discordinteraktions/common/commands/MessageCommandExecutor;
+	public fun getName ()Ljava/lang/String;
+	public fun getNameLocalizations ()Ljava/util/Map;
+	public fun getNsfw ()Ljava/lang/Boolean;
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/InteraKTionsSlashCommandDeclaration : net/perfectdreams/discordinteraktions/common/commands/SlashCommandDeclaration {
+	public fun <init> (Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/util/Map;Lnet/perfectdreams/discordinteraktions/common/commands/SlashCommandExecutor;Ldev/kord/common/entity/Permissions;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/List;Ljava/lang/Boolean;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/util/Map;Lnet/perfectdreams/discordinteraktions/common/commands/SlashCommandExecutor;Ldev/kord/common/entity/Permissions;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/List;Ljava/lang/Boolean;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun getDefaultMemberPermissions ()Ldev/kord/common/entity/Permissions;
+	public fun getDescription ()Ljava/lang/String;
+	public fun getDescriptionLocalizations ()Ljava/util/Map;
+	public fun getDmPermission ()Ljava/lang/Boolean;
+	public fun getExecutor ()Lnet/perfectdreams/discordinteraktions/common/commands/SlashCommandExecutor;
+	public fun getName ()Ljava/lang/String;
+	public fun getNameLocalizations ()Ljava/util/Map;
+	public fun getNsfw ()Ljava/lang/Boolean;
+	public fun getSubcommandGroups ()Ljava/util/List;
+	public fun getSubcommands ()Ljava/util/List;
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/InteraKTionsSlashCommandGroupDeclaration : net/perfectdreams/discordinteraktions/common/commands/SlashCommandGroupDeclaration {
+	public fun <init> (Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/util/Map;Ljava/util/List;Ljava/lang/Boolean;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/util/Map;Ljava/util/List;Ljava/lang/Boolean;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun getDescription ()Ljava/lang/String;
+	public fun getDescriptionLocalizations ()Ljava/util/Map;
+	public fun getName ()Ljava/lang/String;
+	public fun getNameLocalizations ()Ljava/util/Map;
+	public fun getNsfw ()Ljava/lang/Boolean;
+	public fun getSubcommands ()Ljava/util/List;
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/InteraKTionsUserCommandDeclaration : net/perfectdreams/discordinteraktions/common/commands/UserCommandDeclaration {
+	public fun <init> (Ljava/lang/String;Ljava/util/Map;Lnet/perfectdreams/discordinteraktions/common/commands/UserCommandExecutor;Ldev/kord/common/entity/Permissions;Ljava/lang/Boolean;Ljava/lang/Boolean;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/util/Map;Lnet/perfectdreams/discordinteraktions/common/commands/UserCommandExecutor;Ldev/kord/common/entity/Permissions;Ljava/lang/Boolean;Ljava/lang/Boolean;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun getDefaultMemberPermissions ()Ldev/kord/common/entity/Permissions;
+	public fun getDmPermission ()Ljava/lang/Boolean;
+	public fun getExecutor ()Lnet/perfectdreams/discordinteraktions/common/commands/UserCommandExecutor;
+	public fun getName ()Ljava/lang/String;
+	public fun getNameLocalizations ()Ljava/util/Map;
+	public fun getNsfw ()Ljava/lang/Boolean;
+}
+
+public class net/perfectdreams/discordinteraktions/common/commands/InteractionsManager {
+	public fun <init> ()V
+	public final fun getApplicationCommandsDeclarations ()Ljava/util/List;
+	public final fun getApplicationCommandsExecutors ()Ljava/util/List;
+	public final fun getButtonExecutors ()Ljava/util/List;
+	public final fun getComponentExecutorDeclarations ()Ljava/util/List;
+	public final fun getMessageCommandsExecutors ()Ljava/util/List;
+	public final fun getModalDeclarations ()Ljava/util/List;
+	public final fun getModalExecutors ()Ljava/util/List;
+	public final fun getSelectMenusExecutors ()Ljava/util/List;
+	public final fun getSlashCommandsExecutors ()Ljava/util/List;
+	public final fun getUserCommandsExecutors ()Ljava/util/List;
+	public final fun register (Lnet/perfectdreams/discordinteraktions/common/commands/ApplicationCommandDeclaration;)V
+	public final fun register (Lnet/perfectdreams/discordinteraktions/common/commands/MessageCommandDeclarationWrapper;)V
+	public final fun register (Lnet/perfectdreams/discordinteraktions/common/commands/SlashCommandDeclarationWrapper;)V
+	public final fun register (Lnet/perfectdreams/discordinteraktions/common/commands/UserCommandDeclarationWrapper;)V
+	public final fun register (Lnet/perfectdreams/discordinteraktions/common/components/ButtonExecutor;)V
+	public final fun register (Lnet/perfectdreams/discordinteraktions/common/components/ComponentExecutorDeclaration;Lnet/perfectdreams/discordinteraktions/common/components/ButtonExecutor;)V
+	public final fun register (Lnet/perfectdreams/discordinteraktions/common/components/ComponentExecutorDeclaration;Lnet/perfectdreams/discordinteraktions/common/components/SelectMenuExecutor;)V
+	public final fun register (Lnet/perfectdreams/discordinteraktions/common/components/SelectMenuExecutor;)V
+	public final fun register (Lnet/perfectdreams/discordinteraktions/common/modals/ModalExecutor;)V
+	public final fun register (Lnet/perfectdreams/discordinteraktions/common/modals/ModalExecutorDeclaration;Lnet/perfectdreams/discordinteraktions/common/modals/ModalExecutor;)V
+}
+
+public abstract class net/perfectdreams/discordinteraktions/common/commands/MessageCommandDeclaration : net/perfectdreams/discordinteraktions/common/commands/ApplicationCommandDeclaration {
+	public fun <init> ()V
+	public abstract fun getDefaultMemberPermissions ()Ldev/kord/common/entity/Permissions;
+	public abstract fun getDmPermission ()Ljava/lang/Boolean;
+	public abstract fun getExecutor ()Lnet/perfectdreams/discordinteraktions/common/commands/MessageCommandExecutor;
+	public abstract fun getNsfw ()Ljava/lang/Boolean;
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/MessageCommandDeclarationBuilder {
+	public fun <init> (Ljava/lang/String;Lnet/perfectdreams/discordinteraktions/common/commands/MessageCommandExecutor;)V
+	public final fun build ()Lnet/perfectdreams/discordinteraktions/common/commands/MessageCommandDeclaration;
+	public final fun getDefaultMemberPermissions ()Ldev/kord/common/entity/Permissions;
+	public final fun getDmPermission ()Ljava/lang/Boolean;
+	public final fun getExecutor ()Lnet/perfectdreams/discordinteraktions/common/commands/MessageCommandExecutor;
+	public final fun getName ()Ljava/lang/String;
+	public final fun getNameLocalizations ()Ljava/util/Map;
+	public final fun getNsfw ()Ljava/lang/Boolean;
+	public final fun setDefaultMemberPermissions (Ldev/kord/common/entity/Permissions;)V
+	public final fun setDmPermission (Ljava/lang/Boolean;)V
+	public final fun setNameLocalizations (Ljava/util/Map;)V
+	public final fun setNsfw (Ljava/lang/Boolean;)V
+}
+
+public abstract interface class net/perfectdreams/discordinteraktions/common/commands/MessageCommandDeclarationWrapper : net/perfectdreams/discordinteraktions/common/commands/ApplicationCommandDeclarationWrapper {
+	public abstract fun declaration ()Lnet/perfectdreams/discordinteraktions/common/commands/MessageCommandDeclarationBuilder;
+}
+
+public abstract class net/perfectdreams/discordinteraktions/common/commands/MessageCommandExecutor : net/perfectdreams/discordinteraktions/common/commands/ApplicationCommandExecutor {
+	public fun <init> ()V
+	public abstract fun execute (Lnet/perfectdreams/discordinteraktions/common/commands/ApplicationCommandContext;Lnet/perfectdreams/discordinteraktions/common/entities/messages/Message;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public abstract class net/perfectdreams/discordinteraktions/common/commands/SlashCommandDeclaration : net/perfectdreams/discordinteraktions/common/commands/ApplicationCommandDeclaration {
+	public fun <init> ()V
+	public abstract fun getDefaultMemberPermissions ()Ldev/kord/common/entity/Permissions;
+	public abstract fun getDescription ()Ljava/lang/String;
+	public abstract fun getDescriptionLocalizations ()Ljava/util/Map;
+	public abstract fun getDmPermission ()Ljava/lang/Boolean;
+	public abstract fun getExecutor ()Lnet/perfectdreams/discordinteraktions/common/commands/SlashCommandExecutor;
+	public abstract fun getNsfw ()Ljava/lang/Boolean;
+	public abstract fun getSubcommandGroups ()Ljava/util/List;
+	public abstract fun getSubcommands ()Ljava/util/List;
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/SlashCommandDeclarationBuilder {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
+	public final fun build ()Lnet/perfectdreams/discordinteraktions/common/commands/SlashCommandDeclaration;
+	public final fun getDefaultMemberPermissions ()Ldev/kord/common/entity/Permissions;
+	public final fun getDescription ()Ljava/lang/String;
+	public final fun getDescriptionLocalizations ()Ljava/util/Map;
+	public final fun getDmPermission ()Ljava/lang/Boolean;
+	public final fun getExecutor ()Lnet/perfectdreams/discordinteraktions/common/commands/SlashCommandExecutor;
+	public final fun getName ()Ljava/lang/String;
+	public final fun getNameLocalizations ()Ljava/util/Map;
+	public final fun getNsfw ()Ljava/lang/Boolean;
+	public final fun getSubcommandGroups ()Ljava/util/List;
+	public final fun getSubcommands ()Ljava/util/List;
+	public final fun setDefaultMemberPermissions (Ldev/kord/common/entity/Permissions;)V
+	public final fun setDescriptionLocalizations (Ljava/util/Map;)V
+	public final fun setDmPermission (Ljava/lang/Boolean;)V
+	public final fun setExecutor (Lnet/perfectdreams/discordinteraktions/common/commands/SlashCommandExecutor;)V
+	public final fun setNameLocalizations (Ljava/util/Map;)V
+	public final fun setNsfw (Ljava/lang/Boolean;)V
+	public final fun subcommand (Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
+	public final fun subcommandGroup (Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
+}
+
+public abstract interface class net/perfectdreams/discordinteraktions/common/commands/SlashCommandDeclarationWrapper : net/perfectdreams/discordinteraktions/common/commands/ApplicationCommandDeclarationWrapper {
+	public abstract fun declaration ()Lnet/perfectdreams/discordinteraktions/common/commands/SlashCommandDeclarationBuilder;
+}
+
+public abstract class net/perfectdreams/discordinteraktions/common/commands/SlashCommandExecutor : net/perfectdreams/discordinteraktions/common/commands/ApplicationCommandExecutor {
+	public fun <init> ()V
+	public abstract fun execute (Lnet/perfectdreams/discordinteraktions/common/commands/ApplicationCommandContext;Lnet/perfectdreams/discordinteraktions/common/commands/options/SlashCommandArguments;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun getOptions ()Lnet/perfectdreams/discordinteraktions/common/commands/options/ApplicationCommandOptions;
+}
+
+public abstract class net/perfectdreams/discordinteraktions/common/commands/SlashCommandGroupDeclaration : net/perfectdreams/discordinteraktions/common/commands/ApplicationCommandDeclaration {
+	public fun <init> ()V
+	public abstract fun getDescription ()Ljava/lang/String;
+	public abstract fun getDescriptionLocalizations ()Ljava/util/Map;
+	public abstract fun getNsfw ()Ljava/lang/Boolean;
+	public abstract fun getSubcommands ()Ljava/util/List;
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/SlashCommandGroupDeclarationBuilder {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
+	public final fun build ()Lnet/perfectdreams/discordinteraktions/common/commands/SlashCommandGroupDeclaration;
+	public final fun getDescription ()Ljava/lang/String;
+	public final fun getDescriptionLocalizations ()Ljava/util/Map;
+	public final fun getName ()Ljava/lang/String;
+	public final fun getNameLocalizations ()Ljava/util/Map;
+	public final fun getNsfw ()Ljava/lang/Boolean;
+	public final fun getSubcommands ()Ljava/util/List;
+	public final fun setDescriptionLocalizations (Ljava/util/Map;)V
+	public final fun setNameLocalizations (Ljava/util/Map;)V
+	public final fun setNsfw (Ljava/lang/Boolean;)V
+	public final fun subcommand (Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
+}
+
+public abstract class net/perfectdreams/discordinteraktions/common/commands/UserCommandDeclaration : net/perfectdreams/discordinteraktions/common/commands/ApplicationCommandDeclaration {
+	public fun <init> ()V
+	public abstract fun getDefaultMemberPermissions ()Ldev/kord/common/entity/Permissions;
+	public abstract fun getDmPermission ()Ljava/lang/Boolean;
+	public abstract fun getExecutor ()Lnet/perfectdreams/discordinteraktions/common/commands/UserCommandExecutor;
+	public abstract fun getNsfw ()Ljava/lang/Boolean;
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/UserCommandDeclarationBuilder {
+	public fun <init> (Ljava/lang/String;Lnet/perfectdreams/discordinteraktions/common/commands/UserCommandExecutor;)V
+	public final fun build ()Lnet/perfectdreams/discordinteraktions/common/commands/UserCommandDeclaration;
+	public final fun getDefaultMemberPermissions ()Ldev/kord/common/entity/Permissions;
+	public final fun getDmPermission ()Ljava/lang/Boolean;
+	public final fun getExecutor ()Lnet/perfectdreams/discordinteraktions/common/commands/UserCommandExecutor;
+	public final fun getName ()Ljava/lang/String;
+	public final fun getNameLocalizations ()Ljava/util/Map;
+	public final fun getNsfw ()Ljava/lang/Boolean;
+	public final fun setDefaultMemberPermissions (Ldev/kord/common/entity/Permissions;)V
+	public final fun setDmPermission (Ljava/lang/Boolean;)V
+	public final fun setNameLocalizations (Ljava/util/Map;)V
+	public final fun setNsfw (Ljava/lang/Boolean;)V
+}
+
+public abstract interface class net/perfectdreams/discordinteraktions/common/commands/UserCommandDeclarationWrapper : net/perfectdreams/discordinteraktions/common/commands/ApplicationCommandDeclarationWrapper {
+	public abstract fun declaration ()Lnet/perfectdreams/discordinteraktions/common/commands/UserCommandDeclarationBuilder;
+}
+
+public abstract class net/perfectdreams/discordinteraktions/common/commands/UserCommandExecutor : net/perfectdreams/discordinteraktions/common/commands/ApplicationCommandExecutor {
+	public fun <init> ()V
+	public abstract fun execute (Lnet/perfectdreams/discordinteraktions/common/commands/ApplicationCommandContext;Ldev/kord/core/entity/User;Ldev/kord/core/entity/Member;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public class net/perfectdreams/discordinteraktions/common/commands/options/ApplicationCommandOptions {
+	public static final field Companion Lnet/perfectdreams/discordinteraktions/common/commands/options/ApplicationCommandOptions$Companion;
+	public fun <init> ()V
+	public final fun attachment (Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)Lnet/perfectdreams/discordinteraktions/common/commands/options/OptionReference;
+	public static synthetic fun attachment$default (Lnet/perfectdreams/discordinteraktions/common/commands/options/ApplicationCommandOptions;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Lnet/perfectdreams/discordinteraktions/common/commands/options/OptionReference;
+	public final fun boolean (Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)Lnet/perfectdreams/discordinteraktions/common/commands/options/OptionReference;
+	public static synthetic fun boolean$default (Lnet/perfectdreams/discordinteraktions/common/commands/options/ApplicationCommandOptions;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Lnet/perfectdreams/discordinteraktions/common/commands/options/OptionReference;
+	public final fun channel (Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)Lnet/perfectdreams/discordinteraktions/common/commands/options/OptionReference;
+	public static synthetic fun channel$default (Lnet/perfectdreams/discordinteraktions/common/commands/options/ApplicationCommandOptions;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Lnet/perfectdreams/discordinteraktions/common/commands/options/OptionReference;
+	public final fun getReferences ()Ljava/util/List;
+	public final fun getRegisteredOptions ()Ljava/util/List;
+	public final fun integer (Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)Lnet/perfectdreams/discordinteraktions/common/commands/options/OptionReference;
+	public static synthetic fun integer$default (Lnet/perfectdreams/discordinteraktions/common/commands/options/ApplicationCommandOptions;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Lnet/perfectdreams/discordinteraktions/common/commands/options/OptionReference;
+	public final fun mentionable (Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)Lnet/perfectdreams/discordinteraktions/common/commands/options/OptionReference;
+	public static synthetic fun mentionable$default (Lnet/perfectdreams/discordinteraktions/common/commands/options/ApplicationCommandOptions;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Lnet/perfectdreams/discordinteraktions/common/commands/options/OptionReference;
+	public final fun number (Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)Lnet/perfectdreams/discordinteraktions/common/commands/options/OptionReference;
+	public static synthetic fun number$default (Lnet/perfectdreams/discordinteraktions/common/commands/options/ApplicationCommandOptions;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Lnet/perfectdreams/discordinteraktions/common/commands/options/OptionReference;
+	public final fun optionalAttachment (Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)Lnet/perfectdreams/discordinteraktions/common/commands/options/OptionReference;
+	public static synthetic fun optionalAttachment$default (Lnet/perfectdreams/discordinteraktions/common/commands/options/ApplicationCommandOptions;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Lnet/perfectdreams/discordinteraktions/common/commands/options/OptionReference;
+	public final fun optionalBoolean (Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)Lnet/perfectdreams/discordinteraktions/common/commands/options/OptionReference;
+	public static synthetic fun optionalBoolean$default (Lnet/perfectdreams/discordinteraktions/common/commands/options/ApplicationCommandOptions;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Lnet/perfectdreams/discordinteraktions/common/commands/options/OptionReference;
+	public final fun optionalChannel (Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)Lnet/perfectdreams/discordinteraktions/common/commands/options/OptionReference;
+	public static synthetic fun optionalChannel$default (Lnet/perfectdreams/discordinteraktions/common/commands/options/ApplicationCommandOptions;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Lnet/perfectdreams/discordinteraktions/common/commands/options/OptionReference;
+	public final fun optionalInteger (Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)Lnet/perfectdreams/discordinteraktions/common/commands/options/OptionReference;
+	public static synthetic fun optionalInteger$default (Lnet/perfectdreams/discordinteraktions/common/commands/options/ApplicationCommandOptions;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Lnet/perfectdreams/discordinteraktions/common/commands/options/OptionReference;
+	public final fun optionalMentionable (Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)Lnet/perfectdreams/discordinteraktions/common/commands/options/OptionReference;
+	public static synthetic fun optionalMentionable$default (Lnet/perfectdreams/discordinteraktions/common/commands/options/ApplicationCommandOptions;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Lnet/perfectdreams/discordinteraktions/common/commands/options/OptionReference;
+	public final fun optionalNumber (Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)Lnet/perfectdreams/discordinteraktions/common/commands/options/OptionReference;
+	public static synthetic fun optionalNumber$default (Lnet/perfectdreams/discordinteraktions/common/commands/options/ApplicationCommandOptions;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Lnet/perfectdreams/discordinteraktions/common/commands/options/OptionReference;
+	public final fun optionalRole (Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)Lnet/perfectdreams/discordinteraktions/common/commands/options/OptionReference;
+	public static synthetic fun optionalRole$default (Lnet/perfectdreams/discordinteraktions/common/commands/options/ApplicationCommandOptions;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Lnet/perfectdreams/discordinteraktions/common/commands/options/OptionReference;
+	public final fun optionalString (Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)Lnet/perfectdreams/discordinteraktions/common/commands/options/OptionReference;
+	public static synthetic fun optionalString$default (Lnet/perfectdreams/discordinteraktions/common/commands/options/ApplicationCommandOptions;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Lnet/perfectdreams/discordinteraktions/common/commands/options/OptionReference;
+	public final fun optionalUser (Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)Lnet/perfectdreams/discordinteraktions/common/commands/options/OptionReference;
+	public static synthetic fun optionalUser$default (Lnet/perfectdreams/discordinteraktions/common/commands/options/ApplicationCommandOptions;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Lnet/perfectdreams/discordinteraktions/common/commands/options/OptionReference;
+	public final fun role (Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)Lnet/perfectdreams/discordinteraktions/common/commands/options/OptionReference;
+	public static synthetic fun role$default (Lnet/perfectdreams/discordinteraktions/common/commands/options/ApplicationCommandOptions;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Lnet/perfectdreams/discordinteraktions/common/commands/options/OptionReference;
+	public final fun string (Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)Lnet/perfectdreams/discordinteraktions/common/commands/options/OptionReference;
+	public static synthetic fun string$default (Lnet/perfectdreams/discordinteraktions/common/commands/options/ApplicationCommandOptions;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Lnet/perfectdreams/discordinteraktions/common/commands/options/OptionReference;
+	public final fun user (Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)Lnet/perfectdreams/discordinteraktions/common/commands/options/OptionReference;
+	public static synthetic fun user$default (Lnet/perfectdreams/discordinteraktions/common/commands/options/ApplicationCommandOptions;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Lnet/perfectdreams/discordinteraktions/common/commands/options/OptionReference;
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/options/ApplicationCommandOptions$Companion {
+	public final fun getNO_OPTIONS ()Lnet/perfectdreams/discordinteraktions/common/commands/options/ApplicationCommandOptions;
+}
+
+public abstract interface class net/perfectdreams/discordinteraktions/common/commands/options/AttachmentCommandOption : net/perfectdreams/discordinteraktions/common/commands/options/DiscordCommandOption {
+	public abstract fun parse (Ldev/kord/core/Kord;Ljava/util/List;Ldev/kord/common/entity/DiscordInteraction;)Ldev/kord/common/entity/DiscordAttachment;
+	public abstract fun register (Ldev/kord/rest/builder/interaction/BaseInputChatBuilder;)V
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/options/AttachmentCommandOption$DefaultImpls {
+	public static fun parse (Lnet/perfectdreams/discordinteraktions/common/commands/options/AttachmentCommandOption;Ldev/kord/core/Kord;Ljava/util/List;Ldev/kord/common/entity/DiscordInteraction;)Ldev/kord/common/entity/DiscordAttachment;
+	public static fun register (Lnet/perfectdreams/discordinteraktions/common/commands/options/AttachmentCommandOption;Ldev/kord/rest/builder/interaction/BaseInputChatBuilder;)V
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/options/AttachmentCommandOptionBuilder : net/perfectdreams/discordinteraktions/common/commands/options/AttachmentCommandOptionBuilderBase {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
+	public fun getDescription ()Ljava/lang/String;
+	public fun getName ()Ljava/lang/String;
+	public fun getRequired ()Z
+}
+
+public abstract class net/perfectdreams/discordinteraktions/common/commands/options/AttachmentCommandOptionBuilderBase : net/perfectdreams/discordinteraktions/common/commands/options/DiscordCommandOptionBuilder {
+	public fun <init> ()V
+	public fun build ()Lnet/perfectdreams/discordinteraktions/common/commands/options/AttachmentCommandOption;
+	public synthetic fun build ()Lnet/perfectdreams/discordinteraktions/common/commands/options/InteraKTionsCommandOption;
+}
+
+public abstract interface class net/perfectdreams/discordinteraktions/common/commands/options/BooleanCommandOption : net/perfectdreams/discordinteraktions/common/commands/options/GenericCommandOption {
+	public abstract fun register (Ldev/kord/rest/builder/interaction/BaseInputChatBuilder;)V
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/options/BooleanCommandOption$DefaultImpls {
+	public static fun parse (Lnet/perfectdreams/discordinteraktions/common/commands/options/BooleanCommandOption;Ldev/kord/core/Kord;Ljava/util/List;Ldev/kord/common/entity/DiscordInteraction;)Ljava/lang/Boolean;
+	public static fun register (Lnet/perfectdreams/discordinteraktions/common/commands/options/BooleanCommandOption;Ldev/kord/rest/builder/interaction/BaseInputChatBuilder;)V
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/options/BooleanCommandOptionBuilder : net/perfectdreams/discordinteraktions/common/commands/options/BooleanCommandOptionBuilderBase {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
+	public fun getDescription ()Ljava/lang/String;
+	public fun getName ()Ljava/lang/String;
+	public fun getRequired ()Z
+}
+
+public abstract class net/perfectdreams/discordinteraktions/common/commands/options/BooleanCommandOptionBuilderBase : net/perfectdreams/discordinteraktions/common/commands/options/DiscordCommandOptionBuilder {
+	public fun <init> ()V
+	public fun build ()Lnet/perfectdreams/discordinteraktions/common/commands/options/BooleanCommandOption;
+	public synthetic fun build ()Lnet/perfectdreams/discordinteraktions/common/commands/options/InteraKTionsCommandOption;
+}
+
+public abstract interface class net/perfectdreams/discordinteraktions/common/commands/options/ChannelCommandOption : net/perfectdreams/discordinteraktions/common/commands/options/DiscordCommandOption {
+	public abstract fun getChannelTypes ()Ljava/util/List;
+	public abstract fun parse (Ldev/kord/core/Kord;Ljava/util/List;Ldev/kord/common/entity/DiscordInteraction;)Ldev/kord/core/entity/channel/Channel;
+	public abstract fun register (Ldev/kord/rest/builder/interaction/BaseInputChatBuilder;)V
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/options/ChannelCommandOption$DefaultImpls {
+	public static fun parse (Lnet/perfectdreams/discordinteraktions/common/commands/options/ChannelCommandOption;Ldev/kord/core/Kord;Ljava/util/List;Ldev/kord/common/entity/DiscordInteraction;)Ldev/kord/core/entity/channel/Channel;
+	public static fun register (Lnet/perfectdreams/discordinteraktions/common/commands/options/ChannelCommandOption;Ldev/kord/rest/builder/interaction/BaseInputChatBuilder;)V
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/options/ChannelCommandOptionBuilder : net/perfectdreams/discordinteraktions/common/commands/options/ChannelCommandOptionBuilderBase {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
+	public fun getDescription ()Ljava/lang/String;
+	public fun getName ()Ljava/lang/String;
+	public fun getRequired ()Z
+}
+
+public abstract class net/perfectdreams/discordinteraktions/common/commands/options/ChannelCommandOptionBuilderBase : net/perfectdreams/discordinteraktions/common/commands/options/DiscordCommandOptionBuilder {
+	public fun <init> ()V
+	public fun build ()Lnet/perfectdreams/discordinteraktions/common/commands/options/ChannelCommandOption;
+	public synthetic fun build ()Lnet/perfectdreams/discordinteraktions/common/commands/options/InteraKTionsCommandOption;
+	public final fun getChannelTypes ()Ljava/util/List;
+	public final fun setChannelTypes (Ljava/util/List;)V
+}
+
+public abstract interface class net/perfectdreams/discordinteraktions/common/commands/options/ChoiceableCommandOption {
+	public abstract fun getAutocompleteExecutor ()Lnet/perfectdreams/discordinteraktions/common/autocomplete/AutocompleteHandler;
+	public abstract fun getChoices ()Ljava/util/List;
+}
+
+public abstract class net/perfectdreams/discordinteraktions/common/commands/options/ChoiceableCommandOptionBuilder : net/perfectdreams/discordinteraktions/common/commands/options/DiscordCommandOptionBuilder {
+	public fun <init> ()V
+	public final fun autocomplete (Lnet/perfectdreams/discordinteraktions/common/autocomplete/AutocompleteHandler;)V
+	public final fun choice (Ljava/lang/String;Ljava/lang/Object;Lkotlin/jvm/functions/Function1;)V
+	public static synthetic fun choice$default (Lnet/perfectdreams/discordinteraktions/common/commands/options/ChoiceableCommandOptionBuilder;Ljava/lang/String;Ljava/lang/Object;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+	public final fun getAutocompleteExecutor ()Lnet/perfectdreams/discordinteraktions/common/autocomplete/AutocompleteHandler;
+	public final fun getChoices ()Ljava/util/List;
+	public final fun setAutocompleteExecutor (Lnet/perfectdreams/discordinteraktions/common/autocomplete/AutocompleteHandler;)V
+	public final fun setChoices (Ljava/util/List;)V
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/options/CommandChoice {
+	public fun <init> (Ljava/lang/String;Ljava/lang/Object;Ljava/util/Map;)V
+	public final fun getName ()Ljava/lang/String;
+	public final fun getNameLocalizations ()Ljava/util/Map;
+	public final fun getValue ()Ljava/lang/Object;
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/options/CommandChoiceBuilder {
+	public fun <init> (Ljava/lang/String;Ljava/lang/Object;)V
+	public final fun build ()Lnet/perfectdreams/discordinteraktions/common/commands/options/CommandChoice;
+	public final fun getName ()Ljava/lang/String;
+	public final fun getNameLocalizations ()Ljava/util/Map;
+	public final fun getValue ()Ljava/lang/Object;
+	public final fun setNameLocalizations (Ljava/util/Map;)V
+}
+
+public abstract class net/perfectdreams/discordinteraktions/common/commands/options/CommandOptionBuilder {
+	public fun <init> ()V
+	public abstract fun build ()Lnet/perfectdreams/discordinteraktions/common/commands/options/InteraKTionsCommandOption;
+	public abstract fun getName ()Ljava/lang/String;
+	public abstract fun getRequired ()Z
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/options/DefaultAttachmentCommandOption : net/perfectdreams/discordinteraktions/common/commands/options/AttachmentCommandOption {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ljava/util/Map;Z)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/util/Map;
+	public final fun component4 ()Ljava/util/Map;
+	public final fun component5 ()Z
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ljava/util/Map;Z)Lnet/perfectdreams/discordinteraktions/common/commands/options/DefaultAttachmentCommandOption;
+	public static synthetic fun copy$default (Lnet/perfectdreams/discordinteraktions/common/commands/options/DefaultAttachmentCommandOption;Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ljava/util/Map;ZILjava/lang/Object;)Lnet/perfectdreams/discordinteraktions/common/commands/options/DefaultAttachmentCommandOption;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getDescription ()Ljava/lang/String;
+	public fun getDescriptionLocalizations ()Ljava/util/Map;
+	public fun getName ()Ljava/lang/String;
+	public fun getNameLocalizations ()Ljava/util/Map;
+	public fun getRequired ()Z
+	public fun hashCode ()I
+	public fun parse (Ldev/kord/core/Kord;Ljava/util/List;Ldev/kord/common/entity/DiscordInteraction;)Ldev/kord/common/entity/DiscordAttachment;
+	public synthetic fun parse (Ldev/kord/core/Kord;Ljava/util/List;Ldev/kord/common/entity/DiscordInteraction;)Ljava/lang/Object;
+	public fun register (Ldev/kord/rest/builder/interaction/BaseInputChatBuilder;)V
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/options/DefaultBooleanCommandOption : net/perfectdreams/discordinteraktions/common/commands/options/BooleanCommandOption {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ljava/util/Map;Z)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/util/Map;
+	public final fun component4 ()Ljava/util/Map;
+	public final fun component5 ()Z
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ljava/util/Map;Z)Lnet/perfectdreams/discordinteraktions/common/commands/options/DefaultBooleanCommandOption;
+	public static synthetic fun copy$default (Lnet/perfectdreams/discordinteraktions/common/commands/options/DefaultBooleanCommandOption;Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ljava/util/Map;ZILjava/lang/Object;)Lnet/perfectdreams/discordinteraktions/common/commands/options/DefaultBooleanCommandOption;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getDescription ()Ljava/lang/String;
+	public fun getDescriptionLocalizations ()Ljava/util/Map;
+	public fun getName ()Ljava/lang/String;
+	public fun getNameLocalizations ()Ljava/util/Map;
+	public fun getRequired ()Z
+	public fun hashCode ()I
+	public fun parse (Ldev/kord/core/Kord;Ljava/util/List;Ldev/kord/common/entity/DiscordInteraction;)Ljava/lang/Boolean;
+	public synthetic fun parse (Ldev/kord/core/Kord;Ljava/util/List;Ldev/kord/common/entity/DiscordInteraction;)Ljava/lang/Object;
+	public fun register (Ldev/kord/rest/builder/interaction/BaseInputChatBuilder;)V
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/options/DefaultChannelCommandOption : net/perfectdreams/discordinteraktions/common/commands/options/ChannelCommandOption {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ljava/util/Map;ZLjava/util/List;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/util/Map;
+	public final fun component4 ()Ljava/util/Map;
+	public final fun component5 ()Z
+	public final fun component6 ()Ljava/util/List;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ljava/util/Map;ZLjava/util/List;)Lnet/perfectdreams/discordinteraktions/common/commands/options/DefaultChannelCommandOption;
+	public static synthetic fun copy$default (Lnet/perfectdreams/discordinteraktions/common/commands/options/DefaultChannelCommandOption;Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ljava/util/Map;ZLjava/util/List;ILjava/lang/Object;)Lnet/perfectdreams/discordinteraktions/common/commands/options/DefaultChannelCommandOption;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getChannelTypes ()Ljava/util/List;
+	public fun getDescription ()Ljava/lang/String;
+	public fun getDescriptionLocalizations ()Ljava/util/Map;
+	public fun getName ()Ljava/lang/String;
+	public fun getNameLocalizations ()Ljava/util/Map;
+	public fun getRequired ()Z
+	public fun hashCode ()I
+	public fun parse (Ldev/kord/core/Kord;Ljava/util/List;Ldev/kord/common/entity/DiscordInteraction;)Ldev/kord/core/entity/channel/Channel;
+	public synthetic fun parse (Ldev/kord/core/Kord;Ljava/util/List;Ldev/kord/common/entity/DiscordInteraction;)Ljava/lang/Object;
+	public fun register (Ldev/kord/rest/builder/interaction/BaseInputChatBuilder;)V
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/options/DefaultIntegerCommandOption : net/perfectdreams/discordinteraktions/common/commands/options/IntegerCommandOption {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ljava/util/Map;ZLjava/util/List;Ljava/lang/Long;Ljava/lang/Long;Lnet/perfectdreams/discordinteraktions/common/autocomplete/AutocompleteHandler;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/util/Map;
+	public final fun component4 ()Ljava/util/Map;
+	public final fun component5 ()Z
+	public final fun component6 ()Ljava/util/List;
+	public final fun component7 ()Ljava/lang/Long;
+	public final fun component8 ()Ljava/lang/Long;
+	public final fun component9 ()Lnet/perfectdreams/discordinteraktions/common/autocomplete/AutocompleteHandler;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ljava/util/Map;ZLjava/util/List;Ljava/lang/Long;Ljava/lang/Long;Lnet/perfectdreams/discordinteraktions/common/autocomplete/AutocompleteHandler;)Lnet/perfectdreams/discordinteraktions/common/commands/options/DefaultIntegerCommandOption;
+	public static synthetic fun copy$default (Lnet/perfectdreams/discordinteraktions/common/commands/options/DefaultIntegerCommandOption;Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ljava/util/Map;ZLjava/util/List;Ljava/lang/Long;Ljava/lang/Long;Lnet/perfectdreams/discordinteraktions/common/autocomplete/AutocompleteHandler;ILjava/lang/Object;)Lnet/perfectdreams/discordinteraktions/common/commands/options/DefaultIntegerCommandOption;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getAutocompleteExecutor ()Lnet/perfectdreams/discordinteraktions/common/autocomplete/AutocompleteHandler;
+	public fun getChoices ()Ljava/util/List;
+	public fun getDescription ()Ljava/lang/String;
+	public fun getDescriptionLocalizations ()Ljava/util/Map;
+	public fun getMaxValue ()Ljava/lang/Long;
+	public fun getMinValue ()Ljava/lang/Long;
+	public fun getName ()Ljava/lang/String;
+	public fun getNameLocalizations ()Ljava/util/Map;
+	public fun getRequired ()Z
+	public fun hashCode ()I
+	public fun parse (Ldev/kord/core/Kord;Ljava/util/List;Ldev/kord/common/entity/DiscordInteraction;)Ljava/lang/Long;
+	public synthetic fun parse (Ldev/kord/core/Kord;Ljava/util/List;Ldev/kord/common/entity/DiscordInteraction;)Ljava/lang/Object;
+	public fun register (Ldev/kord/rest/builder/interaction/BaseInputChatBuilder;)V
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/options/DefaultMentionableCommandOption : net/perfectdreams/discordinteraktions/common/commands/options/MentionableCommandOption {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ljava/util/Map;Z)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/util/Map;
+	public final fun component4 ()Ljava/util/Map;
+	public final fun component5 ()Z
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ljava/util/Map;Z)Lnet/perfectdreams/discordinteraktions/common/commands/options/DefaultMentionableCommandOption;
+	public static synthetic fun copy$default (Lnet/perfectdreams/discordinteraktions/common/commands/options/DefaultMentionableCommandOption;Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ljava/util/Map;ZILjava/lang/Object;)Lnet/perfectdreams/discordinteraktions/common/commands/options/DefaultMentionableCommandOption;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getDescription ()Ljava/lang/String;
+	public fun getDescriptionLocalizations ()Ljava/util/Map;
+	public fun getName ()Ljava/lang/String;
+	public fun getNameLocalizations ()Ljava/util/Map;
+	public fun getRequired ()Z
+	public fun hashCode ()I
+	public fun parse (Ldev/kord/core/Kord;Ljava/util/List;Ldev/kord/common/entity/DiscordInteraction;)Ljava/lang/Object;
+	public fun register (Ldev/kord/rest/builder/interaction/BaseInputChatBuilder;)V
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/options/DefaultNumberCommandOption : net/perfectdreams/discordinteraktions/common/commands/options/NumberCommandOption {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ljava/util/Map;ZLjava/util/List;Ljava/lang/Double;Ljava/lang/Double;Lnet/perfectdreams/discordinteraktions/common/autocomplete/AutocompleteHandler;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/util/Map;
+	public final fun component4 ()Ljava/util/Map;
+	public final fun component5 ()Z
+	public final fun component6 ()Ljava/util/List;
+	public final fun component7 ()Ljava/lang/Double;
+	public final fun component8 ()Ljava/lang/Double;
+	public final fun component9 ()Lnet/perfectdreams/discordinteraktions/common/autocomplete/AutocompleteHandler;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ljava/util/Map;ZLjava/util/List;Ljava/lang/Double;Ljava/lang/Double;Lnet/perfectdreams/discordinteraktions/common/autocomplete/AutocompleteHandler;)Lnet/perfectdreams/discordinteraktions/common/commands/options/DefaultNumberCommandOption;
+	public static synthetic fun copy$default (Lnet/perfectdreams/discordinteraktions/common/commands/options/DefaultNumberCommandOption;Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ljava/util/Map;ZLjava/util/List;Ljava/lang/Double;Ljava/lang/Double;Lnet/perfectdreams/discordinteraktions/common/autocomplete/AutocompleteHandler;ILjava/lang/Object;)Lnet/perfectdreams/discordinteraktions/common/commands/options/DefaultNumberCommandOption;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getAutocompleteExecutor ()Lnet/perfectdreams/discordinteraktions/common/autocomplete/AutocompleteHandler;
+	public fun getChoices ()Ljava/util/List;
+	public fun getDescription ()Ljava/lang/String;
+	public fun getDescriptionLocalizations ()Ljava/util/Map;
+	public fun getMaxValue ()Ljava/lang/Double;
+	public fun getMinValue ()Ljava/lang/Double;
+	public fun getName ()Ljava/lang/String;
+	public fun getNameLocalizations ()Ljava/util/Map;
+	public fun getRequired ()Z
+	public fun hashCode ()I
+	public fun parse (Ldev/kord/core/Kord;Ljava/util/List;Ldev/kord/common/entity/DiscordInteraction;)Ljava/lang/Double;
+	public synthetic fun parse (Ldev/kord/core/Kord;Ljava/util/List;Ldev/kord/common/entity/DiscordInteraction;)Ljava/lang/Object;
+	public fun register (Ldev/kord/rest/builder/interaction/BaseInputChatBuilder;)V
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/options/DefaultRoleCommandOption : net/perfectdreams/discordinteraktions/common/commands/options/RoleCommandOption {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ljava/util/Map;Z)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/util/Map;
+	public final fun component4 ()Ljava/util/Map;
+	public final fun component5 ()Z
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ljava/util/Map;Z)Lnet/perfectdreams/discordinteraktions/common/commands/options/DefaultRoleCommandOption;
+	public static synthetic fun copy$default (Lnet/perfectdreams/discordinteraktions/common/commands/options/DefaultRoleCommandOption;Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ljava/util/Map;ZILjava/lang/Object;)Lnet/perfectdreams/discordinteraktions/common/commands/options/DefaultRoleCommandOption;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getDescription ()Ljava/lang/String;
+	public fun getDescriptionLocalizations ()Ljava/util/Map;
+	public fun getName ()Ljava/lang/String;
+	public fun getNameLocalizations ()Ljava/util/Map;
+	public fun getRequired ()Z
+	public fun hashCode ()I
+	public fun parse (Ldev/kord/core/Kord;Ljava/util/List;Ldev/kord/common/entity/DiscordInteraction;)Ldev/kord/core/entity/Role;
+	public synthetic fun parse (Ldev/kord/core/Kord;Ljava/util/List;Ldev/kord/common/entity/DiscordInteraction;)Ljava/lang/Object;
+	public fun register (Ldev/kord/rest/builder/interaction/BaseInputChatBuilder;)V
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/options/DefaultStringCommandOption : net/perfectdreams/discordinteraktions/common/commands/options/StringCommandOption {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ljava/util/Map;ZLjava/util/List;Ljava/lang/Integer;Ljava/lang/Integer;Lnet/perfectdreams/discordinteraktions/common/autocomplete/AutocompleteHandler;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/util/Map;
+	public final fun component4 ()Ljava/util/Map;
+	public final fun component5 ()Z
+	public final fun component6 ()Ljava/util/List;
+	public final fun component7 ()Ljava/lang/Integer;
+	public final fun component8 ()Ljava/lang/Integer;
+	public final fun component9 ()Lnet/perfectdreams/discordinteraktions/common/autocomplete/AutocompleteHandler;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ljava/util/Map;ZLjava/util/List;Ljava/lang/Integer;Ljava/lang/Integer;Lnet/perfectdreams/discordinteraktions/common/autocomplete/AutocompleteHandler;)Lnet/perfectdreams/discordinteraktions/common/commands/options/DefaultStringCommandOption;
+	public static synthetic fun copy$default (Lnet/perfectdreams/discordinteraktions/common/commands/options/DefaultStringCommandOption;Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ljava/util/Map;ZLjava/util/List;Ljava/lang/Integer;Ljava/lang/Integer;Lnet/perfectdreams/discordinteraktions/common/autocomplete/AutocompleteHandler;ILjava/lang/Object;)Lnet/perfectdreams/discordinteraktions/common/commands/options/DefaultStringCommandOption;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getAutocompleteExecutor ()Lnet/perfectdreams/discordinteraktions/common/autocomplete/AutocompleteHandler;
+	public fun getChoices ()Ljava/util/List;
+	public fun getDescription ()Ljava/lang/String;
+	public fun getDescriptionLocalizations ()Ljava/util/Map;
+	public fun getMaxLength ()Ljava/lang/Integer;
+	public fun getMinLength ()Ljava/lang/Integer;
+	public fun getName ()Ljava/lang/String;
+	public fun getNameLocalizations ()Ljava/util/Map;
+	public fun getRequired ()Z
+	public fun hashCode ()I
+	public synthetic fun parse (Ldev/kord/core/Kord;Ljava/util/List;Ldev/kord/common/entity/DiscordInteraction;)Ljava/lang/Object;
+	public fun parse (Ldev/kord/core/Kord;Ljava/util/List;Ldev/kord/common/entity/DiscordInteraction;)Ljava/lang/String;
+	public fun register (Ldev/kord/rest/builder/interaction/BaseInputChatBuilder;)V
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/options/DefaultUserCommandOption : net/perfectdreams/discordinteraktions/common/commands/options/UserCommandOption {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ljava/util/Map;Z)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/util/Map;
+	public final fun component4 ()Ljava/util/Map;
+	public final fun component5 ()Z
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ljava/util/Map;Z)Lnet/perfectdreams/discordinteraktions/common/commands/options/DefaultUserCommandOption;
+	public static synthetic fun copy$default (Lnet/perfectdreams/discordinteraktions/common/commands/options/DefaultUserCommandOption;Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ljava/util/Map;ZILjava/lang/Object;)Lnet/perfectdreams/discordinteraktions/common/commands/options/DefaultUserCommandOption;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getDescription ()Ljava/lang/String;
+	public fun getDescriptionLocalizations ()Ljava/util/Map;
+	public fun getName ()Ljava/lang/String;
+	public fun getNameLocalizations ()Ljava/util/Map;
+	public fun getRequired ()Z
+	public fun hashCode ()I
+	public fun parse (Ldev/kord/core/Kord;Ljava/util/List;Ldev/kord/common/entity/DiscordInteraction;)Ldev/kord/core/entity/User;
+	public synthetic fun parse (Ldev/kord/core/Kord;Ljava/util/List;Ldev/kord/common/entity/DiscordInteraction;)Ljava/lang/Object;
+	public fun register (Ldev/kord/rest/builder/interaction/BaseInputChatBuilder;)V
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract interface class net/perfectdreams/discordinteraktions/common/commands/options/DiscordCommandOption : net/perfectdreams/discordinteraktions/common/commands/options/NameableCommandOption {
+	public abstract fun getRequired ()Z
+}
+
+public abstract class net/perfectdreams/discordinteraktions/common/commands/options/DiscordCommandOptionBuilder : net/perfectdreams/discordinteraktions/common/commands/options/CommandOptionBuilder {
+	public fun <init> ()V
+	public abstract fun getDescription ()Ljava/lang/String;
+	public final fun getDescriptionLocalizations ()Ljava/util/Map;
+	public final fun getNameLocalizations ()Ljava/util/Map;
+	public final fun setDescriptionLocalizations (Ljava/util/Map;)V
+	public final fun setNameLocalizations (Ljava/util/Map;)V
+}
+
+public abstract interface class net/perfectdreams/discordinteraktions/common/commands/options/GenericCommandOption : net/perfectdreams/discordinteraktions/common/commands/options/DiscordCommandOption {
+	public abstract fun parse (Ldev/kord/core/Kord;Ljava/util/List;Ldev/kord/common/entity/DiscordInteraction;)Ljava/lang/Object;
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/options/GenericCommandOption$DefaultImpls {
+	public static fun parse (Lnet/perfectdreams/discordinteraktions/common/commands/options/GenericCommandOption;Ldev/kord/core/Kord;Ljava/util/List;Ldev/kord/common/entity/DiscordInteraction;)Ljava/lang/Object;
+}
+
+public abstract interface class net/perfectdreams/discordinteraktions/common/commands/options/IntegerCommandOption : net/perfectdreams/discordinteraktions/common/commands/options/ChoiceableCommandOption, net/perfectdreams/discordinteraktions/common/commands/options/GenericCommandOption {
+	public abstract fun getMaxValue ()Ljava/lang/Long;
+	public abstract fun getMinValue ()Ljava/lang/Long;
+	public abstract fun register (Ldev/kord/rest/builder/interaction/BaseInputChatBuilder;)V
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/options/IntegerCommandOption$DefaultImpls {
+	public static fun parse (Lnet/perfectdreams/discordinteraktions/common/commands/options/IntegerCommandOption;Ldev/kord/core/Kord;Ljava/util/List;Ldev/kord/common/entity/DiscordInteraction;)Ljava/lang/Long;
+	public static fun register (Lnet/perfectdreams/discordinteraktions/common/commands/options/IntegerCommandOption;Ldev/kord/rest/builder/interaction/BaseInputChatBuilder;)V
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/options/IntegerCommandOptionBuilder : net/perfectdreams/discordinteraktions/common/commands/options/IntegerCommandOptionBuilderBase {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
+	public fun getDescription ()Ljava/lang/String;
+	public fun getName ()Ljava/lang/String;
+	public fun getRequired ()Z
+}
+
+public abstract class net/perfectdreams/discordinteraktions/common/commands/options/IntegerCommandOptionBuilderBase : net/perfectdreams/discordinteraktions/common/commands/options/ChoiceableCommandOptionBuilder {
+	public fun <init> ()V
+	public fun build ()Lnet/perfectdreams/discordinteraktions/common/commands/options/IntegerCommandOption;
+	public synthetic fun build ()Lnet/perfectdreams/discordinteraktions/common/commands/options/InteraKTionsCommandOption;
+	public final fun getMaxValue ()Ljava/lang/Long;
+	public final fun getMinValue ()Ljava/lang/Long;
+	public final fun getRange ()Lkotlin/ranges/LongRange;
+	public final fun setMaxValue (Ljava/lang/Long;)V
+	public final fun setMinValue (Ljava/lang/Long;)V
+	public final fun setRange (Lkotlin/ranges/LongRange;)V
+}
+
+public abstract interface class net/perfectdreams/discordinteraktions/common/commands/options/InteraKTionsCommandOption {
+	public abstract fun getName ()Ljava/lang/String;
+	public abstract fun parse (Ldev/kord/core/Kord;Ljava/util/List;Ldev/kord/common/entity/DiscordInteraction;)Ljava/lang/Object;
+	public abstract fun register (Ldev/kord/rest/builder/interaction/BaseInputChatBuilder;)V
+}
+
+public abstract interface class net/perfectdreams/discordinteraktions/common/commands/options/MentionableCommandOption : net/perfectdreams/discordinteraktions/common/commands/options/DiscordCommandOption {
+	public abstract fun parse (Ldev/kord/core/Kord;Ljava/util/List;Ldev/kord/common/entity/DiscordInteraction;)Ljava/lang/Object;
+	public abstract fun register (Ldev/kord/rest/builder/interaction/BaseInputChatBuilder;)V
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/options/MentionableCommandOption$DefaultImpls {
+	public static fun parse (Lnet/perfectdreams/discordinteraktions/common/commands/options/MentionableCommandOption;Ldev/kord/core/Kord;Ljava/util/List;Ldev/kord/common/entity/DiscordInteraction;)Ljava/lang/Object;
+	public static fun register (Lnet/perfectdreams/discordinteraktions/common/commands/options/MentionableCommandOption;Ldev/kord/rest/builder/interaction/BaseInputChatBuilder;)V
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/options/MentionableCommandOptionBuilder : net/perfectdreams/discordinteraktions/common/commands/options/MentionableCommandOptionBuilderBase {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
+	public fun getDescription ()Ljava/lang/String;
+	public fun getName ()Ljava/lang/String;
+	public fun getRequired ()Z
+}
+
+public abstract class net/perfectdreams/discordinteraktions/common/commands/options/MentionableCommandOptionBuilderBase : net/perfectdreams/discordinteraktions/common/commands/options/DiscordCommandOptionBuilder {
+	public fun <init> ()V
+	public synthetic fun build ()Lnet/perfectdreams/discordinteraktions/common/commands/options/InteraKTionsCommandOption;
+	public fun build ()Lnet/perfectdreams/discordinteraktions/common/commands/options/MentionableCommandOption;
+}
+
+public abstract interface class net/perfectdreams/discordinteraktions/common/commands/options/NameableCommandOption : net/perfectdreams/discordinteraktions/common/commands/options/InteraKTionsCommandOption {
+	public abstract fun getDescription ()Ljava/lang/String;
+	public abstract fun getDescriptionLocalizations ()Ljava/util/Map;
+	public abstract fun getNameLocalizations ()Ljava/util/Map;
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/options/NullableAttachmentCommandOptionBuilder : net/perfectdreams/discordinteraktions/common/commands/options/AttachmentCommandOptionBuilderBase {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
+	public fun getDescription ()Ljava/lang/String;
+	public fun getName ()Ljava/lang/String;
+	public fun getRequired ()Z
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/options/NullableBooleanCommandOptionBuilder : net/perfectdreams/discordinteraktions/common/commands/options/BooleanCommandOptionBuilderBase {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
+	public fun getDescription ()Ljava/lang/String;
+	public fun getName ()Ljava/lang/String;
+	public fun getRequired ()Z
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/options/NullableChannelCommandOptionBuilder : net/perfectdreams/discordinteraktions/common/commands/options/ChannelCommandOptionBuilderBase {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
+	public fun getDescription ()Ljava/lang/String;
+	public fun getName ()Ljava/lang/String;
+	public fun getRequired ()Z
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/options/NullableIntegerCommandOptionBuilder : net/perfectdreams/discordinteraktions/common/commands/options/IntegerCommandOptionBuilderBase {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
+	public fun getDescription ()Ljava/lang/String;
+	public fun getName ()Ljava/lang/String;
+	public fun getRequired ()Z
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/options/NullableMentionableCommandOptionBuilder : net/perfectdreams/discordinteraktions/common/commands/options/MentionableCommandOptionBuilderBase {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
+	public fun getDescription ()Ljava/lang/String;
+	public fun getName ()Ljava/lang/String;
+	public fun getRequired ()Z
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/options/NullableNumberCommandOptionBuilder : net/perfectdreams/discordinteraktions/common/commands/options/NumberCommandOptionBuilderBase {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
+	public fun getDescription ()Ljava/lang/String;
+	public fun getName ()Ljava/lang/String;
+	public fun getRequired ()Z
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/options/NullableRoleCommandOptionBuilder : net/perfectdreams/discordinteraktions/common/commands/options/RoleCommandOptionBuilderBase {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
+	public fun getDescription ()Ljava/lang/String;
+	public fun getName ()Ljava/lang/String;
+	public fun getRequired ()Z
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/options/NullableStringCommandOptionBuilder : net/perfectdreams/discordinteraktions/common/commands/options/StringCommandOptionBuilderBase {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
+	public fun getDescription ()Ljava/lang/String;
+	public fun getName ()Ljava/lang/String;
+	public fun getRequired ()Z
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/options/NullableUserCommandOptionBuilder : net/perfectdreams/discordinteraktions/common/commands/options/UserCommandOptionBuilderBase {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
+	public fun getDescription ()Ljava/lang/String;
+	public fun getName ()Ljava/lang/String;
+	public fun getRequired ()Z
+}
+
+public abstract interface class net/perfectdreams/discordinteraktions/common/commands/options/NumberCommandOption : net/perfectdreams/discordinteraktions/common/commands/options/ChoiceableCommandOption, net/perfectdreams/discordinteraktions/common/commands/options/GenericCommandOption {
+	public abstract fun getMaxValue ()Ljava/lang/Double;
+	public abstract fun getMinValue ()Ljava/lang/Double;
+	public abstract fun register (Ldev/kord/rest/builder/interaction/BaseInputChatBuilder;)V
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/options/NumberCommandOption$DefaultImpls {
+	public static fun parse (Lnet/perfectdreams/discordinteraktions/common/commands/options/NumberCommandOption;Ldev/kord/core/Kord;Ljava/util/List;Ldev/kord/common/entity/DiscordInteraction;)Ljava/lang/Double;
+	public static fun register (Lnet/perfectdreams/discordinteraktions/common/commands/options/NumberCommandOption;Ldev/kord/rest/builder/interaction/BaseInputChatBuilder;)V
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/options/NumberCommandOptionBuilder : net/perfectdreams/discordinteraktions/common/commands/options/NumberCommandOptionBuilderBase {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
+	public fun getDescription ()Ljava/lang/String;
+	public fun getName ()Ljava/lang/String;
+	public fun getRequired ()Z
+}
+
+public abstract class net/perfectdreams/discordinteraktions/common/commands/options/NumberCommandOptionBuilderBase : net/perfectdreams/discordinteraktions/common/commands/options/ChoiceableCommandOptionBuilder {
+	public fun <init> ()V
+	public synthetic fun build ()Lnet/perfectdreams/discordinteraktions/common/commands/options/InteraKTionsCommandOption;
+	public fun build ()Lnet/perfectdreams/discordinteraktions/common/commands/options/NumberCommandOption;
+	public final fun getMaxValue ()Ljava/lang/Double;
+	public final fun getMinValue ()Ljava/lang/Double;
+	public final fun getRange ()Lkotlin/ranges/ClosedFloatingPointRange;
+	public final fun setMaxValue (Ljava/lang/Double;)V
+	public final fun setMinValue (Ljava/lang/Double;)V
+	public final fun setRange (Lkotlin/ranges/ClosedFloatingPointRange;)V
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/options/OptionReference {
+	public fun <init> (Ljava/lang/String;Z)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Z
+	public final fun copy (Ljava/lang/String;Z)Lnet/perfectdreams/discordinteraktions/common/commands/options/OptionReference;
+	public static synthetic fun copy$default (Lnet/perfectdreams/discordinteraktions/common/commands/options/OptionReference;Ljava/lang/String;ZILjava/lang/Object;)Lnet/perfectdreams/discordinteraktions/common/commands/options/OptionReference;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getName ()Ljava/lang/String;
+	public final fun getRequired ()Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract interface class net/perfectdreams/discordinteraktions/common/commands/options/RoleCommandOption : net/perfectdreams/discordinteraktions/common/commands/options/DiscordCommandOption {
+	public abstract fun parse (Ldev/kord/core/Kord;Ljava/util/List;Ldev/kord/common/entity/DiscordInteraction;)Ldev/kord/core/entity/Role;
+	public abstract fun register (Ldev/kord/rest/builder/interaction/BaseInputChatBuilder;)V
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/options/RoleCommandOption$DefaultImpls {
+	public static fun parse (Lnet/perfectdreams/discordinteraktions/common/commands/options/RoleCommandOption;Ldev/kord/core/Kord;Ljava/util/List;Ldev/kord/common/entity/DiscordInteraction;)Ldev/kord/core/entity/Role;
+	public static fun register (Lnet/perfectdreams/discordinteraktions/common/commands/options/RoleCommandOption;Ldev/kord/rest/builder/interaction/BaseInputChatBuilder;)V
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/options/RoleCommandOptionBuilder : net/perfectdreams/discordinteraktions/common/commands/options/RoleCommandOptionBuilderBase {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
+	public fun getDescription ()Ljava/lang/String;
+	public fun getName ()Ljava/lang/String;
+	public fun getRequired ()Z
+}
+
+public abstract class net/perfectdreams/discordinteraktions/common/commands/options/RoleCommandOptionBuilderBase : net/perfectdreams/discordinteraktions/common/commands/options/DiscordCommandOptionBuilder {
+	public fun <init> ()V
+	public synthetic fun build ()Lnet/perfectdreams/discordinteraktions/common/commands/options/InteraKTionsCommandOption;
+	public fun build ()Lnet/perfectdreams/discordinteraktions/common/commands/options/RoleCommandOption;
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/options/SlashCommandArguments {
+	public fun <init> (Ljava/util/Map;)V
+	public final fun get (Lnet/perfectdreams/discordinteraktions/common/commands/options/OptionReference;)Ljava/lang/Object;
+	public final fun getTypes ()Ljava/util/Map;
+}
+
+public abstract interface class net/perfectdreams/discordinteraktions/common/commands/options/StringCommandOption : net/perfectdreams/discordinteraktions/common/commands/options/ChoiceableCommandOption, net/perfectdreams/discordinteraktions/common/commands/options/GenericCommandOption {
+	public abstract fun getMaxLength ()Ljava/lang/Integer;
+	public abstract fun getMinLength ()Ljava/lang/Integer;
+	public abstract fun register (Ldev/kord/rest/builder/interaction/BaseInputChatBuilder;)V
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/options/StringCommandOption$DefaultImpls {
+	public static fun parse (Lnet/perfectdreams/discordinteraktions/common/commands/options/StringCommandOption;Ldev/kord/core/Kord;Ljava/util/List;Ldev/kord/common/entity/DiscordInteraction;)Ljava/lang/String;
+	public static fun register (Lnet/perfectdreams/discordinteraktions/common/commands/options/StringCommandOption;Ldev/kord/rest/builder/interaction/BaseInputChatBuilder;)V
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/options/StringCommandOptionBuilder : net/perfectdreams/discordinteraktions/common/commands/options/StringCommandOptionBuilderBase {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
+	public fun getDescription ()Ljava/lang/String;
+	public fun getName ()Ljava/lang/String;
+	public fun getRequired ()Z
+}
+
+public abstract class net/perfectdreams/discordinteraktions/common/commands/options/StringCommandOptionBuilderBase : net/perfectdreams/discordinteraktions/common/commands/options/ChoiceableCommandOptionBuilder {
+	public fun <init> ()V
+	public synthetic fun build ()Lnet/perfectdreams/discordinteraktions/common/commands/options/InteraKTionsCommandOption;
+	public fun build ()Lnet/perfectdreams/discordinteraktions/common/commands/options/StringCommandOption;
+	public final fun getAllowedLength ()Lkotlin/ranges/IntRange;
+	public final fun getMaxLength ()Ljava/lang/Integer;
+	public final fun getMinLength ()Ljava/lang/Integer;
+	public final fun setAllowedLength (Lkotlin/ranges/IntRange;)V
+	public final fun setMaxLength (Ljava/lang/Integer;)V
+	public final fun setMinLength (Ljava/lang/Integer;)V
+}
+
+public abstract interface class net/perfectdreams/discordinteraktions/common/commands/options/UserCommandOption : net/perfectdreams/discordinteraktions/common/commands/options/DiscordCommandOption {
+	public abstract fun parse (Ldev/kord/core/Kord;Ljava/util/List;Ldev/kord/common/entity/DiscordInteraction;)Ldev/kord/core/entity/User;
+	public abstract fun register (Ldev/kord/rest/builder/interaction/BaseInputChatBuilder;)V
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/options/UserCommandOption$DefaultImpls {
+	public static fun parse (Lnet/perfectdreams/discordinteraktions/common/commands/options/UserCommandOption;Ldev/kord/core/Kord;Ljava/util/List;Ldev/kord/common/entity/DiscordInteraction;)Ldev/kord/core/entity/User;
+	public static fun register (Lnet/perfectdreams/discordinteraktions/common/commands/options/UserCommandOption;Ldev/kord/rest/builder/interaction/BaseInputChatBuilder;)V
+}
+
+public final class net/perfectdreams/discordinteraktions/common/commands/options/UserCommandOptionBuilder : net/perfectdreams/discordinteraktions/common/commands/options/UserCommandOptionBuilderBase {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
+	public fun getDescription ()Ljava/lang/String;
+	public fun getName ()Ljava/lang/String;
+	public fun getRequired ()Z
+}
+
+public abstract class net/perfectdreams/discordinteraktions/common/commands/options/UserCommandOptionBuilderBase : net/perfectdreams/discordinteraktions/common/commands/options/DiscordCommandOptionBuilder {
+	public fun <init> ()V
+	public synthetic fun build ()Lnet/perfectdreams/discordinteraktions/common/commands/options/InteraKTionsCommandOption;
+	public fun build ()Lnet/perfectdreams/discordinteraktions/common/commands/options/UserCommandOption;
+}
+
+public abstract interface class net/perfectdreams/discordinteraktions/common/components/ButtonExecutor : net/perfectdreams/discordinteraktions/common/components/ComponentExecutor {
+	public abstract fun onClick (Ldev/kord/core/entity/User;Lnet/perfectdreams/discordinteraktions/common/components/ComponentContext;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class net/perfectdreams/discordinteraktions/common/components/ButtonExecutor$DefaultImpls {
+	public static fun signature (Lnet/perfectdreams/discordinteraktions/common/components/ButtonExecutor;)Ljava/lang/Object;
+}
+
+public class net/perfectdreams/discordinteraktions/common/components/ButtonExecutorDeclaration : net/perfectdreams/discordinteraktions/common/components/ComponentExecutorDeclaration {
+	public fun <init> (Ljava/lang/Object;Ljava/lang/String;)V
+	public synthetic fun <init> (Ljava/lang/Object;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun <init> (Ljava/lang/String;)V
+}
+
+public class net/perfectdreams/discordinteraktions/common/components/ComponentContext : net/perfectdreams/discordinteraktions/common/InteractionContext {
+	public fun <init> (Lnet/perfectdreams/discordinteraktions/common/requests/RequestBridge;Ldev/kord/core/entity/User;Ldev/kord/common/entity/Snowflake;Lnet/perfectdreams/discordinteraktions/common/components/ComponentExecutorDeclaration;Lnet/perfectdreams/discordinteraktions/common/entities/messages/Message;Ljava/lang/String;Lnet/perfectdreams/discordinteraktions/common/interactions/InteractionData;Ldev/kord/common/entity/DiscordInteraction;)V
+	public final fun deferUpdateMessage (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun getComponentExecutorDeclaration ()Lnet/perfectdreams/discordinteraktions/common/components/ComponentExecutorDeclaration;
+	public final fun getData ()Ljava/lang/String;
+	public final fun getDataOrNull ()Ljava/lang/String;
+	public final fun getMessage ()Lnet/perfectdreams/discordinteraktions/common/entities/messages/Message;
+	public final fun updateMessage (Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun updateMessage (Lnet/perfectdreams/discordinteraktions/common/builder/message/modify/InteractionOrFollowupMessageModifyBuilder;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public abstract interface class net/perfectdreams/discordinteraktions/common/components/ComponentExecutor {
+	public abstract fun signature ()Ljava/lang/Object;
+}
+
+public final class net/perfectdreams/discordinteraktions/common/components/ComponentExecutor$DefaultImpls {
+	public static fun signature (Lnet/perfectdreams/discordinteraktions/common/components/ComponentExecutor;)Ljava/lang/Object;
+}
+
+public abstract class net/perfectdreams/discordinteraktions/common/components/ComponentExecutorDeclaration {
+	public static final field Companion Lnet/perfectdreams/discordinteraktions/common/components/ComponentExecutorDeclaration$Companion;
+	public synthetic fun <init> (Ljava/lang/Object;Ljava/lang/String;Lkotlin/text/Regex;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public synthetic fun <init> (Ljava/lang/Object;Ljava/lang/String;Lkotlin/text/Regex;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public synthetic fun <init> (Ljava/lang/String;Lkotlin/text/Regex;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun getId ()Ljava/lang/String;
+	public final fun getParent ()Ljava/lang/Object;
+	public final fun setParent (Ljava/lang/Object;)V
+}
+
+public final class net/perfectdreams/discordinteraktions/common/components/ComponentExecutorDeclaration$Companion {
+	public final fun getID_REGEX ()Lkotlin/text/Regex;
+}
+
+public final class net/perfectdreams/discordinteraktions/common/components/ComponentHelpersKt {
+	public static final fun channelSelect (Ldev/kord/rest/builder/component/ActionRowBuilder;Lnet/perfectdreams/discordinteraktions/common/components/SelectMenuExecutorDeclaration;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
+	public static final fun channelSelect (Ldev/kord/rest/builder/component/ActionRowBuilder;Lnet/perfectdreams/discordinteraktions/common/components/SelectMenuExecutorDeclaration;Lkotlin/jvm/functions/Function1;)V
+	public static final fun interactionButton (Ldev/kord/rest/builder/component/ActionRowBuilder;Ldev/kord/common/entity/ButtonStyle;Ljava/lang/String;Lnet/perfectdreams/discordinteraktions/common/components/ButtonExecutorDeclaration;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
+	public static final fun interactionButton (Ldev/kord/rest/builder/component/ActionRowBuilder;Ldev/kord/common/entity/ButtonStyle;Ljava/lang/String;Lnet/perfectdreams/discordinteraktions/common/components/ButtonExecutorDeclaration;Lkotlin/jvm/functions/Function1;)V
+	public static final fun interactionButton (Ldev/kord/rest/builder/component/ActionRowBuilder;Ldev/kord/common/entity/ButtonStyle;Lnet/perfectdreams/discordinteraktions/common/components/ButtonExecutorDeclaration;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
+	public static synthetic fun interactionButton$default (Ldev/kord/rest/builder/component/ActionRowBuilder;Ldev/kord/common/entity/ButtonStyle;Ljava/lang/String;Lnet/perfectdreams/discordinteraktions/common/components/ButtonExecutorDeclaration;Ljava/lang/String;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+	public static synthetic fun interactionButton$default (Ldev/kord/rest/builder/component/ActionRowBuilder;Ldev/kord/common/entity/ButtonStyle;Ljava/lang/String;Lnet/perfectdreams/discordinteraktions/common/components/ButtonExecutorDeclaration;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+	public static final fun interactiveButton (Ldev/kord/rest/builder/component/ActionRowBuilder;Ldev/kord/common/entity/ButtonStyle;Ljava/lang/String;Lnet/perfectdreams/discordinteraktions/common/components/ButtonExecutorDeclaration;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
+	public static final fun interactiveButton (Ldev/kord/rest/builder/component/ActionRowBuilder;Ldev/kord/common/entity/ButtonStyle;Ljava/lang/String;Lnet/perfectdreams/discordinteraktions/common/components/ButtonExecutorDeclaration;Lkotlin/jvm/functions/Function1;)V
+	public static final fun interactiveButton (Ldev/kord/rest/builder/component/ActionRowBuilder;Ldev/kord/common/entity/ButtonStyle;Lnet/perfectdreams/discordinteraktions/common/components/ButtonExecutorDeclaration;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
+	public static final fun interactiveButton (Ldev/kord/rest/builder/component/ActionRowBuilder;Ldev/kord/common/entity/ButtonStyle;Lnet/perfectdreams/discordinteraktions/common/components/ButtonExecutorDeclaration;Lkotlin/jvm/functions/Function1;)V
+	public static synthetic fun interactiveButton$default (Ldev/kord/rest/builder/component/ActionRowBuilder;Ldev/kord/common/entity/ButtonStyle;Ljava/lang/String;Lnet/perfectdreams/discordinteraktions/common/components/ButtonExecutorDeclaration;Ljava/lang/String;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+	public static synthetic fun interactiveButton$default (Ldev/kord/rest/builder/component/ActionRowBuilder;Ldev/kord/common/entity/ButtonStyle;Ljava/lang/String;Lnet/perfectdreams/discordinteraktions/common/components/ButtonExecutorDeclaration;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+	public static final fun mentionableSelect (Ldev/kord/rest/builder/component/ActionRowBuilder;Lnet/perfectdreams/discordinteraktions/common/components/SelectMenuExecutorDeclaration;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
+	public static final fun mentionableSelect (Ldev/kord/rest/builder/component/ActionRowBuilder;Lnet/perfectdreams/discordinteraktions/common/components/SelectMenuExecutorDeclaration;Lkotlin/jvm/functions/Function1;)V
+	public static synthetic fun mentionableSelect$default (Ldev/kord/rest/builder/component/ActionRowBuilder;Lnet/perfectdreams/discordinteraktions/common/components/SelectMenuExecutorDeclaration;Ljava/lang/String;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+	public static synthetic fun mentionableSelect$default (Ldev/kord/rest/builder/component/ActionRowBuilder;Lnet/perfectdreams/discordinteraktions/common/components/SelectMenuExecutorDeclaration;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+	public static final fun roleSelect (Ldev/kord/rest/builder/component/ActionRowBuilder;Lnet/perfectdreams/discordinteraktions/common/components/SelectMenuExecutorDeclaration;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
+	public static final fun roleSelect (Ldev/kord/rest/builder/component/ActionRowBuilder;Lnet/perfectdreams/discordinteraktions/common/components/SelectMenuExecutorDeclaration;Lkotlin/jvm/functions/Function1;)V
+	public static synthetic fun roleSelect$default (Ldev/kord/rest/builder/component/ActionRowBuilder;Lnet/perfectdreams/discordinteraktions/common/components/SelectMenuExecutorDeclaration;Ljava/lang/String;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+	public static synthetic fun roleSelect$default (Ldev/kord/rest/builder/component/ActionRowBuilder;Lnet/perfectdreams/discordinteraktions/common/components/SelectMenuExecutorDeclaration;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+	public static final fun stringSelect (Ldev/kord/rest/builder/component/ActionRowBuilder;Lnet/perfectdreams/discordinteraktions/common/components/SelectMenuExecutorDeclaration;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
+	public static final fun stringSelect (Ldev/kord/rest/builder/component/ActionRowBuilder;Lnet/perfectdreams/discordinteraktions/common/components/SelectMenuExecutorDeclaration;Lkotlin/jvm/functions/Function1;)V
+	public static synthetic fun stringSelect$default (Ldev/kord/rest/builder/component/ActionRowBuilder;Lnet/perfectdreams/discordinteraktions/common/components/SelectMenuExecutorDeclaration;Ljava/lang/String;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+	public static synthetic fun stringSelect$default (Ldev/kord/rest/builder/component/ActionRowBuilder;Lnet/perfectdreams/discordinteraktions/common/components/SelectMenuExecutorDeclaration;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+}
+
+public class net/perfectdreams/discordinteraktions/common/components/GuildComponentContext : net/perfectdreams/discordinteraktions/common/components/ComponentContext {
+	public fun <init> (Lnet/perfectdreams/discordinteraktions/common/requests/RequestBridge;Ldev/kord/core/entity/User;Ldev/kord/common/entity/Snowflake;Lnet/perfectdreams/discordinteraktions/common/components/ComponentExecutorDeclaration;Lnet/perfectdreams/discordinteraktions/common/entities/messages/Message;Ljava/lang/String;Lnet/perfectdreams/discordinteraktions/common/interactions/InteractionData;Ldev/kord/common/entity/DiscordInteraction;Ldev/kord/common/entity/Snowflake;Ldev/kord/core/entity/Member;)V
+	public final fun getAppPermissions ()Ldev/kord/common/entity/Permissions;
+	public final fun getGuildId ()Ldev/kord/common/entity/Snowflake;
+	public final fun getMember ()Ldev/kord/core/entity/Member;
+}
+
+public abstract interface class net/perfectdreams/discordinteraktions/common/components/SelectMenuExecutor : net/perfectdreams/discordinteraktions/common/components/ComponentExecutor {
+	public abstract fun onSelect (Ldev/kord/core/entity/User;Lnet/perfectdreams/discordinteraktions/common/components/ComponentContext;Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class net/perfectdreams/discordinteraktions/common/components/SelectMenuExecutor$DefaultImpls {
+	public static fun signature (Lnet/perfectdreams/discordinteraktions/common/components/SelectMenuExecutor;)Ljava/lang/Object;
+}
+
+public class net/perfectdreams/discordinteraktions/common/components/SelectMenuExecutorDeclaration : net/perfectdreams/discordinteraktions/common/components/ComponentExecutorDeclaration {
+	public fun <init> (Ljava/lang/Object;Ljava/lang/String;)V
+	public synthetic fun <init> (Ljava/lang/Object;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun <init> (Ljava/lang/String;)V
+}
+
+public abstract interface class net/perfectdreams/discordinteraktions/common/entities/messages/EditableMessage {
+	public abstract fun editMessage (Lnet/perfectdreams/discordinteraktions/common/builder/message/modify/InteractionOrFollowupMessageModifyBuilder;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class net/perfectdreams/discordinteraktions/common/entities/messages/EditableMessageKt {
+	public static final fun editMessage (Lnet/perfectdreams/discordinteraktions/common/entities/messages/EditableMessage;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public abstract interface class net/perfectdreams/discordinteraktions/common/entities/messages/EphemeralMessage : net/perfectdreams/discordinteraktions/common/entities/messages/Message {
+}
+
+public abstract interface class net/perfectdreams/discordinteraktions/common/entities/messages/Message {
+	public abstract fun getAttachments ()Ljava/util/List;
+	public abstract fun getAuthor ()Ldev/kord/core/entity/User;
+	public abstract fun getChannelId ()Ldev/kord/common/entity/Snowflake;
+	public abstract fun getContent ()Ljava/lang/String;
+	public abstract fun getEditedTimestamp ()Lkotlinx/datetime/Instant;
+	public abstract fun getGuildId ()Ldev/kord/common/entity/Snowflake;
+	public abstract fun getId ()Ldev/kord/common/entity/Snowflake;
+	public abstract fun getMember ()Ldev/kord/core/entity/Member;
+	public abstract fun getTimestamp ()Lkotlinx/datetime/Instant;
+}
+
+public abstract interface class net/perfectdreams/discordinteraktions/common/entities/messages/PublicMessage : net/perfectdreams/discordinteraktions/common/entities/messages/Message {
+}
+
+public final class net/perfectdreams/discordinteraktions/common/interactions/InteractionData {
+	public fun <init> (Lnet/perfectdreams/discordinteraktions/common/interactions/ResolvedObjects;)V
+	public final fun getResolved ()Lnet/perfectdreams/discordinteraktions/common/interactions/ResolvedObjects;
+}
+
+public final class net/perfectdreams/discordinteraktions/common/interactions/ResolvedObjects {
+	public fun <init> (Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;)V
+	public final fun getAttachments ()Ljava/util/Map;
+	public final fun getChannels ()Ljava/util/Map;
+	public final fun getMembers ()Ljava/util/Map;
+	public final fun getMessages ()Ljava/util/Map;
+	public final fun getRoles ()Ljava/util/Map;
+	public final fun getUsers ()Ljava/util/Map;
+}
+
+public class net/perfectdreams/discordinteraktions/common/modals/GuildModalContext : net/perfectdreams/discordinteraktions/common/modals/ModalContext {
+	public fun <init> (Lnet/perfectdreams/discordinteraktions/common/requests/RequestBridge;Ldev/kord/core/entity/User;Ldev/kord/common/entity/Snowflake;Lnet/perfectdreams/discordinteraktions/common/modals/ModalExecutorDeclaration;Ljava/lang/String;Lnet/perfectdreams/discordinteraktions/common/interactions/InteractionData;Ldev/kord/common/entity/DiscordInteraction;Ldev/kord/common/entity/Snowflake;Ldev/kord/core/entity/Member;)V
+	public final fun getAppPermissions ()Ldev/kord/common/entity/Permissions;
+	public final fun getGuildId ()Ldev/kord/common/entity/Snowflake;
+	public final fun getMember ()Ldev/kord/core/entity/Member;
+}
+
+public class net/perfectdreams/discordinteraktions/common/modals/ModalContext : net/perfectdreams/discordinteraktions/common/InteractionContext {
+	public fun <init> (Lnet/perfectdreams/discordinteraktions/common/requests/RequestBridge;Ldev/kord/core/entity/User;Ldev/kord/common/entity/Snowflake;Lnet/perfectdreams/discordinteraktions/common/modals/ModalExecutorDeclaration;Ljava/lang/String;Lnet/perfectdreams/discordinteraktions/common/interactions/InteractionData;Ldev/kord/common/entity/DiscordInteraction;)V
+	public final fun getData ()Ljava/lang/String;
+	public final fun getDataOrNull ()Ljava/lang/String;
+	public final fun getModalExecutorDeclaration ()Lnet/perfectdreams/discordinteraktions/common/modals/ModalExecutorDeclaration;
+}
+
+public abstract interface class net/perfectdreams/discordinteraktions/common/modals/ModalExecutor {
+	public abstract fun onSubmit (Lnet/perfectdreams/discordinteraktions/common/modals/ModalContext;Lnet/perfectdreams/discordinteraktions/common/modals/components/ModalArguments;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun signature ()Ljava/lang/Object;
+}
+
+public final class net/perfectdreams/discordinteraktions/common/modals/ModalExecutor$DefaultImpls {
+	public static fun signature (Lnet/perfectdreams/discordinteraktions/common/modals/ModalExecutor;)Ljava/lang/Object;
+}
+
+public class net/perfectdreams/discordinteraktions/common/modals/ModalExecutorDeclaration {
+	public static final field Companion Lnet/perfectdreams/discordinteraktions/common/modals/ModalExecutorDeclaration$Companion;
+	public fun <init> (Ljava/lang/Object;Ljava/lang/String;Lkotlin/text/Regex;)V
+	public synthetic fun <init> (Ljava/lang/Object;Ljava/lang/String;Lkotlin/text/Regex;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun <init> (Ljava/lang/String;Lkotlin/text/Regex;)V
+	public synthetic fun <init> (Ljava/lang/String;Lkotlin/text/Regex;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun getId ()Ljava/lang/String;
+	public fun getOptions ()Lnet/perfectdreams/discordinteraktions/common/modals/components/ModalComponents;
+	public final fun getParent ()Ljava/lang/Object;
+	public final fun setParent (Ljava/lang/Object;)V
+}
+
+public final class net/perfectdreams/discordinteraktions/common/modals/ModalExecutorDeclaration$Companion {
+	public final fun getID_REGEX ()Lkotlin/text/Regex;
+}
+
+public final class net/perfectdreams/discordinteraktions/common/modals/components/ComponentHelpersKt {
+	public static final fun textInput (Ldev/kord/rest/builder/component/ActionRowBuilder;Lnet/perfectdreams/discordinteraktions/common/modals/components/ComponentReference;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
+	public static synthetic fun textInput$default (Ldev/kord/rest/builder/component/ActionRowBuilder;Lnet/perfectdreams/discordinteraktions/common/modals/components/ComponentReference;Ljava/lang/String;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+}
+
+public final class net/perfectdreams/discordinteraktions/common/modals/components/ComponentReference {
+	public fun <init> (Lnet/perfectdreams/discordinteraktions/common/modals/components/ModalComponents;Ljava/lang/String;Z)V
+	public final fun component1 ()Lnet/perfectdreams/discordinteraktions/common/modals/components/ModalComponents;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Z
+	public final fun copy (Lnet/perfectdreams/discordinteraktions/common/modals/components/ModalComponents;Ljava/lang/String;Z)Lnet/perfectdreams/discordinteraktions/common/modals/components/ComponentReference;
+	public static synthetic fun copy$default (Lnet/perfectdreams/discordinteraktions/common/modals/components/ComponentReference;Lnet/perfectdreams/discordinteraktions/common/modals/components/ModalComponents;Ljava/lang/String;ZILjava/lang/Object;)Lnet/perfectdreams/discordinteraktions/common/modals/components/ComponentReference;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getComponents ()Lnet/perfectdreams/discordinteraktions/common/modals/components/ModalComponents;
+	public final fun getCustomId ()Ljava/lang/String;
+	public final fun getRequired ()Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract class net/perfectdreams/discordinteraktions/common/modals/components/InteraKTionsModalComponent {
+	public fun <init> (Ljava/lang/String;Z)V
+	public final fun getCustomId ()Ljava/lang/String;
+	public final fun getRequired ()Z
+	public abstract fun parse (Ljava/util/List;Ldev/kord/common/entity/DiscordInteraction;)Ljava/lang/Object;
+	public abstract fun register (Ldev/kord/rest/builder/interaction/BaseInputChatBuilder;)V
+}
+
+public final class net/perfectdreams/discordinteraktions/common/modals/components/ModalArguments {
+	public fun <init> (Ljava/util/Map;)V
+	public final fun get (Lnet/perfectdreams/discordinteraktions/common/modals/components/ComponentReference;)Ljava/lang/Object;
+	public final fun getTypes ()Ljava/util/Map;
+}
+
+public abstract class net/perfectdreams/discordinteraktions/common/modals/components/ModalComponentBehaviorBuilder {
+	public fun <init> (Ljava/lang/String;Z)V
+	public abstract fun build ()Lnet/perfectdreams/discordinteraktions/common/modals/components/InteraKTionsModalComponent;
+	public final fun getId ()Ljava/lang/String;
+	public final fun getRequired ()Z
+}
+
+public class net/perfectdreams/discordinteraktions/common/modals/components/ModalComponents {
+	public fun <init> ()V
+	public final fun getReferences ()Ljava/util/List;
+	public final fun getRegisteredComponents ()Ljava/util/List;
+	public final fun optionalTextInput (Ljava/lang/String;Ldev/kord/common/entity/TextInputStyle;Lkotlin/jvm/functions/Function1;)Lnet/perfectdreams/discordinteraktions/common/modals/components/ComponentReference;
+	public static synthetic fun optionalTextInput$default (Lnet/perfectdreams/discordinteraktions/common/modals/components/ModalComponents;Ljava/lang/String;Ldev/kord/common/entity/TextInputStyle;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Lnet/perfectdreams/discordinteraktions/common/modals/components/ComponentReference;
+	public final fun textInput (Ljava/lang/String;Ldev/kord/common/entity/TextInputStyle;Lkotlin/jvm/functions/Function1;)Lnet/perfectdreams/discordinteraktions/common/modals/components/ComponentReference;
+	public static synthetic fun textInput$default (Lnet/perfectdreams/discordinteraktions/common/modals/components/ModalComponents;Ljava/lang/String;Ldev/kord/common/entity/TextInputStyle;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Lnet/perfectdreams/discordinteraktions/common/modals/components/ComponentReference;
+}
+
+public final class net/perfectdreams/discordinteraktions/common/modals/components/NullableTextInputModalComponentBehaviorBuilder : net/perfectdreams/discordinteraktions/common/modals/components/TextInputModalComponentBehaviorBuilderBase {
+	public fun <init> (Ljava/lang/String;Ldev/kord/common/entity/TextInputStyle;)V
+}
+
+public final class net/perfectdreams/discordinteraktions/common/modals/components/TextInputComponentAppearanceBuilder {
+	public fun <init> ()V
+	public final fun getPlaceholder ()Ljava/lang/String;
+	public final fun getValue ()Ljava/lang/String;
+	public final fun setPlaceholder (Ljava/lang/String;)V
+	public final fun setValue (Ljava/lang/String;)V
+}
+
+public final class net/perfectdreams/discordinteraktions/common/modals/components/TextInputModalComponent : net/perfectdreams/discordinteraktions/common/modals/components/InteraKTionsModalComponent {
+	public fun <init> (Ljava/lang/String;ZLdev/kord/common/entity/TextInputStyle;Ljava/lang/Integer;Ljava/lang/Integer;)V
+	public final fun getMaxLength ()Ljava/lang/Integer;
+	public final fun getMinLength ()Ljava/lang/Integer;
+	public final fun getStyle ()Ldev/kord/common/entity/TextInputStyle;
+	public synthetic fun parse (Ljava/util/List;Ldev/kord/common/entity/DiscordInteraction;)Ljava/lang/Object;
+	public fun parse (Ljava/util/List;Ldev/kord/common/entity/DiscordInteraction;)Ljava/lang/String;
+	public fun register (Ldev/kord/rest/builder/interaction/BaseInputChatBuilder;)V
+}
+
+public final class net/perfectdreams/discordinteraktions/common/modals/components/TextInputModalComponentBehaviorBuilder : net/perfectdreams/discordinteraktions/common/modals/components/TextInputModalComponentBehaviorBuilderBase {
+	public fun <init> (Ljava/lang/String;Ldev/kord/common/entity/TextInputStyle;)V
+}
+
+public abstract class net/perfectdreams/discordinteraktions/common/modals/components/TextInputModalComponentBehaviorBuilderBase : net/perfectdreams/discordinteraktions/common/modals/components/ModalComponentBehaviorBuilder {
+	public fun <init> (Ljava/lang/String;ZLdev/kord/common/entity/TextInputStyle;)V
+	public synthetic fun build ()Lnet/perfectdreams/discordinteraktions/common/modals/components/InteraKTionsModalComponent;
+	public fun build ()Lnet/perfectdreams/discordinteraktions/common/modals/components/TextInputModalComponent;
+	public final fun getAllowedLength ()Lkotlin/ranges/IntRange;
+	public final fun getMaxLength ()Ljava/lang/Integer;
+	public final fun getMinLength ()Ljava/lang/Integer;
+	public final fun getStyle ()Ldev/kord/common/entity/TextInputStyle;
+	public final fun setAllowedLength (Lkotlin/ranges/IntRange;)V
+	public final fun setMaxLength (Ljava/lang/Integer;)V
+	public final fun setMinLength (Ljava/lang/Integer;)V
+}
+
+public final class net/perfectdreams/discordinteraktions/common/requests/InteractionRequestState : java/lang/Enum {
+	public static final field ALREADY_REPLIED Lnet/perfectdreams/discordinteraktions/common/requests/InteractionRequestState;
+	public static final field DEFERRED_CHANNEL_MESSAGE Lnet/perfectdreams/discordinteraktions/common/requests/InteractionRequestState;
+	public static final field DEFERRED_UPDATE_MESSAGE Lnet/perfectdreams/discordinteraktions/common/requests/InteractionRequestState;
+	public static final field NOT_REPLIED_YET Lnet/perfectdreams/discordinteraktions/common/requests/InteractionRequestState;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lnet/perfectdreams/discordinteraktions/common/requests/InteractionRequestState;
+	public static fun values ()[Lnet/perfectdreams/discordinteraktions/common/requests/InteractionRequestState;
+}
+
+public final class net/perfectdreams/discordinteraktions/common/requests/RequestBridge {
+	public fun <init> (Lnet/perfectdreams/discordinteraktions/common/utils/Observable;)V
+	public final fun getManager ()Lnet/perfectdreams/discordinteraktions/common/requests/managers/RequestManager;
+	public final fun getState ()Lnet/perfectdreams/discordinteraktions/common/utils/Observable;
+	public final fun get_manager ()Lnet/perfectdreams/discordinteraktions/common/requests/managers/RequestManager;
+	public final fun setManager (Lnet/perfectdreams/discordinteraktions/common/requests/managers/RequestManager;)V
+	public final fun set_manager (Lnet/perfectdreams/discordinteraktions/common/requests/managers/RequestManager;)V
+}
+
+public final class net/perfectdreams/discordinteraktions/common/requests/managers/HttpRequestManager : net/perfectdreams/discordinteraktions/common/requests/managers/RequestManager {
+	public static final field Companion Lnet/perfectdreams/discordinteraktions/common/requests/managers/HttpRequestManager$Companion;
+	public fun <init> (Lnet/perfectdreams/discordinteraktions/common/requests/RequestBridge;Ldev/kord/core/Kord;Ldev/kord/common/entity/Snowflake;Ljava/lang/String;)V
+	public fun deferChannelMessage (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun deferChannelMessageEphemerally (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun deferUpdateMessage (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun getApplicationId ()Ldev/kord/common/entity/Snowflake;
+	public final fun getInteractionToken ()Ljava/lang/String;
+	public final fun getKord ()Ldev/kord/core/Kord;
+	public fun sendEphemeralMessage (Lnet/perfectdreams/discordinteraktions/common/builder/message/create/InteractionOrFollowupMessageCreateBuilder;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun sendIntegerAutocomplete (Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun sendModal (Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun sendNumberAutocomplete (Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun sendPublicMessage (Lnet/perfectdreams/discordinteraktions/common/builder/message/create/InteractionOrFollowupMessageCreateBuilder;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun sendStringAutocomplete (Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun updateMessage (Lnet/perfectdreams/discordinteraktions/common/builder/message/modify/InteractionOrFollowupMessageModifyBuilder;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class net/perfectdreams/discordinteraktions/common/requests/managers/HttpRequestManager$Companion {
+}
+
+public final class net/perfectdreams/discordinteraktions/common/requests/managers/InitialHttpRequestManager : net/perfectdreams/discordinteraktions/common/requests/managers/RequestManager {
+	public static final field Companion Lnet/perfectdreams/discordinteraktions/common/requests/managers/InitialHttpRequestManager$Companion;
+	public fun <init> (Lnet/perfectdreams/discordinteraktions/common/requests/RequestBridge;Ldev/kord/core/Kord;Ldev/kord/common/entity/Snowflake;Ldev/kord/common/entity/Snowflake;Ljava/lang/String;)V
+	public fun deferChannelMessage (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun deferChannelMessageEphemerally (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun deferUpdateMessage (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun getApplicationId ()Ldev/kord/common/entity/Snowflake;
+	public final fun getInteractionId ()Ldev/kord/common/entity/Snowflake;
+	public final fun getInteractionToken ()Ljava/lang/String;
+	public final fun getKord ()Ldev/kord/core/Kord;
+	public fun sendEphemeralMessage (Lnet/perfectdreams/discordinteraktions/common/builder/message/create/InteractionOrFollowupMessageCreateBuilder;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun sendIntegerAutocomplete (Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun sendModal (Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun sendNumberAutocomplete (Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun sendPublicMessage (Lnet/perfectdreams/discordinteraktions/common/builder/message/create/InteractionOrFollowupMessageCreateBuilder;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun sendStringAutocomplete (Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun updateMessage (Lnet/perfectdreams/discordinteraktions/common/builder/message/modify/InteractionOrFollowupMessageModifyBuilder;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class net/perfectdreams/discordinteraktions/common/requests/managers/InitialHttpRequestManager$Companion {
+}
+
+public abstract class net/perfectdreams/discordinteraktions/common/requests/managers/RequestManager {
+	public fun <init> (Lnet/perfectdreams/discordinteraktions/common/requests/RequestBridge;)V
+	public abstract fun deferChannelMessage (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun deferChannelMessageEphemerally (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun deferUpdateMessage (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun getBridge ()Lnet/perfectdreams/discordinteraktions/common/requests/RequestBridge;
+	public abstract fun sendEphemeralMessage (Lnet/perfectdreams/discordinteraktions/common/builder/message/create/InteractionOrFollowupMessageCreateBuilder;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun sendIntegerAutocomplete (Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun sendModal (Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun sendNumberAutocomplete (Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun sendPublicMessage (Lnet/perfectdreams/discordinteraktions/common/builder/message/create/InteractionOrFollowupMessageCreateBuilder;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun sendStringAutocomplete (Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun updateMessage (Lnet/perfectdreams/discordinteraktions/common/builder/message/modify/InteractionOrFollowupMessageModifyBuilder;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class net/perfectdreams/discordinteraktions/common/utils/EmbedHelpersKt {
+	public static final fun author (Ldev/kord/rest/builder/message/EmbedBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+	public static synthetic fun author$default (Ldev/kord/rest/builder/message/EmbedBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)V
+	public static final fun field (Ldev/kord/rest/builder/message/EmbedBuilder;Ljava/lang/String;Ljava/lang/String;Z)V
+	public static synthetic fun field$default (Ldev/kord/rest/builder/message/EmbedBuilder;Ljava/lang/String;Ljava/lang/String;ZILjava/lang/Object;)V
+	public static final fun footer (Ldev/kord/rest/builder/message/EmbedBuilder;Ljava/lang/String;Ljava/lang/String;)V
+	public static synthetic fun footer$default (Ldev/kord/rest/builder/message/EmbedBuilder;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)V
+	public static final fun getThumbnailUrl (Ldev/kord/rest/builder/message/EmbedBuilder;)Ljava/lang/String;
+	public static final fun inlineField (Ldev/kord/rest/builder/message/EmbedBuilder;Ljava/lang/String;Ljava/lang/String;)V
+	public static final fun setThumbnailUrl (Ldev/kord/rest/builder/message/EmbedBuilder;Ljava/lang/String;)V
+}
+
+public final class net/perfectdreams/discordinteraktions/common/utils/InteraKTionsExceptions {
+	public static final field INSTANCE Lnet/perfectdreams/discordinteraktions/common/utils/InteraKTionsExceptions;
+	public final fun missingDeclaration (Ljava/lang/String;)Ljava/lang/Void;
+	public final fun missingExecutor (Ljava/lang/String;)Ljava/lang/Void;
+}
+
+public final class net/perfectdreams/discordinteraktions/common/utils/Observable {
+	public fun <init> (Ljava/lang/Object;)V
+	public final fun awaitChange (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun getValue ()Ljava/lang/Object;
+	public final fun setValue (Ljava/lang/Object;)V
+}
+
+public final class net/perfectdreams/discordinteraktions/platforms/kord/commands/CommandDeclarationUtils {
+	public static final field INSTANCE Lnet/perfectdreams/discordinteraktions/platforms/kord/commands/CommandDeclarationUtils;
+	public final fun convertOptions (Ldev/kord/core/Kord;Ldev/kord/common/entity/DiscordInteraction;Lnet/perfectdreams/discordinteraktions/common/commands/SlashCommandExecutor;Ljava/util/List;)Ljava/util/Map;
+	public final fun findAllSubcommandDeclarationNames (Ldev/kord/common/entity/DiscordInteraction;)Ljava/util/List;
+	public final fun getLabelsConnectedToCommandDeclaration (Ljava/util/List;Lnet/perfectdreams/discordinteraktions/common/commands/ApplicationCommandDeclaration;)Lnet/perfectdreams/discordinteraktions/common/commands/ApplicationCommandDeclaration;
+	public final fun getNestedOptions (Ljava/util/List;)Ljava/util/List;
+	public final fun getParentClass (Ljava/lang/Object;)Lkotlin/reflect/KClass;
+}
+
+public final class net/perfectdreams/discordinteraktions/platforms/kord/commands/CommandDeclarationUtils$CommandGroupLabel : net/perfectdreams/discordinteraktions/platforms/kord/commands/CommandDeclarationUtils$CommandLabel {
+	public fun <init> (Ljava/lang/String;)V
+}
+
+public class net/perfectdreams/discordinteraktions/platforms/kord/commands/CommandDeclarationUtils$CommandLabel {
+	public fun <init> (Ljava/lang/String;)V
+	public final fun getLabel ()Ljava/lang/String;
+}
+
+public final class net/perfectdreams/discordinteraktions/platforms/kord/commands/CommandDeclarationUtils$RootCommandLabel : net/perfectdreams/discordinteraktions/platforms/kord/commands/CommandDeclarationUtils$CommandLabel {
+	public fun <init> (Ljava/lang/String;)V
+}
+
+public final class net/perfectdreams/discordinteraktions/platforms/kord/commands/CommandDeclarationUtils$SubCommandLabel : net/perfectdreams/discordinteraktions/platforms/kord/commands/CommandDeclarationUtils$CommandLabel {
+	public fun <init> (Ljava/lang/String;)V
+}
+
+public final class net/perfectdreams/discordinteraktions/platforms/kord/entities/messages/KordEditedOriginalInteractionEphemeralMessage : net/perfectdreams/discordinteraktions/platforms/kord/entities/messages/KordEphemeralMessage, net/perfectdreams/discordinteraktions/common/entities/messages/EditableMessage {
+	public fun <init> (Ldev/kord/core/Kord;Ldev/kord/common/entity/Snowflake;Ljava/lang/String;Ldev/kord/common/entity/DiscordMessage;)V
+	public fun editMessage (Lnet/perfectdreams/discordinteraktions/common/builder/message/modify/InteractionOrFollowupMessageModifyBuilder;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class net/perfectdreams/discordinteraktions/platforms/kord/entities/messages/KordEditedOriginalInteractionPublicMessage : net/perfectdreams/discordinteraktions/platforms/kord/entities/messages/KordPublicMessage, net/perfectdreams/discordinteraktions/common/entities/messages/EditableMessage {
+	public fun <init> (Ldev/kord/core/Kord;Ldev/kord/common/entity/Snowflake;Ljava/lang/String;Ldev/kord/common/entity/DiscordMessage;)V
+	public fun editMessage (Lnet/perfectdreams/discordinteraktions/common/builder/message/modify/InteractionOrFollowupMessageModifyBuilder;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public class net/perfectdreams/discordinteraktions/platforms/kord/entities/messages/KordEphemeralFollowupMessage : net/perfectdreams/discordinteraktions/platforms/kord/entities/messages/KordEphemeralMessage, net/perfectdreams/discordinteraktions/common/entities/messages/EditableMessage {
+	public fun <init> (Ldev/kord/core/Kord;Ldev/kord/common/entity/Snowflake;Ljava/lang/String;Ldev/kord/common/entity/DiscordMessage;)V
+	public fun editMessage (Lnet/perfectdreams/discordinteraktions/common/builder/message/modify/InteractionOrFollowupMessageModifyBuilder;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public class net/perfectdreams/discordinteraktions/platforms/kord/entities/messages/KordEphemeralMessage : net/perfectdreams/discordinteraktions/platforms/kord/entities/messages/KordMessage {
+	public fun <init> (Ldev/kord/core/Kord;Ldev/kord/common/entity/DiscordMessage;)V
+}
+
+public class net/perfectdreams/discordinteraktions/platforms/kord/entities/messages/KordMessage : net/perfectdreams/discordinteraktions/common/entities/messages/Message {
+	public fun <init> (Ldev/kord/core/Kord;Ldev/kord/common/entity/DiscordMessage;)V
+	public fun getAttachments ()Ljava/util/List;
+	public fun getAuthor ()Ldev/kord/core/entity/User;
+	public fun getChannelId ()Ldev/kord/common/entity/Snowflake;
+	public fun getContent ()Ljava/lang/String;
+	public final fun getData ()Ldev/kord/common/entity/DiscordMessage;
+	public fun getEditedTimestamp ()Lkotlinx/datetime/Instant;
+	public fun getGuildId ()Ldev/kord/common/entity/Snowflake;
+	public fun getId ()Ldev/kord/common/entity/Snowflake;
+	public final fun getKord ()Ldev/kord/core/Kord;
+	public fun getMember ()Ldev/kord/core/entity/Member;
+	public fun getTimestamp ()Lkotlinx/datetime/Instant;
+}
+
+public final class net/perfectdreams/discordinteraktions/platforms/kord/entities/messages/KordOriginalInteractionEphemeralMessage : net/perfectdreams/discordinteraktions/platforms/kord/entities/messages/OriginalInteractionMessage, net/perfectdreams/discordinteraktions/common/entities/messages/EditableMessage, net/perfectdreams/discordinteraktions/common/entities/messages/EphemeralMessage {
+	public fun <init> (Ldev/kord/core/Kord;Ldev/kord/common/entity/Snowflake;Ljava/lang/String;)V
+	public fun editMessage (Lnet/perfectdreams/discordinteraktions/common/builder/message/modify/InteractionOrFollowupMessageModifyBuilder;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class net/perfectdreams/discordinteraktions/platforms/kord/entities/messages/KordOriginalInteractionPublicMessage : net/perfectdreams/discordinteraktions/platforms/kord/entities/messages/OriginalInteractionMessage, net/perfectdreams/discordinteraktions/common/entities/messages/EditableMessage, net/perfectdreams/discordinteraktions/common/entities/messages/PublicMessage {
+	public fun <init> (Ldev/kord/core/Kord;Ldev/kord/common/entity/Snowflake;Ljava/lang/String;)V
+	public fun editMessage (Lnet/perfectdreams/discordinteraktions/common/builder/message/modify/InteractionOrFollowupMessageModifyBuilder;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class net/perfectdreams/discordinteraktions/platforms/kord/entities/messages/KordPublicFollowupMessage : net/perfectdreams/discordinteraktions/platforms/kord/entities/messages/KordPublicMessage, net/perfectdreams/discordinteraktions/common/entities/messages/EditableMessage {
+	public fun <init> (Ldev/kord/core/Kord;Ldev/kord/common/entity/Snowflake;Ljava/lang/String;Ldev/kord/common/entity/DiscordMessage;)V
+	public fun editMessage (Lnet/perfectdreams/discordinteraktions/common/builder/message/modify/InteractionOrFollowupMessageModifyBuilder;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun getContent ()Ljava/lang/String;
+	public fun getId ()Ldev/kord/common/entity/Snowflake;
+}
+
+public class net/perfectdreams/discordinteraktions/platforms/kord/entities/messages/KordPublicMessage : net/perfectdreams/discordinteraktions/platforms/kord/entities/messages/KordMessage {
+	public fun <init> (Ldev/kord/core/Kord;Ldev/kord/common/entity/DiscordMessage;)V
+}
+
+public class net/perfectdreams/discordinteraktions/platforms/kord/entities/messages/OriginalInteractionMessage : net/perfectdreams/discordinteraktions/common/entities/messages/Message {
+	public fun <init> ()V
+	public fun getAttachments ()Ljava/util/List;
+	public fun getAuthor ()Ldev/kord/core/entity/User;
+	public fun getChannelId ()Ldev/kord/common/entity/Snowflake;
+	public fun getContent ()Ljava/lang/String;
+	public fun getEditedTimestamp ()Lkotlinx/datetime/Instant;
+	public fun getGuildId ()Ldev/kord/common/entity/Snowflake;
+	public fun getId ()Ldev/kord/common/entity/Snowflake;
+	public fun getMember ()Ldev/kord/core/entity/Member;
+	public fun getTimestamp ()Lkotlinx/datetime/Instant;
+}
+
+public final class net/perfectdreams/discordinteraktions/platforms/kord/utils/KordAutocompleteChecker {
+	public static final field Companion Lnet/perfectdreams/discordinteraktions/platforms/kord/utils/KordAutocompleteChecker$Companion;
+	public fun <init> (Ldev/kord/core/Kord;Lnet/perfectdreams/discordinteraktions/common/commands/InteractionsManager;)V
+	public final fun checkAndExecute (Ldev/kord/common/entity/DiscordInteraction;Lnet/perfectdreams/discordinteraktions/common/requests/managers/RequestManager;)V
+	public final fun getInteractionsManager ()Lnet/perfectdreams/discordinteraktions/common/commands/InteractionsManager;
+	public final fun getKord ()Ldev/kord/core/Kord;
+}
+
+public final class net/perfectdreams/discordinteraktions/platforms/kord/utils/KordAutocompleteChecker$Companion {
+}
+
+public final class net/perfectdreams/discordinteraktions/platforms/kord/utils/KordCommandChecker {
+	public static final field Companion Lnet/perfectdreams/discordinteraktions/platforms/kord/utils/KordCommandChecker$Companion;
+	public fun <init> (Ldev/kord/core/Kord;Lnet/perfectdreams/discordinteraktions/common/commands/InteractionsManager;)V
+	public final fun checkAndExecute (Ldev/kord/common/entity/DiscordInteraction;Lnet/perfectdreams/discordinteraktions/common/requests/managers/RequestManager;)V
+	public final fun getInteractionsManager ()Lnet/perfectdreams/discordinteraktions/common/commands/InteractionsManager;
+	public final fun getKord ()Ldev/kord/core/Kord;
+}
+
+public final class net/perfectdreams/discordinteraktions/platforms/kord/utils/KordCommandChecker$Companion {
+}
+
+public final class net/perfectdreams/discordinteraktions/platforms/kord/utils/KordComponentChecker {
+	public fun <init> (Ldev/kord/core/Kord;Lnet/perfectdreams/discordinteraktions/common/commands/InteractionsManager;)V
+	public final fun checkAndExecute (Ldev/kord/common/entity/DiscordInteraction;Lnet/perfectdreams/discordinteraktions/common/requests/managers/RequestManager;)V
+	public final fun getInteractionsManager ()Lnet/perfectdreams/discordinteraktions/common/commands/InteractionsManager;
+	public final fun getKord ()Ldev/kord/core/Kord;
+}
+
+public final class net/perfectdreams/discordinteraktions/platforms/kord/utils/KordConversionUtilsKt {
+	public static final fun runIfNotMissing (Ldev/kord/common/entity/optional/Optional;Lkotlin/jvm/functions/Function1;)V
+	public static final fun toDiscordInteraKTionsResolvedObjects (Ldev/kord/common/entity/ResolvedObjects;Ldev/kord/core/Kord;Ldev/kord/common/entity/Snowflake;)Lnet/perfectdreams/discordinteraktions/common/interactions/ResolvedObjects;
+}
+
+public final class net/perfectdreams/discordinteraktions/platforms/kord/utils/KordModalChecker {
+	public static final field Companion Lnet/perfectdreams/discordinteraktions/platforms/kord/utils/KordModalChecker$Companion;
+	public fun <init> (Ldev/kord/core/Kord;Lnet/perfectdreams/discordinteraktions/common/commands/InteractionsManager;)V
+	public final fun checkAndExecute (Ldev/kord/common/entity/DiscordInteraction;Lnet/perfectdreams/discordinteraktions/common/requests/managers/RequestManager;)V
+	public final fun getInteractionsManager ()Lnet/perfectdreams/discordinteraktions/common/commands/InteractionsManager;
+	public final fun getKord ()Ldev/kord/core/Kord;
+}
+
+public final class net/perfectdreams/discordinteraktions/platforms/kord/utils/KordModalChecker$Companion {
+}
+

@@ -1,5 +1,5 @@
 package net.perfectdreams.discordinteraktions.common.autocomplete
 
-fun interface AutocompleteHandler<T> {
-    suspend fun handle(context: AutocompleteContext, focusedOption: FocusedCommandOption): Map<String, T>
+public fun interface AutocompleteHandler<T> {
+    public suspend fun handle(context: AutocompleteContext, focusedOption: FocusedCommandOption): Map<String, T>
 }

@@ -8,15 +8,15 @@ import java.security.spec.EdECPublicKeySpec
 import java.security.spec.NamedParameterSpec
 import kotlin.experimental.and
 
-class InteractionRequestVerifier(publicKey: String) {
-    companion object {
+public class InteractionRequestVerifier(publicKey: String) {
+    public companion object {
         /**
          * The algorithm used in Discord's interactions requests
          */
         private val INTERACTIONS_ALGORITHM = "ed25519"
         private val kf = KeyFactory.getInstance(INTERACTIONS_ALGORITHM)
     }
-    val signingKey = generateKeySpec(hex(publicKey))
+    public val signingKey: EdECPublicKeySpec = generateKeySpec(hex(publicKey))
     private val generatedPublicKey = kf.generatePublic(signingKey)
 
     /**
@@ -27,7 +27,7 @@ class InteractionRequestVerifier(publicKey: String) {
      * @param timestamp   From the `X-Signature-Timestamp` header
      * @return if the request is valid
      */
-    fun verifyKey(requestBody: String, signature: String, timestamp: String): Boolean {
+    public fun verifyKey(requestBody: String, signature: String, timestamp: String): Boolean {
         val signedData = Signature.getInstance(INTERACTIONS_ALGORITHM)
         signedData.initVerify(generatedPublicKey)
 

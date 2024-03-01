@@ -5,7 +5,7 @@ import net.perfectdreams.discordinteraktions.common.modals.ModalExecutorDeclarat
 import net.perfectdreams.discordinteraktions.common.modals.components.ModalComponents
 import net.perfectdreams.discordinteraktions.platforms.kord.commands.CommandDeclarationUtils
 
-open class ModalExecutorDeclaration(
+public open class ModalExecutorDeclaration(
     /**
      * The [parent] is Any? to avoid issues with anonymous classes
      *
@@ -13,14 +13,14 @@ open class ModalExecutorDeclaration(
      *
      * If [parent] is null when the class is initialized, the declaration will try to find the parent by using Reflection!
      */
-    var parent: Any? = null,
+    public var parent: Any? = null,
 
     /**
      * The executor's ID, this is stored in the modal, to be able to figure out what executor should be used
      *
      * All modal executors should be unique!
      */
-    val id: String,
+    public val id: String,
 
     /**
      * The RegEx that the [id] will be validated against
@@ -31,10 +31,10 @@ open class ModalExecutorDeclaration(
      */
     idRegex: Regex = ID_REGEX
 ) {
-    constructor(id: String, idRegex: Regex = ID_REGEX) : this(null, id, idRegex)
+    public constructor(id: String, idRegex: Regex = ID_REGEX) : this(null, id, idRegex)
 
-    companion object {
-        val ID_REGEX = Regex("[A-z0-9]+")
+    public companion object {
+        public val ID_REGEX: Regex = Regex("[A-z0-9]+")
     }
 
     init {
@@ -44,5 +44,5 @@ open class ModalExecutorDeclaration(
             parent = CommandDeclarationUtils.getParentClass(this)
     }
 
-    open val options: ModalComponents = object: ModalComponents() {}
+    public open val options: ModalComponents = object: ModalComponents() {}
 }

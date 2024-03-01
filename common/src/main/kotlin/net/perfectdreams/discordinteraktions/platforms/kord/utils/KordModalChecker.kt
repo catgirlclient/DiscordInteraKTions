@@ -22,12 +22,12 @@ import net.perfectdreams.discordinteraktions.common.utils.InteraKTionsExceptions
 /**
  * Checks, matches and executes commands, this is a class because we share code between the `gateway-kord` and `webserver-ktor-kord` modules
  */
-class KordModalChecker(val kord: Kord, val interactionsManager: InteractionsManager) {
-    companion object {
+public class KordModalChecker(public val kord: Kord, public val interactionsManager: InteractionsManager) {
+    public companion object {
         private val logger = KotlinLogging.logger {}
     }
 
-    fun checkAndExecute(request: DiscordInteraction, requestManager: RequestManager) {
+    public fun checkAndExecute(request: DiscordInteraction, requestManager: RequestManager) {
         val bridge = requestManager.bridge
 
         // If the component doesn't have a custom ID, we won't process it
@@ -61,7 +61,7 @@ class KordModalChecker(val kord: Kord, val interactionsManager: InteractionsMana
             GuildModalContext(
                 bridge,
                 kordUser,
-                request.channelId,
+                request.channelId.value!!,
                 modalSubmitDeclaration,
                 data.ifEmpty { null },
                 interactionData,
@@ -73,7 +73,7 @@ class KordModalChecker(val kord: Kord, val interactionsManager: InteractionsMana
             ModalContext(
                 bridge,
                 kordUser,
-                request.channelId,
+                request.channelId.value!!,
                 modalSubmitDeclaration,
                 data.ifEmpty { null },
                 interactionData,

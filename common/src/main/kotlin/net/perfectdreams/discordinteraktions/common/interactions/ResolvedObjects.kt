@@ -8,11 +8,11 @@ import dev.kord.core.entity.User
 import dev.kord.core.entity.channel.ResolvedChannel
 import net.perfectdreams.discordinteraktions.common.entities.messages.Message
 
-class ResolvedObjects(
-    val channels: Map<Snowflake, ResolvedChannel>?,
-    val roles: Map<Snowflake, Role>?,
-    val users: Map<Snowflake, User>?,
-    val members: Map<Snowflake, Member>?,
-    val messages: Map<Snowflake, Message>?,
-    val attachments: Map<Snowflake, Attachment>?
+public class ResolvedObjects(
+    public val channels: Map<Snowflake, ResolvedChannel>?,
+    public val roles: Map<Snowflake, Role>?,
+    public val users: Map<Snowflake, User>?,
+    public val members: Map<Snowflake, Member>?,
+    public val messages: Map<Snowflake, Message>?,
+    public val attachments: Map<Snowflake, Attachment>?
 )

@@ -24,8 +24,8 @@ import net.perfectdreams.discordinteraktions.platforms.kord.entities.messages.Ko
 /**
  * Checks, matches and executes commands, this is a class because we share code between the `gateway-kord` and `webserver-ktor-kord` modules
  */
-class KordComponentChecker(val kord: Kord, val interactionsManager: InteractionsManager) {
-    fun checkAndExecute(request: DiscordInteraction, requestManager: RequestManager) {
+public class KordComponentChecker(public val kord: Kord, public val interactionsManager: InteractionsManager) {
+    public fun checkAndExecute(request: DiscordInteraction, requestManager: RequestManager) {
         val bridge = requestManager.bridge
 
         val componentType = request.data.componentType.value ?: error("Component Type is not present in Discord's request! Bug?")
@@ -136,7 +136,7 @@ class KordComponentChecker(val kord: Kord, val interactionsManager: Interactions
             GuildComponentContext(
                 bridge,
                 kordUser,
-                request.channelId,
+                request.channelId.value!!,
                 declaration,
                 message,
                 data.ifEmpty { null },
@@ -149,7 +149,7 @@ class KordComponentChecker(val kord: Kord, val interactionsManager: Interactions
             ComponentContext(
                 bridge,
                 kordUser,
-                request.channelId,
+                request.channelId.value!!,
                 declaration,
                 message,
                 data.ifEmpty { null },

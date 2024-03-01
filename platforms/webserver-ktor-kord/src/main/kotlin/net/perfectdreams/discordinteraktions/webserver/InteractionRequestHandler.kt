@@ -10,7 +10,7 @@ import io.ktor.server.application.*
  * The server's Interaction Request Handler can be changed on the
  * [InteractionsServer]
  */
-abstract class InteractionRequestHandler {
+public abstract class InteractionRequestHandler {
     /**
      * Method called when we receive an interaction of the
      * [PingInteraction] type.
@@ -18,7 +18,7 @@ abstract class InteractionRequestHandler {
      * @param call The Ktor call containing the request details.
      * @param request The interaction data.
      */
-    open suspend fun onPing(call: ApplicationCall) {}
+    public open suspend fun onPing(call: ApplicationCall) {}
 
     /**
      * Method called when we receive an interaction of the
@@ -27,7 +27,7 @@ abstract class InteractionRequestHandler {
      * @param call The Ktor call containing the request details.
      * @param request The interaction data.
      */
-    open suspend fun onCommand(call: ApplicationCall, request: DiscordInteraction) {}
+    public open suspend fun onCommand(call: ApplicationCall, request: DiscordInteraction) {}
 
     /**
      * Method called when we receive an interaction of the
@@ -36,7 +36,7 @@ abstract class InteractionRequestHandler {
      * @param call The Ktor call containing the request details.
      * @param request The interaction data.
      */
-    open suspend fun onComponent(call: ApplicationCall, request: DiscordInteraction) {}
+    public open suspend fun onComponent(call: ApplicationCall, request: DiscordInteraction) {}
 
     /**
      * Method called when we receive an interaction of the
@@ -45,7 +45,7 @@ abstract class InteractionRequestHandler {
      * @param call The Ktor call containing the request details.
      * @param request The interaction data.
      */
-    open suspend fun onAutocomplete(call: ApplicationCall, request: DiscordInteraction) {}
+    public open suspend fun onAutocomplete(call: ApplicationCall, request: DiscordInteraction) {}
 
     /**
      * Method called when we receive an interaction of the
@@ -54,5 +54,5 @@ abstract class InteractionRequestHandler {
      * @param call The Ktor call containing the request details.
      * @param request The interaction data.
      */
-    open suspend fun onModalSubmit(call: ApplicationCall, request: DiscordInteraction) {}
+    public open suspend fun onModalSubmit(call: ApplicationCall, request: DiscordInteraction) {}
 }

@@ -1,8 +1,6 @@
 plugins {
-    kotlin("jvm")
+    org.jetbrains.kotlin.jvm
 }
-
-group = "net.perfectdreams.discordinteraktions"
 
 dependencies {
     implementation(kotlin("stdlib"))
@@ -10,7 +8,7 @@ dependencies {
     implementation(project(":platforms:webserver-ktor-kord"))
     implementation(libs.kord.rest)
     implementation(libs.kord.gateway)
-    implementation("ch.qos.logback:logback-classic:1.3.0-alpha16")
+    implementation(libs.logback)
 }
 
 tasks.test {

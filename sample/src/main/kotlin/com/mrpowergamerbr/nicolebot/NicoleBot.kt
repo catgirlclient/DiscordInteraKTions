@@ -10,12 +10,13 @@ import com.mrpowergamerbr.nicolebot.utils.Counter
 import com.mrpowergamerbr.nicolebot.utils.LanguageManager
 import dev.kord.common.entity.Snowflake
 import net.perfectdreams.discordinteraktions.common.DiscordInteraKTions
+import java.io.File
 
 // "Nicole" is an easter egg: Loritta's (https://loritta.website/) name was planned to be "Nicole" at one point
 class NicoleBot(token: String) {
     companion object {
-        val APPLICATION_ID = Snowflake(680539524400676977L)
-        val GUILD_ID = Snowflake(936391274951503873L)
+        val APPLICATION_ID = Snowflake(File("applicationid.txt").readText())
+        val GUILD_ID = Snowflake(File("guildid.txt").readText())
     }
 
     val interaKTions = DiscordInteraKTions(token, APPLICATION_ID)
@@ -37,6 +38,9 @@ class NicoleBot(token: String) {
             ModalYayExecutor,
             ModalYayExecutor()
         )
+
+        // ===[ /embed ]===
+        interaKTions.manager.register(EmbedCommand)
 
         // ===[ /counter ]===
         interaKTions.manager.register(CounterCommand(counter))

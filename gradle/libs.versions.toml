@@ -1,9 +1,15 @@
 [versions]
-kord = "0.13.0-SNAPSHOT"
-ktor = "2.3.6"
+kotlin = "1.9.22"
+kord = "0.14.0-SNAPSHOT"
+dokka = "1.9.10"
+binary-compatibility-validator = "0.14.0"
+# jda = "5.0.0-beta.20"
+ktor = "2.3.8"
 serialization = "1.6.0"
 coroutines = "1.7.3"
 kotlin-logging = "5.1.0"
+kaml = "0.54.0"
+logback = "1.4.12"
 
 [libraries]
 kord-core = { module = "dev.kord:kord-core", version.ref = "kord" }
@@ -16,3 +22,20 @@ serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-jso
 coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
 
 kotlin-logging = { module = "io.github.oshai:kotlin-logging-jvm", version.ref = "kotlin-logging" }
+
+# Test library libs
+kaml = { module = "com.charleskorn.kaml:kaml", version.ref = "kaml" }
+logback = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
+
+kotlin-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+kotlin-serialization-plugin = { module = "org.jetbrains.kotlin:kotlin-serialization", version.ref = "kotlin" }
+dokka-plugin = { module = "org.jetbrains.dokka:dokka-gradle-plugin", version.ref = "dokka" }
+binary-compatibility-validator-plugin = { module = "org.jetbrains.kotlinx:binary-compatibility-validator", version.ref = "binary-compatibility-validator" }
+
+[bundles]
+buildSrc = [
+    "kotlin-plugin",
+    "kotlin-serialization-plugin",
+    "dokka-plugin",
+    "binary-compatibility-validator-plugin"
+]

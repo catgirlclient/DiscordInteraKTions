@@ -7,8 +7,8 @@ import kotlin.coroutines.resume
 /**
  * A observable [value] where you can await for a update on [value] by using [awaitChange]
  */
-class Observable<T>(value: T) {
-    var value: T = value
+public class Observable<T>(value: T) {
+    public var value: T = value
         set(value) {
             field = value
             val currentListeners = listeners.toList()
@@ -20,7 +20,7 @@ class Observable<T>(value: T) {
 
     private val listeners = mutableListOf<Continuation<T>>()
 
-    suspend fun awaitChange(): T {
+    public suspend fun awaitChange(): T {
         return suspendCancellableCoroutine {
             listeners.add(it)
         }

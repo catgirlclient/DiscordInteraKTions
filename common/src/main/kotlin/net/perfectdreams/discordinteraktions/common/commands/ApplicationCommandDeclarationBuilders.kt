@@ -2,38 +2,39 @@ package net.perfectdreams.discordinteraktions.common.commands
 
 import dev.kord.common.Locale
 import dev.kord.common.entity.Permissions
-import net.perfectdreams.discordinteraktions.common.utils.InteraKTionsDslMarker
+import net.perfectdreams.discordinteraktions.common.annotations.InteraKTionsDsl
 
 // ===[ SLASH COMMANDS ]===
-fun slashCommand(name: String, description: String, block: SlashCommandDeclarationBuilder.() -> (Unit)) = SlashCommandDeclarationBuilder(
-    name,
-    description
-).apply(block)
+public fun slashCommand(
+    name: String,
+    description: String,
+    block: SlashCommandDeclarationBuilder.() -> (Unit)
+): SlashCommandDeclarationBuilder = SlashCommandDeclarationBuilder(name, description).apply(block)
 
-@InteraKTionsDslMarker
-class SlashCommandDeclarationBuilder(
-    val name: String,
-    val description: String
+@InteraKTionsDsl
+public class SlashCommandDeclarationBuilder(
+    public val name: String,
+    public val description: String
 ) {
-    var nameLocalizations: Map<Locale, String>? = null
-    var descriptionLocalizations: Map<Locale, String>? = null
-    var executor: SlashCommandExecutor? = null
-    val subcommands = mutableListOf<SlashCommandDeclarationBuilder>()
-    val subcommandGroups = mutableListOf<SlashCommandGroupDeclarationBuilder>()
+    public var nameLocalizations: Map<Locale, String>? = null
+    public var descriptionLocalizations: Map<Locale, String>? = null
+    public var executor: SlashCommandExecutor? = null
+    public val subcommands: MutableList<SlashCommandDeclarationBuilder> = mutableListOf()
+    public val subcommandGroups: MutableList<SlashCommandGroupDeclarationBuilder> = mutableListOf()
     // Only root commands can have permissions and dmPermission
-    var defaultMemberPermissions: Permissions? = null
-    var dmPermission: Boolean? = null
-    var nsfw: Boolean? = null
+    public var defaultMemberPermissions: Permissions? = null
+    public var dmPermission: Boolean? = null
+    public var nsfw: Boolean? = null
 
-    fun subcommand(name: String, description: String, block: SlashCommandDeclarationBuilder.() -> (Unit)) {
+    public fun subcommand(name: String, description: String, block: SlashCommandDeclarationBuilder.() -> (Unit)) {
         subcommands += SlashCommandDeclarationBuilder(name, description).apply(block)
     }
 
-    fun subcommandGroup(name: String, description: String, block: SlashCommandGroupDeclarationBuilder.() -> (Unit)) {
+    public fun subcommandGroup(name: String, description: String, block: SlashCommandGroupDeclarationBuilder.() -> (Unit)) {
         subcommandGroups += SlashCommandGroupDeclarationBuilder(name, description).apply(block)
     }
 
-    fun build(): SlashCommandDeclaration {
+    public fun build(): SlashCommandDeclaration {
         return InteraKTionsSlashCommandDeclaration(
             name,
             nameLocalizations,
@@ -49,22 +50,22 @@ class SlashCommandDeclarationBuilder(
     }
 }
 
-@InteraKTionsDslMarker
-class SlashCommandGroupDeclarationBuilder(
-    val name: String,
-    val description: String
+@InteraKTionsDsl
+public class SlashCommandGroupDeclarationBuilder(
+    public val name: String,
+    public val description: String
 ) {
-    var nameLocalizations: Map<Locale, String>? = null
-    var descriptionLocalizations: Map<Locale, String>? = null
+    public var nameLocalizations: Map<Locale, String>? = null
+    public var descriptionLocalizations: Map<Locale, String>? = null
     // Groups can't have executors!
-    val subcommands = mutableListOf<SlashCommandDeclarationBuilder>()
-    var nsfw: Boolean? = null
+    public val subcommands: MutableList<SlashCommandDeclarationBuilder> = mutableListOf()
+    public var nsfw: Boolean? = null
 
-    fun subcommand(name: String, description: String, block: SlashCommandDeclarationBuilder.() -> (Unit)) {
+    public fun subcommand(name: String, description: String, block: SlashCommandDeclarationBuilder.() -> (Unit)) {
         subcommands += SlashCommandDeclarationBuilder(name, description).apply(block)
     }
 
-    fun build(): SlashCommandGroupDeclaration {
+    public fun build(): SlashCommandGroupDeclaration {
         return InteraKTionsSlashCommandGroupDeclaration(
             name,
             nameLocalizations,
@@ -77,16 +78,19 @@ class SlashCommandGroupDeclarationBuilder(
 }
 
 // ===[ USER COMMANDS ]===
-fun userCommand(name: String, executor: UserCommandExecutor) = UserCommandDeclarationBuilder(name, executor)
+public fun userCommand(
+    name: String,
+    executor: UserCommandExecutor
+): UserCommandDeclarationBuilder = UserCommandDeclarationBuilder(name, executor)
 
-@InteraKTionsDslMarker
-class UserCommandDeclarationBuilder(val name: String, val executor: UserCommandExecutor) {
-    var nameLocalizations: Map<Locale, String>? = null
-    var defaultMemberPermissions: Permissions? = null
-    var dmPermission: Boolean? = null
-    var nsfw: Boolean? = null
+@InteraKTionsDsl
+public class UserCommandDeclarationBuilder(public val name: String, public val executor: UserCommandExecutor) {
+    public var nameLocalizations: Map<Locale, String>? = null
+    public var defaultMemberPermissions: Permissions? = null
+    public var dmPermission: Boolean? = null
+    public var nsfw: Boolean? = null
 
-    fun build(): UserCommandDeclaration {
+    public fun build(): UserCommandDeclaration {
         return InteraKTionsUserCommandDeclaration(
             name,
             nameLocalizations,
@@ -99,16 +103,19 @@ class UserCommandDeclarationBuilder(val name: String, val executor: UserCommandE
 }
 
 // ===[ MESSAGE COMMANDS ]===
-fun messageCommand(name: String, executor: MessageCommandExecutor) = MessageCommandDeclarationBuilder(name, executor)
+public fun messageCommand(
+    name: String,
+    executor: MessageCommandExecutor
+): MessageCommandDeclarationBuilder = MessageCommandDeclarationBuilder(name, executor)
 
-@InteraKTionsDslMarker
-class MessageCommandDeclarationBuilder(val name: String, val executor: MessageCommandExecutor) {
-    var nameLocalizations: Map<Locale, String>? = null
-    var defaultMemberPermissions: Permissions? = null
-    var dmPermission: Boolean? = null
-    var nsfw: Boolean? = null
+@InteraKTionsDsl
+public class MessageCommandDeclarationBuilder(public val name: String, public val executor: MessageCommandExecutor) {
+    public var nameLocalizations: Map<Locale, String>? = null
+    public var defaultMemberPermissions: Permissions? = null
+    public var dmPermission: Boolean? = null
+    public var nsfw: Boolean? = null
 
-    fun build(): MessageCommandDeclaration {
+    public fun build(): MessageCommandDeclaration {
         return InteraKTionsMessageCommandDeclaration(
             name,
             nameLocalizations,

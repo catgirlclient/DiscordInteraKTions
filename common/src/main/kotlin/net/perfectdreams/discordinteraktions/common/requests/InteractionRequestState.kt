@@ -1,6 +1,6 @@
 package net.perfectdreams.discordinteraktions.common.requests
 
-enum class InteractionRequestState {
+public enum class InteractionRequestState {
     /**
      * Not replied to the interaction request yet
      */

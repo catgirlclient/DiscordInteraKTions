@@ -27,7 +27,7 @@ import net.perfectdreams.discordinteraktions.verifier.InteractionRequestVerifier
  *
  * @see InteractionsServer
  */
-fun Routing.installDiscordInteractions(
+public fun Routing.installDiscordInteractions(
     publicKey: String,
     path: String,
     handler: InteractionRequestHandler,
@@ -63,7 +63,7 @@ fun Routing.installDiscordInteractions(
         )
 
         if (!verified) {
-            call.respondText("", ContentType.Application.Json, HttpStatusCode.Unauthorized)
+            call.respondText("Unauthorized placeholder", ContentType.Application.Json, HttpStatusCode.Unauthorized)
             return@post
         }
 

@@ -20,8 +20,8 @@ import net.perfectdreams.discordinteraktions.webserver.requests.managers.WebServ
  *
  * @param m The server that we'll handle the requests for.
  */
-class DefaultInteractionRequestHandler(val interaKTions: DiscordInteraKTions) : InteractionRequestHandler() {
-    companion object {
+public class DefaultInteractionRequestHandler(public val interaKTions: DiscordInteraKTions) : InteractionRequestHandler() {
+    public companion object {
         private val logger = KotlinLogging.logger {}
     }
 

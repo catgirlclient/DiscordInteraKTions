@@ -36,14 +36,14 @@ import net.perfectdreams.discordinteraktions.platforms.kord.entities.messages.Ko
  * @param interactionToken The request's token
  * @param call The request data
  */
-class WebServerRequestManager(
+public class WebServerRequestManager(
     bridge: RequestBridge,
-    val kord: Kord,
-    val applicationId: Snowflake,
-    val interactionToken: String,
-    val call: ApplicationCall,
+    public val kord: Kord,
+    public val applicationId: Snowflake,
+    public val interactionToken: String,
+    public val call: ApplicationCall,
 ) : RequestManager(bridge) {
-    companion object {
+    public companion object {
         private val logger = KotlinLogging.logger {}
     }
 

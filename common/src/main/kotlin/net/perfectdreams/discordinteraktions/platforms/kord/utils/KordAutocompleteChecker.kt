@@ -28,12 +28,12 @@ import net.perfectdreams.discordinteraktions.platforms.kord.commands.CommandDecl
 /**
  * Checks, matches and executes commands, this is a class because we share code between the `gateway-kord` and `webserver-ktor-kord` modules
  */
-class KordAutocompleteChecker(val kord: Kord, val interactionsManager: InteractionsManager) {
-    companion object {
+public class KordAutocompleteChecker(public val kord: Kord, public val interactionsManager: InteractionsManager) {
+    public companion object {
         private val logger = KotlinLogging.logger {}
     }
 
-    fun checkAndExecute(request: DiscordInteraction, requestManager: RequestManager) {
+    public fun checkAndExecute(request: DiscordInteraction, requestManager: RequestManager) {
         val bridge = requestManager.bridge
 
         logger.debug { request.data.name }
@@ -61,7 +61,7 @@ class KordAutocompleteChecker(val kord: Kord, val interactionsManager: Interacti
 
             GuildAutocompleteContext(
                 kordUser,
-                request.channelId,
+                request.channelId.value!!,
                 interactionData,
                 relativeOptions.filterIsInstance<CommandArgument<*>>(),
                 request,
@@ -71,7 +71,7 @@ class KordAutocompleteChecker(val kord: Kord, val interactionsManager: Interacti
         } else {
             AutocompleteContext(
                 kordUser,
-                request.channelId,
+                request.channelId.value!!,
                 interactionData,
                 relativeOptions.filterIsInstance<CommandArgument<*>>(),
                 request

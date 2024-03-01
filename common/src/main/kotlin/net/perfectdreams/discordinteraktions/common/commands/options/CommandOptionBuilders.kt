@@ -8,31 +8,31 @@ import dev.kord.core.entity.User
 import dev.kord.core.entity.channel.Channel
 import net.perfectdreams.discordinteraktions.common.autocomplete.AutocompleteHandler
 
-abstract class CommandOptionBuilder<T, ChoiceableType> {
-    abstract val name: String
+public abstract class CommandOptionBuilder<T, ChoiceableType> {
+    public abstract val name: String
 
     /**
      * If the command option is required in the command.
      *
      * If [required] is true and the argument is not present, the command will fail.
      */
-    abstract val required: Boolean
+    public abstract val required: Boolean
 
-    abstract fun build(): InteraKTionsCommandOption<ChoiceableType>
+    public abstract fun build(): InteraKTionsCommandOption<ChoiceableType>
 }
 
-abstract class DiscordCommandOptionBuilder<T, ChoiceableType> : CommandOptionBuilder<T, ChoiceableType>() {
-    abstract val description: String
+public abstract class DiscordCommandOptionBuilder<T, ChoiceableType> : CommandOptionBuilder<T, ChoiceableType>() {
+    public abstract val description: String
 
-    var nameLocalizations: Map<Locale, String>? = null
-    var descriptionLocalizations: Map<Locale, String>? = null
+    public var nameLocalizations: Map<Locale, String>? = null
+    public var descriptionLocalizations: Map<Locale, String>? = null
 }
 
-abstract class ChoiceableCommandOptionBuilder<T, ChoiceableType> : DiscordCommandOptionBuilder<T, ChoiceableType>() {
-    var choices: MutableList<CommandChoiceBuilder<ChoiceableType>>? = mutableListOf()
-    var autocompleteExecutor: AutocompleteHandler<ChoiceableType>? = null
+public abstract class ChoiceableCommandOptionBuilder<T, ChoiceableType> : DiscordCommandOptionBuilder<T, ChoiceableType>() {
+    public var choices: MutableList<CommandChoiceBuilder<ChoiceableType>>? = mutableListOf()
+    public var autocompleteExecutor: AutocompleteHandler<ChoiceableType>? = null
 
-    fun choice(name: String, value: ChoiceableType, block: CommandChoiceBuilder<ChoiceableType>.() -> (Unit) = {}) {
+    public fun choice(name: String, value: ChoiceableType, block: CommandChoiceBuilder<ChoiceableType>.() -> (Unit) = {}) {
         require(autocompleteExecutor == null) {
             "You can't use pre-defined choices with an autocomplete executor set!"
         }
@@ -44,7 +44,7 @@ abstract class ChoiceableCommandOptionBuilder<T, ChoiceableType> : DiscordComman
         choices?.add(builder)
     }
 
-    fun autocomplete(handler: AutocompleteHandler<ChoiceableType>) {
+    public fun autocomplete(handler: AutocompleteHandler<ChoiceableType>) {
         require(choices?.isNotEmpty() == false) {
             "You can't use autocomplete with pre-defined choices!"
         }
@@ -54,10 +54,10 @@ abstract class ChoiceableCommandOptionBuilder<T, ChoiceableType> : DiscordComman
 }
 
 // ===[ STRING ]===
-abstract class StringCommandOptionBuilderBase<T> : ChoiceableCommandOptionBuilder<T, String>() {
-    var minLength: Int? = null
-    var maxLength: Int? = null
-    var allowedLength: IntRange
+public abstract class StringCommandOptionBuilderBase<T> : ChoiceableCommandOptionBuilder<T, String>() {
+    public var minLength: Int? = null
+    public var maxLength: Int? = null
+    public var allowedLength: IntRange
         get() = error("This is a settable property only")
         set(value) {
             minLength = value.first
@@ -77,25 +77,25 @@ abstract class StringCommandOptionBuilderBase<T> : ChoiceableCommandOptionBuilde
     )
 }
 
-class StringCommandOptionBuilder(
+public class StringCommandOptionBuilder(
     override val name: String,
     override val description: String
 ) : StringCommandOptionBuilderBase<String>() {
-    override val required = true
+    override val required: Boolean = true
 }
 
-class NullableStringCommandOptionBuilder(
+public class NullableStringCommandOptionBuilder(
     override val name: String,
     override val description: String
 ) : StringCommandOptionBuilderBase<String?>() {
-    override val required = false
+    override val required: Boolean = false
 }
 
 // ===[ INTEGER ]===
-abstract class IntegerCommandOptionBuilderBase<T> : ChoiceableCommandOptionBuilder<T, Long>() {
-    var minValue: Long? = null
-    var maxValue: Long? = null
-    var range: LongRange
+public abstract class IntegerCommandOptionBuilderBase<T> : ChoiceableCommandOptionBuilder<T, Long>() {
+    public var minValue: Long? = null
+    public var maxValue: Long? = null
+    public var range: LongRange
         get() = error("This is a settable property only")
         set(value) {
             minValue = value.first
@@ -115,25 +115,25 @@ abstract class IntegerCommandOptionBuilderBase<T> : ChoiceableCommandOptionBuild
     )
 }
 
-class IntegerCommandOptionBuilder(
+public class IntegerCommandOptionBuilder(
     override val name: String,
     override val description: String
 ) : IntegerCommandOptionBuilderBase<Long>() {
-    override val required = true
+    override val required: Boolean = true
 }
 
-class NullableIntegerCommandOptionBuilder(
+public class NullableIntegerCommandOptionBuilder(
     override val name: String,
     override val description: String
 ) : IntegerCommandOptionBuilderBase<Long?>() {
-    override val required = false
+    override val required: Boolean = false
 }
 
 // ===[ NUMBER ]===
-abstract class NumberCommandOptionBuilderBase<T> : ChoiceableCommandOptionBuilder<T, Double>() {
-    var minValue: Double? = null
-    var maxValue: Double? = null
-    var range: ClosedFloatingPointRange<Double>
+public abstract class NumberCommandOptionBuilderBase<T> : ChoiceableCommandOptionBuilder<T, Double>() {
+    public var minValue: Double? = null
+    public var maxValue: Double? = null
+    public var range: ClosedFloatingPointRange<Double>
         get() = error("This is a settable property only")
         set(value) {
             minValue = value.start
@@ -153,22 +153,22 @@ abstract class NumberCommandOptionBuilderBase<T> : ChoiceableCommandOptionBuilde
     )
 }
 
-class NumberCommandOptionBuilder(
+public class NumberCommandOptionBuilder(
     override val name: String,
     override val description: String
 ) : NumberCommandOptionBuilderBase<Double>() {
-    override val required = true
+    override val required: Boolean = true
 }
 
-class NullableNumberCommandOptionBuilder(
+public class NullableNumberCommandOptionBuilder(
     override val name: String,
     override val description: String
 ) : NumberCommandOptionBuilderBase<Double?>() {
-    override val required = false
+    override val required: Boolean = false
 }
 
 // ===[ BOOLEAN ]===
-abstract class BooleanCommandOptionBuilderBase<T> : DiscordCommandOptionBuilder<T, Boolean>() {
+public abstract class BooleanCommandOptionBuilderBase<T> : DiscordCommandOptionBuilder<T, Boolean>() {
     override fun build(): BooleanCommandOption = DefaultBooleanCommandOption(
         name,
         description,
@@ -178,22 +178,22 @@ abstract class BooleanCommandOptionBuilderBase<T> : DiscordCommandOptionBuilder<
     )
 }
 
-class BooleanCommandOptionBuilder(
+public class BooleanCommandOptionBuilder(
     override val name: String,
     override val description: String
 ) : BooleanCommandOptionBuilderBase<Boolean>() {
-    override val required = true
+    override val required: Boolean = true
 }
 
-class NullableBooleanCommandOptionBuilder(
+public class NullableBooleanCommandOptionBuilder(
     override val name: String,
     override val description: String
 ) : BooleanCommandOptionBuilderBase<Boolean?>() {
-    override val required = false
+    override val required: Boolean = false
 }
 
 // ===[ USER ]===
-abstract class UserCommandOptionBuilderBase<T> : DiscordCommandOptionBuilder<T, User>() {
+public abstract class UserCommandOptionBuilderBase<T> : DiscordCommandOptionBuilder<T, User>() {
     override fun build(): UserCommandOption = DefaultUserCommandOption(
         name,
         description,
@@ -203,22 +203,22 @@ abstract class UserCommandOptionBuilderBase<T> : DiscordCommandOptionBuilder<T, 
     )
 }
 
-class UserCommandOptionBuilder(
+public class UserCommandOptionBuilder(
     override val name: String,
     override val description: String
 ) : UserCommandOptionBuilderBase<User>() {
-    override val required = true
+    override val required: Boolean = true
 }
 
-class NullableUserCommandOptionBuilder(
+public class NullableUserCommandOptionBuilder(
     override val name: String,
     override val description: String
 ) : UserCommandOptionBuilderBase<User?>() {
-    override val required = false
+    override val required: Boolean = false
 }
 
 // ===[ ROLE ]===
-abstract class RoleCommandOptionBuilderBase<T> : DiscordCommandOptionBuilder<T, Role>() {
+public abstract class RoleCommandOptionBuilderBase<T> : DiscordCommandOptionBuilder<T, Role>() {
     override fun build(): RoleCommandOption = DefaultRoleCommandOption(
         name,
         description,
@@ -228,23 +228,23 @@ abstract class RoleCommandOptionBuilderBase<T> : DiscordCommandOptionBuilder<T, 
     )
 }
 
-class RoleCommandOptionBuilder(
+public class RoleCommandOptionBuilder(
     override val name: String,
     override val description: String
 ) : RoleCommandOptionBuilderBase<Role>() {
-    override val required = true
+    override val required: Boolean = true
 }
 
-class NullableRoleCommandOptionBuilder(
+public class NullableRoleCommandOptionBuilder(
     override val name: String,
     override val description: String
 ) : RoleCommandOptionBuilderBase<Role?>() {
-    override val required = false
+    override val required: Boolean = false
 }
 
 // ===[ CHANNEL ]===
-abstract class ChannelCommandOptionBuilderBase<T> : DiscordCommandOptionBuilder<T, Channel>() {
-    var channelTypes: List<ChannelType>? = null
+public abstract class ChannelCommandOptionBuilderBase<T> : DiscordCommandOptionBuilder<T, Channel>() {
+    public var channelTypes: List<ChannelType>? = null
 
     override fun build(): ChannelCommandOption = DefaultChannelCommandOption(
         name,
@@ -256,22 +256,22 @@ abstract class ChannelCommandOptionBuilderBase<T> : DiscordCommandOptionBuilder<
     )
 }
 
-class ChannelCommandOptionBuilder(
+public class ChannelCommandOptionBuilder(
     override val name: String,
     override val description: String
 ) : ChannelCommandOptionBuilderBase<Channel>() {
-    override val required = true
+    override val required: Boolean = true
 }
 
-class NullableChannelCommandOptionBuilder(
+public class NullableChannelCommandOptionBuilder(
     override val name: String,
     override val description: String
 ) : ChannelCommandOptionBuilderBase<Channel?>() {
-    override val required = false
+    override val required: Boolean = false
 }
 
 // ===[ MENTIONABLE ]===
-abstract class MentionableCommandOptionBuilderBase<T> : DiscordCommandOptionBuilder<T, Any>() {
+public abstract class MentionableCommandOptionBuilderBase<T> : DiscordCommandOptionBuilder<T, Any>() {
     override fun build(): MentionableCommandOption = DefaultMentionableCommandOption(
         name,
         description,
@@ -281,22 +281,22 @@ abstract class MentionableCommandOptionBuilderBase<T> : DiscordCommandOptionBuil
     )
 }
 
-class MentionableCommandOptionBuilder(
+public class MentionableCommandOptionBuilder(
     override val name: String,
     override val description: String
 ) : MentionableCommandOptionBuilderBase<Any>() {
-    override val required = true
+    override val required: Boolean = true
 }
 
-class NullableMentionableCommandOptionBuilder(
+public class NullableMentionableCommandOptionBuilder(
     override val name: String,
     override val description: String
 ) : MentionableCommandOptionBuilderBase<Any?>() {
-    override val required = false
+    override val required: Boolean = false
 }
 
 // ===[ ATTACHMENT ]===
-abstract class AttachmentCommandOptionBuilderBase<T> : DiscordCommandOptionBuilder<T, DiscordAttachment>() {
+public abstract class AttachmentCommandOptionBuilderBase<T> : DiscordCommandOptionBuilder<T, DiscordAttachment>() {
     override fun build(): AttachmentCommandOption = DefaultAttachmentCommandOption(
         name,
         description,
@@ -306,16 +306,16 @@ abstract class AttachmentCommandOptionBuilderBase<T> : DiscordCommandOptionBuild
     )
 }
 
-class AttachmentCommandOptionBuilder(
+public class AttachmentCommandOptionBuilder(
     override val name: String,
     override val description: String
 ) : AttachmentCommandOptionBuilderBase<DiscordAttachment>() {
-    override val required = true
+    override val required: Boolean = true
 }
 
-class NullableAttachmentCommandOptionBuilder(
+public class NullableAttachmentCommandOptionBuilder(
     override val name: String,
     override val description: String
 ) : AttachmentCommandOptionBuilderBase<DiscordAttachment?>() {
-    override val required = false
+    override val required: Boolean = false
 }
