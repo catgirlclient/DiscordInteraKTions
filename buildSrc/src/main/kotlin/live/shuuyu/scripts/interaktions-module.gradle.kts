@@ -1,7 +1,7 @@
 package live.shuuyu.scripts
 
-import org.jetbrains.dokka.gradle.AbstractDokkaLeafTask
 import live.shuuyu.scripts.utils.Project
+import org.jetbrains.dokka.gradle.AbstractDokkaLeafTask
 
 plugins {
     org.jetbrains.kotlin.jvm
@@ -26,6 +26,7 @@ kotlin {
 
     compilerOptions {
         progressiveMode = true
+        freeCompilerArgs.add("-Xdont-warn-on-error-suppression")
     }
 }
 

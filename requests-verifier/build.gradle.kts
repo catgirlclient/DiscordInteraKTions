@@ -4,7 +4,7 @@ plugins {
 }
 
 dependencies {
-    implementation(kotlin("stdlib"))
+    implementation(libs.stdlib)
 }
 
 tasks.test {

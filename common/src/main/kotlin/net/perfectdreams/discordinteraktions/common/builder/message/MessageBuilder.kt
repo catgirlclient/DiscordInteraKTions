@@ -65,7 +65,7 @@ public interface MessageBuilder {
 
 
 @OptIn(ExperimentalContracts::class)
-public inline fun MessageBuilder.embed(block: EmbedBuilder.() -> Unit) {
+public inline fun MessageBuilder.embed(block: EmbedBuilder.() -> (Unit)) {
     contract {
         callsInPlace(block, InvocationKind.EXACTLY_ONCE)
     }
@@ -81,7 +81,7 @@ public inline fun MessageBuilder.embed(block: EmbedBuilder.() -> Unit) {
  * pings being ignored.
  */
 @OptIn(ExperimentalContracts::class)
-public inline fun MessageBuilder.allowedMentions(block: AllowedMentionsBuilder.() -> Unit = {}) {
+public inline fun MessageBuilder.allowedMentions(block: AllowedMentionsBuilder.() -> (Unit) = {}) {
     contract {
         callsInPlace(block, InvocationKind.EXACTLY_ONCE)
     }
@@ -91,7 +91,7 @@ public inline fun MessageBuilder.allowedMentions(block: AllowedMentionsBuilder.(
 
 
 @OptIn(ExperimentalContracts::class)
-public inline fun MessageBuilder.actionRow(builder: ActionRowBuilder.() -> Unit) {
+public inline fun MessageBuilder.actionRow(builder: ActionRowBuilder.() -> (Unit)) {
     contract {
         callsInPlace(builder, InvocationKind.EXACTLY_ONCE)
     }

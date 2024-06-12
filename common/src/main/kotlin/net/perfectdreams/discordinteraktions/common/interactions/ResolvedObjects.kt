@@ -8,7 +8,7 @@ import dev.kord.core.entity.User
 import dev.kord.core.entity.channel.ResolvedChannel
 import net.perfectdreams.discordinteraktions.common.entities.messages.Message
 
-public class ResolvedObjects(
+public class ResolvedObjects (
     public val channels: Map<Snowflake, ResolvedChannel>?,
     public val roles: Map<Snowflake, Role>?,
     public val users: Map<Snowflake, User>?,

@@ -25,5 +25,5 @@ include(
     ":common",
     ":requests-verifier",
     ":platforms:gateway-kord",
-    ":platforms:webserver-ktor-kord"
+    ":platforms:webserver-ktor-kord",
 )

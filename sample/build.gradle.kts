@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-    implementation(kotlin("stdlib"))
+    implementation(libs.stdlib)
     implementation(project(":platforms:gateway-kord"))
     implementation(project(":platforms:webserver-ktor-kord"))
     implementation(libs.kord.rest)

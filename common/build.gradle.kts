@@ -4,8 +4,8 @@ plugins {
 }
 
 dependencies {
-    implementation(kotlin("stdlib"))
-    implementation(kotlin("reflect"))
+    implementation(libs.stdlib)
+    implementation(libs.reflect)
 
     api(libs.kord.common)
     api(libs.kord.rest)
