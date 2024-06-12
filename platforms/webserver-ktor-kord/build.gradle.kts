@@ -4,7 +4,7 @@ plugins {
 }
 
 dependencies {
-    implementation(libs.reflect)
+    implementation(kotlin("reflect"))
     api(project(":requests-verifier"))
     api(project(":common"))
     implementation(libs.kord.rest)

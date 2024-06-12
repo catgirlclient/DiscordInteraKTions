@@ -35,7 +35,7 @@ tasks {
         useJUnitPlatform()
     }
 
-    withType<AbstractDokkaLeafTask> {
+    withType<AbstractDokkaLeafTask>().configureEach {
         moduleName = project.name
         failOnWarning = true
 

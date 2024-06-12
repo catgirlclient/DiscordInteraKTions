@@ -4,7 +4,7 @@ plugins {
 }
 
 dependencies {
-    implementation(libs.stdlib)
+    implementation(kotlin("stdlib"))
     api(project(":common"))
     implementation(libs.kord.rest)
     implementation(libs.kord.gateway)
