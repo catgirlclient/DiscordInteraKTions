@@ -1,4 +1,5 @@
 [versions]
+
 kotlin = "2.0.0"
 kord = "0.15.0-SNAPSHOT"
 dokka = "1.9.20"
