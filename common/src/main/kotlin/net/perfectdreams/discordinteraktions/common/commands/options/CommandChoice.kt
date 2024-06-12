@@ -2,8 +2,8 @@ package net.perfectdreams.discordinteraktions.common.commands.options
 
 import dev.kord.common.Locale
 
-class CommandChoice<T>(
-    val name: String,
-    val value: T,
-    val nameLocalizations: Map<Locale, String>?
+public class CommandChoice<T>(
+    public val name: String,
+    public val value: T,
+    public val nameLocalizations: Map<Locale, String>?
 )

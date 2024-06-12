@@ -7,7 +7,7 @@ import kotlin.contracts.InvocationKind
 import kotlin.contracts.contract
 
 @OptIn(ExperimentalContracts::class)
-fun ActionRowBuilder.channelSelect(
+public fun ActionRowBuilder.channelSelect(
     executor: SelectMenuExecutorDeclaration,
     data: String,
     builder: ChannelSelectBuilder.() -> (Unit)
@@ -24,7 +24,7 @@ fun ActionRowBuilder.channelSelect(
 }
 
 @OptIn(ExperimentalContracts::class)
-fun ActionRowBuilder.channelSelect(
+public fun ActionRowBuilder.channelSelect(
     executor: SelectMenuExecutorDeclaration,
     builder: ChannelSelectBuilder.() -> (Unit)
 ) {
@@ -40,7 +40,7 @@ fun ActionRowBuilder.channelSelect(
 }
 
 @OptIn(ExperimentalContracts::class)
-fun ActionRowBuilder.interactiveButton(
+public fun ActionRowBuilder.interactiveButton(
     style: ButtonStyle,
     executor: ButtonExecutorDeclaration,
     builder: ButtonBuilder.InteractionButtonBuilder.() -> Unit
@@ -60,7 +60,7 @@ fun ActionRowBuilder.interactiveButton(
 }
 
 @OptIn(ExperimentalContracts::class)
-fun ActionRowBuilder.interactionButton(
+public fun ActionRowBuilder.interactionButton(
     style: ButtonStyle,
     label: String,
     executor: ButtonExecutorDeclaration,
@@ -82,7 +82,7 @@ fun ActionRowBuilder.interactionButton(
 }
 
 @OptIn(ExperimentalContracts::class)
-fun ActionRowBuilder.interactionButton(
+public fun ActionRowBuilder.interactionButton(
     style: ButtonStyle,
     executor: ButtonExecutorDeclaration,
     data: String,
@@ -103,7 +103,7 @@ fun ActionRowBuilder.interactionButton(
 }
 
 @OptIn(ExperimentalContracts::class)
-fun ActionRowBuilder.interactionButton(
+public fun ActionRowBuilder.interactionButton(
     style: ButtonStyle,
     label: String,
     executor: ButtonExecutorDeclaration,
@@ -131,7 +131,7 @@ fun ActionRowBuilder.interactionButton(
     DeprecationLevel.WARNING
 )
 @OptIn(ExperimentalContracts::class)
-fun ActionRowBuilder.interactiveButton(
+public fun ActionRowBuilder.interactiveButton(
     style: ButtonStyle,
     label: String,
     executor: ButtonExecutorDeclaration,
@@ -158,7 +158,7 @@ fun ActionRowBuilder.interactiveButton(
     DeprecationLevel.WARNING
 )
 @OptIn(ExperimentalContracts::class)
-fun ActionRowBuilder.interactiveButton(
+public fun ActionRowBuilder.interactiveButton(
     style: ButtonStyle,
     executor: ButtonExecutorDeclaration,
     data: String,
@@ -184,7 +184,7 @@ fun ActionRowBuilder.interactiveButton(
     DeprecationLevel.WARNING
 )
 @OptIn(ExperimentalContracts::class)
-fun ActionRowBuilder.interactiveButton(
+public fun ActionRowBuilder.interactiveButton(
     style: ButtonStyle,
     label: String,
     executor: ButtonExecutorDeclaration,
@@ -207,7 +207,7 @@ fun ActionRowBuilder.interactiveButton(
 }
 
 @OptIn(ExperimentalContracts::class)
-fun ActionRowBuilder.mentionableSelect(
+public fun ActionRowBuilder.mentionableSelect(
     executor: SelectMenuExecutorDeclaration,
     builder: MentionableSelectBuilder.() -> (Unit) = {}
 ) {
@@ -223,7 +223,7 @@ fun ActionRowBuilder.mentionableSelect(
 }
 
 @OptIn(ExperimentalContracts::class)
-fun ActionRowBuilder.mentionableSelect(
+public fun ActionRowBuilder.mentionableSelect(
     executor: SelectMenuExecutorDeclaration,
     data: String,
     builder: MentionableSelectBuilder.() -> (Unit) = {}
@@ -240,7 +240,7 @@ fun ActionRowBuilder.mentionableSelect(
 }
 
 @OptIn(ExperimentalContracts::class)
-fun ActionRowBuilder.roleSelect(
+public fun ActionRowBuilder.roleSelect(
     executor: SelectMenuExecutorDeclaration,
     builder: RoleSelectBuilder.() -> (Unit) = {}
 ) {
@@ -256,7 +256,7 @@ fun ActionRowBuilder.roleSelect(
 }
 
 @OptIn(ExperimentalContracts::class)
-fun ActionRowBuilder.roleSelect(
+public fun ActionRowBuilder.roleSelect(
     executor: SelectMenuExecutorDeclaration,
     data: String,
     builder: RoleSelectBuilder.() -> (Unit) = {}
@@ -273,7 +273,7 @@ fun ActionRowBuilder.roleSelect(
 }
 
 @OptIn(ExperimentalContracts::class)
-fun ActionRowBuilder.stringSelect(
+public fun ActionRowBuilder.stringSelect(
     executor: SelectMenuExecutorDeclaration,
     builder: SelectMenuBuilder.() -> Unit = {}
 ) {
@@ -289,7 +289,7 @@ fun ActionRowBuilder.stringSelect(
 }
 
 @OptIn(ExperimentalContracts::class)
-fun ActionRowBuilder.stringSelect(
+public fun ActionRowBuilder.stringSelect(
     executor: SelectMenuExecutorDeclaration,
     data: String,
     builder: SelectMenuBuilder.() -> Unit = {}

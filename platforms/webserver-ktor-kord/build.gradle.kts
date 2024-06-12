@@ -1,12 +1,10 @@
 plugins {
-    kotlin("jvm")
-    `maven-publish`
+    live.shuuyu.scripts.`interaktions-module`
+    live.shuuyu.scripts.`interaktions-publishing`
 }
 
-group = "net.perfectdreams.discordinteraktions"
-
 dependencies {
-    implementation(kotlin("stdlib"))
+    implementation(libs.reflect)
     api(project(":requests-verifier"))
     api(project(":common"))
     implementation(libs.kord.rest)
@@ -15,12 +13,4 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
-}
-
-publishing {
-    publications {
-        register("PerfectDreams", MavenPublication::class.java) {
-            from(components["java"])
-        }
-    }
 }

@@ -2,7 +2,7 @@ package net.perfectdreams.discordinteraktions.common.modals.components
 
 import dev.kord.rest.builder.component.ActionRowBuilder
 
-fun <T : String?> ActionRowBuilder.textInput(
+public fun <T : String?> ActionRowBuilder.textInput(
     reference: ComponentReference<T>,
     label: String,
     block: TextInputComponentAppearanceBuilder.() -> (Unit) = {}

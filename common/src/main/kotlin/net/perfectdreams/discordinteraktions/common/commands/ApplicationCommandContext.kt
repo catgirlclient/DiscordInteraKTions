@@ -7,11 +7,11 @@ import net.perfectdreams.discordinteraktions.common.InteractionContext
 import net.perfectdreams.discordinteraktions.common.requests.RequestBridge
 import net.perfectdreams.discordinteraktions.common.interactions.InteractionData
 
-open class ApplicationCommandContext(
+public open class ApplicationCommandContext(
     bridge: RequestBridge,
     sender: User,
     channelId: Snowflake,
     data: InteractionData,
     discordInteractionData: DiscordInteraction,
-    val applicationCommandDeclaration: ApplicationCommandDeclaration
+    public val applicationCommandDeclaration: ApplicationCommandDeclaration
 ) : InteractionContext(bridge, sender, channelId, data, discordInteractionData)

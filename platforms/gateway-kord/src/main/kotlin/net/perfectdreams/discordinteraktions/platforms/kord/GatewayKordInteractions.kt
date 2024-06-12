@@ -17,7 +17,7 @@ import net.perfectdreams.discordinteraktions.platforms.kord.utils.KordCommandChe
 import net.perfectdreams.discordinteraktions.platforms.kord.utils.KordComponentChecker
 import net.perfectdreams.discordinteraktions.platforms.kord.utils.KordModalChecker
 
-fun Gateway.installDiscordInteraKTions(interaKTions: DiscordInteraKTions) {
+public fun Gateway.installDiscordInteraKTions(interaKTions: DiscordInteraKTions) {
     on<InteractionCreate> {
         val request = this.interaction
 

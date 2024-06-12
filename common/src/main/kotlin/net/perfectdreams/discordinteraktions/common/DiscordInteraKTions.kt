@@ -1,8 +1,11 @@
 package net.perfectdreams.discordinteraktions.common
 
+import dev.kord.common.entity.DiscordApplicationCommand
 import dev.kord.common.entity.Snowflake
 import dev.kord.core.Kord
 import dev.kord.rest.builder.interaction.*
+import dev.kord.rest.json.request.ApplicationCommandCreateRequest
+import dev.kord.rest.service.RestClient
 import net.perfectdreams.discordinteraktions.common.commands.*
 import net.perfectdreams.discordinteraktions.common.commands.options.InteraKTionsCommandOption
 import net.perfectdreams.discordinteraktions.platforms.kord.utils.KordAutocompleteChecker
@@ -10,22 +13,24 @@ import net.perfectdreams.discordinteraktions.platforms.kord.utils.KordCommandChe
 import net.perfectdreams.discordinteraktions.platforms.kord.utils.KordComponentChecker
 import net.perfectdreams.discordinteraktions.platforms.kord.utils.KordModalChecker
 
-class DiscordInteraKTions(
-    val kord: Kord,
-    val applicationId: Snowflake,
+public class DiscordInteraKTions(
+    public val kord: Kord,
+    public val applicationId: Snowflake,
 ) {
-    val rest = kord.rest
-    val manager = InteractionsManager()
+    public val rest: RestClient = kord.rest
+    public val manager: InteractionsManager = InteractionsManager()
 
-    val autocompleteChecker = KordAutocompleteChecker(kord, manager)
-    val commandChecker = KordCommandChecker(kord, manager)
-    val componentChecker = KordComponentChecker(kord, manager)
-    val modalChecker = KordModalChecker(kord, manager)
+    public val autocompleteChecker: KordAutocompleteChecker = KordAutocompleteChecker(kord, manager)
+    public val commandChecker: KordCommandChecker = KordCommandChecker(kord, manager)
+    public val componentChecker: KordComponentChecker = KordComponentChecker(kord, manager)
+    public val modalChecker: KordModalChecker = KordModalChecker(kord, manager)
 
     /**
      * Upserts all commands in the guild [guildId]
      */
-    suspend fun updateAllCommandsInGuild(guildId: Snowflake) = rest.interaction.createGuildApplicationCommands(
+    public suspend fun updateAllCommandsInGuild(
+        guildId: Snowflake
+    ): List<DiscordApplicationCommand> = rest.interaction.createGuildApplicationCommands(
         applicationId,
         guildId,
         createGuildApplicationCommandCreateRequests()
@@ -34,10 +39,8 @@ class DiscordInteraKTions(
     /**
      * Upserts all global commands
      */
-    suspend fun updateAllGlobalCommands() = rest.interaction.createGlobalApplicationCommands(
-        applicationId,
-        createGlobalApplicationCommandCreateRequests()
-    )
+    public suspend fun updateAllGlobalCommands(): List<DiscordApplicationCommand> =
+        rest.interaction.createGlobalApplicationCommands(applicationId, createGlobalApplicationCommandCreateRequests())
 
     /**
      * Creates a list of guild [ApplicationCommandCreateRequest], which can be used with Kord to register the command on Discord.
@@ -45,11 +48,12 @@ class DiscordInteraKTions(
      * Because [ApplicationCommandCreateRequest] is [Serializable], you can create a hash of the requests and track if your bot needs to send an upsert request do Discord or not,
      * which can be useful to avoid ratelimits.
      */
-    fun createGuildApplicationCommandCreateRequests() = GuildMultiApplicationCommandBuilder().apply {
-        manager.applicationCommandsDeclarations.forEach {
-            convertCommandDeclarationToKord(this, it)
-        }
-    }.build()
+    public fun createGuildApplicationCommandCreateRequests(): List<ApplicationCommandCreateRequest> =
+        GuildMultiApplicationCommandBuilder().apply {
+            manager.applicationCommandsDeclarations.forEach {
+                convertCommandDeclarationToKord(this, it)
+            }
+        }.build()
 
     /**
      * Creates a list of global [ApplicationCommandCreateRequest], which can be used with Kord to register the command on Discord.
@@ -57,11 +61,12 @@ class DiscordInteraKTions(
      * Because [ApplicationCommandCreateRequest] is [Serializable], you can create a hash of the requests and track if your bot needs to send an upsert request do Discord or not,
      * which can be useful to avoid ratelimits.
      */
-    fun createGlobalApplicationCommandCreateRequests() = GlobalMultiApplicationCommandBuilder().apply {
-        manager.applicationCommandsDeclarations.forEach {
-            convertCommandDeclarationToKord(this, it)
-        }
-    }.build()
+    public fun createGlobalApplicationCommandCreateRequests(): List<ApplicationCommandCreateRequest> =
+        GlobalMultiApplicationCommandBuilder().apply {
+            manager.applicationCommandsDeclarations.forEach {
+                convertCommandDeclarationToKord(this, it)
+            }
+        }.build()
 
     private fun convertCommandDeclarationToKord(
         builder: MultiApplicationCommandBuilder,
@@ -131,10 +136,10 @@ class DiscordInteraKTions(
         val commandData = SubCommandBuilder(declaration.name, declaration.description).apply {
             nameLocalizations = declaration.nameLocalizations?.toMutableMap()
             descriptionLocalizations = declaration.descriptionLocalizations?.toMutableMap()
-            options = mutableListOf() // Initialize a empty list so we can use it
+            options = mutableListOf() // Initialize an empty list so we can use it
         }
 
-        // This is a subcommand, so we SHOUlD have an non-null executor
+        // This is a subcommand, so we SHOUlD have a non-null executor
         val executor = declaration.executor
 
         require(executor != null) { "Subcommand without a executor!" }
@@ -150,9 +155,9 @@ class DiscordInteraKTions(
         val commandData = GroupCommandBuilder(declaration.name, declaration.description).apply {
             nameLocalizations = declaration.nameLocalizations?.toMutableMap()
             descriptionLocalizations = declaration.descriptionLocalizations?.toMutableMap()
-            options = mutableListOf() // Initialize a empty list so we can use it
+            options = mutableListOf() // Initialize an empty list so we can use it
         }
-        commandData.options = mutableListOf() // Initialize a empty list so we can use it
+        commandData.options = mutableListOf() // Initialize an empty list so we can use it
 
         declaration.subcommands.forEach {
             commandData.options?.add(convertSubcommandDeclarationToKord(it))
@@ -166,7 +171,7 @@ class DiscordInteraKTions(
     }
 }
 
-fun DiscordInteraKTions(token: String, applicationId: Snowflake) = DiscordInteraKTions(
+public fun DiscordInteraKTions(token: String, applicationId: Snowflake): DiscordInteraKTions = DiscordInteraKTions(
     Kord.restOnly(token),
     applicationId
 )

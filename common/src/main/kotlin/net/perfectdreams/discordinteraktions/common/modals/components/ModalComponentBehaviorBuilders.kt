@@ -2,29 +2,29 @@ package net.perfectdreams.discordinteraktions.common.modals.components
 
 import dev.kord.common.entity.TextInputStyle
 
-abstract class ModalComponentBehaviorBuilder<T, ChoiceableType>(
-    val id: String,
-    val required: Boolean
+public abstract class ModalComponentBehaviorBuilder<T, ChoiceableType>(
+    public val id: String,
+    public val required: Boolean
 ) {
-    abstract fun build(): InteraKTionsModalComponent<*>
+    public abstract fun build(): InteraKTionsModalComponent<*>
 }
 
 // ===[ TEXT INPUT ]===
-abstract class TextInputModalComponentBehaviorBuilderBase<T>(
+public abstract class TextInputModalComponentBehaviorBuilderBase<T>(
     id: String,
     required: Boolean,
-    val style: TextInputStyle
+    public val style: TextInputStyle
 ) : ModalComponentBehaviorBuilder<T, String>(id, required) {
-    var minLength: Int? = null
-    var maxLength: Int? = null
-    var allowedLength: IntRange
+    public var minLength: Int? = null
+    public var maxLength: Int? = null
+    public var allowedLength: IntRange
         get() = error("This is a settable property only")
         set(value) {
             minLength = value.first
             maxLength = value.last
         }
 
-    override fun build() = TextInputModalComponent(
+    override fun build(): TextInputModalComponent = TextInputModalComponent(
         id,
         required,
         style,
@@ -33,12 +33,12 @@ abstract class TextInputModalComponentBehaviorBuilderBase<T>(
     )
 }
 
-class TextInputModalComponentBehaviorBuilder(
+public class TextInputModalComponentBehaviorBuilder(
     id: String,
     style: TextInputStyle
 ) : TextInputModalComponentBehaviorBuilderBase<String>(id, true, style)
 
-class NullableTextInputModalComponentBehaviorBuilder(
+public class NullableTextInputModalComponentBehaviorBuilder(
     id: String,
     style: TextInputStyle
 ) : TextInputModalComponentBehaviorBuilderBase<String?>(id, false, style)

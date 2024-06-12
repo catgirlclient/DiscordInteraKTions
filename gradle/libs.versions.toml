@@ -1,6 +1,15 @@
 [versions]
-kord = "0.10.0"
-ktor = "2.3.0"
+
+kotlin = "2.0.0"
+kord = "0.15.0-SNAPSHOT"
+dokka = "1.9.20"
+binary-compatibility-validator = "0.15.0-Beta.2"
+# jda = "5.0.0-beta.20"
+ktor = "2.3.11"
+serialization = "1.7.0"
+coroutines = "1.9.0-RC"
+kotlin-logging = "6.0.9"
+logback = "1.4.12"
 
 [libraries]
 kord-core = { module = "dev.kord:kord-core", version.ref = "kord" }
@@ -8,3 +17,26 @@ kord-rest = { module = "dev.kord:kord-rest", version.ref = "kord" }
 kord-common = { module = "dev.kord:kord-common", version.ref = "kord" }
 kord-gateway = { module = "dev.kord:kord-gateway", version.ref = "kord" }
 ktor-server-netty = { module = "io.ktor:ktor-server-netty", version.ref = "ktor" }
+
+coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+reflect = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin"}
+serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization" }
+stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin"}
+
+kotlin-logging = { module = "io.github.oshai:kotlin-logging-jvm", version.ref = "kotlin-logging" }
+
+# Test library libs
+logback = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
+
+kotlin-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+kotlin-serialization-plugin = { module = "org.jetbrains.kotlin:kotlin-serialization", version.ref = "kotlin" }
+dokka-plugin = { module = "org.jetbrains.dokka:dokka-gradle-plugin", version.ref = "dokka" }
+binary-compatibility-validator-plugin = { module = "org.jetbrains.kotlinx:binary-compatibility-validator", version.ref = "binary-compatibility-validator" }
+
+[bundles]
+buildSrc = [
+    "kotlin-plugin",
+    "kotlin-serialization-plugin",
+    "dokka-plugin",
+    "binary-compatibility-validator-plugin"
+]

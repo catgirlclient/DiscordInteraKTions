@@ -1,25 +1,16 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import live.shuuyu.scripts.utils.Project
+import org.jetbrains.dokka.base.DokkaBase
+import org.jetbrains.dokka.base.DokkaBaseConfiguration
+import org.jetbrains.dokka.gradle.AbstractDokkaTask
+import java.time.Year
 
 plugins {
-    kotlin("jvm") version "1.8.21" apply false
-    kotlin("plugin.serialization") version "1.8.21" apply false
-    id("org.jetbrains.dokka") version "1.8.20"
-    `maven-publish`
-    java
+    org.jetbrains.dokka
 }
 
-val discordInteraKTionsVersion = "0.0.19"
-group = "net.perfectdreams.discordinteraktions"
-version = discordInteraKTionsVersion
-
-repositories {
-    mavenCentral()
-}
-
-allprojects {
-    repositories {
-        mavenCentral()
-        maven("https://oss.sonatype.org/content/repositories/snapshots")
+buildscript {
+    dependencies {
+        classpath("org.jetbrains.dokka:dokka-base:1.9.20")
     }
 
     tasks.withType<KotlinCompile> {
@@ -27,17 +18,13 @@ allprojects {
     }
 }
 
-subprojects {
-    apply<MavenPublishPlugin>()
-    version = discordInteraKTionsVersion
+group = Project.GROUP
+version = Project.VERSION
 
-    publishing {
-        repositories {
-            maven {
-                name = "PerfectDreams"
-                url = uri("https://repo.perfectdreams.net/")
-                credentials(PasswordCredentials::class)
-            }
+allprojects {
+    tasks.withType<AbstractDokkaTask> {
+        pluginConfiguration<DokkaBase, DokkaBaseConfiguration> {
+            footerMessage = "© ${Year.now().value} Shuuyu"
         }
     }
 }

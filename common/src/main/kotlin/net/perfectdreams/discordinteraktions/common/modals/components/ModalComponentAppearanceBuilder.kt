@@ -1,6 +1,6 @@
 package net.perfectdreams.discordinteraktions.common.modals.components
 
-class TextInputComponentAppearanceBuilder {
-    var placeholder: String? = null
-    var value: String? = null
+public class TextInputComponentAppearanceBuilder {
+    public var placeholder: String? = null
+    public var value: String? = null
 }

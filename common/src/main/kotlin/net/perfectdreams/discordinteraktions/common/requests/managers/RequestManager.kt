@@ -7,14 +7,14 @@ import net.perfectdreams.discordinteraktions.common.builder.message.modify.Inter
 import net.perfectdreams.discordinteraktions.common.entities.messages.EditableMessage
 import net.perfectdreams.discordinteraktions.common.requests.RequestBridge
 
-abstract class RequestManager(val bridge: RequestBridge) {
+public abstract class RequestManager(public val bridge: RequestBridge) {
     /**
      * A deferred response is the one that you can use to
      * be able to edit the original message for 15 minutes since it was sent.
      *
      * The user will just see a loading status for the interaction.
      */
-    abstract suspend fun deferChannelMessage()
+    public abstract suspend fun deferChannelMessage()
 
     /**
      * A deferred response is the one that you can use to
@@ -22,17 +22,17 @@ abstract class RequestManager(val bridge: RequestBridge) {
      *
      * The user will just see a loading status for the interaction.
      */
-    abstract suspend fun deferChannelMessageEphemerally()
+    public abstract suspend fun deferChannelMessageEphemerally()
 
     /**
      * The usual way of sending messages to a specific channel/user.
      */
-    abstract suspend fun sendPublicMessage(message: InteractionOrFollowupMessageCreateBuilder): EditableMessage
+    public abstract suspend fun sendPublicMessage(message: InteractionOrFollowupMessageCreateBuilder): EditableMessage
 
     /**
      * The usual way of sending messages to a specific channel/user.
      */
-    abstract suspend fun sendEphemeralMessage(message: InteractionOrFollowupMessageCreateBuilder): EditableMessage
+    public abstract suspend fun sendEphemeralMessage(message: InteractionOrFollowupMessageCreateBuilder): EditableMessage
 
     /**
      * A deferred response is the one that you can use to
@@ -40,18 +40,18 @@ abstract class RequestManager(val bridge: RequestBridge) {
      *
      * The user will not see a loading status for the interaction.
      */
-    abstract suspend fun deferUpdateMessage()
+    public abstract suspend fun deferUpdateMessage()
 
     /**
      * The usual way of editing a message to a specific channel/user.
      */
-    abstract suspend fun updateMessage(message: InteractionOrFollowupMessageModifyBuilder): EditableMessage
+    public abstract suspend fun updateMessage(message: InteractionOrFollowupMessageModifyBuilder): EditableMessage
 
-    abstract suspend fun sendStringAutocomplete(list: List<Choice<String>>)
+    public abstract suspend fun sendStringAutocomplete(list: List<Choice.StringChoice>)
 
-    abstract suspend fun sendIntegerAutocomplete(list: List<Choice<Long>>)
+    public abstract suspend fun sendIntegerAutocomplete(list: List<Choice.IntegerChoice>)
 
-    abstract suspend fun sendNumberAutocomplete(list: List<Choice<Double>>)
+    public abstract suspend fun sendNumberAutocomplete(list: List<Choice.NumberChoice>)
 
-    abstract suspend fun sendModal(title: String, customId: String, builder: ModalBuilder.() -> Unit)
+    public abstract suspend fun sendModal(title: String, customId: String, builder: ModalBuilder.() -> Unit)
 }

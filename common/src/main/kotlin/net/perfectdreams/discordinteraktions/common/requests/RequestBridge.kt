@@ -12,12 +12,12 @@ import net.perfectdreams.discordinteraktions.common.utils.Observable
  *
  * @param state a [Observable] interaction request state
  */
-class RequestBridge(
-    val state: Observable<InteractionRequestState>
+public class RequestBridge(
+    public val state: Observable<InteractionRequestState>
 ) {
-    var _manager: RequestManager? = null
+    public var _manager: RequestManager? = null
 
-    var manager: RequestManager
+    public var manager: RequestManager
         get() = _manager ?: throw IllegalArgumentException("RequestManager is null!")
         set(value) {
             _manager = value

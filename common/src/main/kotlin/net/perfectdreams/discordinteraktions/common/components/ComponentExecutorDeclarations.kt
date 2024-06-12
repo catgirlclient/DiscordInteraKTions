@@ -2,7 +2,7 @@ package net.perfectdreams.discordinteraktions.common.components
 
 import net.perfectdreams.discordinteraktions.platforms.kord.commands.CommandDeclarationUtils
 
-sealed class ComponentExecutorDeclaration(
+public sealed class ComponentExecutorDeclaration(
     /**
      * The [parent] is Any? to avoid issues with anonymous classes
      *
@@ -10,14 +10,14 @@ sealed class ComponentExecutorDeclaration(
      *
      * If [parent] is null when the class is initialized, the declaration will try to find the parent by using Reflection!
      */
-    var parent: Any? = null,
+    public var parent: Any? = null,
 
     /**
      * The executor's ID, this is stored in the button, to be able to figure out what executor should be used
      *
      * All button executors should be unique!
      */
-    val id: String,
+    public val id: String,
 
     /**
      * The RegEx that the [id] will be validated against
@@ -28,10 +28,10 @@ sealed class ComponentExecutorDeclaration(
      */
     idRegex: Regex = ID_REGEX
 ) {
-    constructor(id: String, idRegex: Regex = ID_REGEX) : this(null, id, idRegex)
+    private constructor(id: String, idRegex: Regex = ID_REGEX) : this(null, id, idRegex)
 
-    companion object {
-        val ID_REGEX = Regex("[A-z0-9]+")
+    public companion object {
+        public val ID_REGEX: Regex = Regex("[A-z0-9]+")
     }
 
     init {
@@ -42,16 +42,16 @@ sealed class ComponentExecutorDeclaration(
     }
 }
 
-open class ButtonExecutorDeclaration(
+public open class ButtonExecutorDeclaration(
     parent: Any? = null,
     id: String
 ) : ComponentExecutorDeclaration(parent, id) {
-    constructor(id: String) : this(null, id)
+    public constructor(id: String) : this(null, id)
 }
 
-open class SelectMenuExecutorDeclaration(
+public open class SelectMenuExecutorDeclaration(
     parent: Any? = null,
     id: String
 ) : ComponentExecutorDeclaration(parent, id) {
-    constructor(id: String) : this(null, id)
+    public constructor(id: String) : this(null, id)
 }

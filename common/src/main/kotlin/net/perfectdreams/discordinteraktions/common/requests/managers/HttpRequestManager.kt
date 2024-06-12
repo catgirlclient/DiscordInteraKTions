@@ -22,13 +22,13 @@ import net.perfectdreams.discordinteraktions.platforms.kord.entities.messages.Ko
  * @param applicationId The bot's application id
  * @param interactionToken The request's token
  */
-class HttpRequestManager(
+public class HttpRequestManager(
     bridge: RequestBridge,
-    val kord: Kord,
-    val applicationId: Snowflake,
-    val interactionToken: String
+    public val kord: Kord,
+    public val applicationId: Snowflake,
+    public val interactionToken: String
 ) : RequestManager(bridge) {
-    companion object {
+    public companion object {
         private val logger = KotlinLogging.logger {}
     }
 
@@ -36,9 +36,9 @@ class HttpRequestManager(
         require(bridge.state.value != InteractionRequestState.NOT_REPLIED_YET) { "HttpRequestManager shouldn't be in the NOT_REPLIED_YET state!" }
     }
 
-    override suspend fun deferChannelMessage() = error("Can't defer a interaction that was already deferred!")
+    override suspend fun deferChannelMessage(): Nothing = error("Can't defer a interaction that was already deferred!")
 
-    override suspend fun deferChannelMessageEphemerally() = error("Can't defer a interaction that was already deferred!")
+    override suspend fun deferChannelMessageEphemerally(): Nothing = error("Can't defer a interaction that was already deferred!")
 
     override suspend fun sendPublicMessage(message: InteractionOrFollowupMessageCreateBuilder): EditableMessage {
         // *Technically* we can respond to the initial interaction via HTTP too
@@ -76,7 +76,7 @@ class HttpRequestManager(
         )
     }
 
-    override suspend fun deferUpdateMessage() = error("Can't defer a interaction that was already deferred!")
+    override suspend fun deferUpdateMessage(): Nothing = error("Can't defer a interaction that was already deferred!")
 
     override suspend fun updateMessage(message: InteractionOrFollowupMessageModifyBuilder): EditableMessage {
         val interactionMessage = KordOriginalInteractionPublicMessage(
@@ -92,11 +92,15 @@ class HttpRequestManager(
         return newMessage
     }
 
-    override suspend fun sendStringAutocomplete(list: List<Choice<String>>) = error("Can't send a autocomplete request via the HttpRequestManager!")
+    override suspend fun sendStringAutocomplete(list: List<Choice.StringChoice>): Nothing =
+        error("Can't send a autocomplete request via the HttpRequestManager!")
 
-    override suspend fun sendIntegerAutocomplete(list: List<Choice<Long>>) = error("Can't send a autocomplete request via the HttpRequestManager!")
+    override suspend fun sendIntegerAutocomplete(list: List<Choice.IntegerChoice>): Nothing =
+        error("Can't send a autocomplete request via the HttpRequestManager!")
 
-    override suspend fun sendNumberAutocomplete(list: List<Choice<Double>>) = error("Can't send a autocomplete request via the HttpRequestManager!")
+    override suspend fun sendNumberAutocomplete(list: List<Choice.NumberChoice>): Nothing =
+        error("Can't send a autocomplete request via the HttpRequestManager!")
 
-    override suspend fun sendModal(title: String, customId: String, builder: ModalBuilder.() -> Unit) = error("Can't send a form to a interaction that was already deferred!")
+    override suspend fun sendModal(title: String, customId: String, builder: ModalBuilder.() -> Unit): Nothing =
+        error("Can't send a form to a interaction that was already deferred!")
 }

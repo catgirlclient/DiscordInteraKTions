@@ -19,37 +19,37 @@ import kotlin.contracts.contract
 /**
  * Base message builder, used to share common properties and extension methods between create and modify builders.
  */
-interface MessageBuilder {
+public interface MessageBuilder {
     /**
      * The text content of the message.
      */
-    var content: String?
+    public var content: String?
 
     /**
      * The embedded content of the message.
      */
-    var embeds: MutableList<EmbedBuilder>?
+    public var embeds: MutableList<EmbedBuilder>?
 
     /**
      * The mentions in this message that are allowed to raise a notification.
      * Setting this to null will default to creating notifications for all mentions.
      */
-    var allowedMentions: AllowedMentionsBuilder?
+    public var allowedMentions: AllowedMentionsBuilder?
 
     /**
      * The message components to include in this message.
      */
-    var components: MutableList<MessageComponentBuilder>?
+    public var components: MutableList<MessageComponentBuilder>?
 
     /**
      * The files to include as attachments.
      */
-    var files: MutableList<NamedFile>?
+    public var files: MutableList<NamedFile>?
 
     /**
      * Adds a file with the [name] and [content] to the attachments.
      */
-    fun addFile(name: String, content: InputStream) {
+    public fun addFile(name: String, content: InputStream) {
         val files = this.files ?: mutableListOf()
         files += NamedFile(name, ChannelProvider { content.toByteReadChannel() })
         this.files = files
@@ -58,16 +58,18 @@ interface MessageBuilder {
     /**
      * Adds a file with the given [path] to the attachments.
      */
-    suspend fun addFile(path: Path) = withContext(Dispatchers.IO) {
+    public suspend fun addFile(path: Path): Unit = withContext(Dispatchers.IO) {
         addFile(path.fileName.toString(), Files.newInputStream(path))
     }
 }
 
+
 @OptIn(ExperimentalContracts::class)
-inline fun MessageBuilder.embed(block: EmbedBuilder.() -> Unit) {
+public inline fun MessageBuilder.embed(block: EmbedBuilder.() -> (Unit)) {
     contract {
         callsInPlace(block, InvocationKind.EXACTLY_ONCE)
     }
+
     embeds = (embeds ?: mutableListOf()).also {
         it.add(EmbedBuilder().apply(block))
     }
@@ -79,19 +81,21 @@ inline fun MessageBuilder.embed(block: EmbedBuilder.() -> Unit) {
  * pings being ignored.
  */
 @OptIn(ExperimentalContracts::class)
-inline fun MessageBuilder.allowedMentions(block: AllowedMentionsBuilder.() -> Unit = {}) {
+public inline fun MessageBuilder.allowedMentions(block: AllowedMentionsBuilder.() -> (Unit) = {}) {
     contract {
         callsInPlace(block, InvocationKind.EXACTLY_ONCE)
     }
+
     allowedMentions = (allowedMentions ?: AllowedMentionsBuilder()).apply(block)
 }
 
 
 @OptIn(ExperimentalContracts::class)
-inline fun MessageBuilder.actionRow(builder: ActionRowBuilder.() -> Unit) {
+public inline fun MessageBuilder.actionRow(builder: ActionRowBuilder.() -> (Unit)) {
     contract {
         callsInPlace(builder, InvocationKind.EXACTLY_ONCE)
     }
+
     components = (components ?: mutableListOf()).also {
         it.add(ActionRowBuilder().apply(builder))
     }

@@ -8,12 +8,12 @@ import net.perfectdreams.discordinteraktions.common.builder.message.MessageBuild
  * The base builder for creating a new message.
  */
 // From Kord
-sealed interface MessageCreateBuilder : MessageBuilder {
+public sealed interface MessageCreateBuilder : MessageBuilder {
     /**
      * Whether this message should be played as a text-to-speech message.
      */
-    var tts: Boolean?
+    public var tts: Boolean?
 
-    fun toFollowupMessageCreateBuilder(): FollowupMessageCreateBuilder
-    fun toInteractionMessageResponseCreateBuilder(): InteractionResponseCreateBuilder
+    public fun toFollowupMessageCreateBuilder(): FollowupMessageCreateBuilder
+    public fun toInteractionMessageResponseCreateBuilder(): InteractionResponseCreateBuilder
 }

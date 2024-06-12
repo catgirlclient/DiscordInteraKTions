@@ -27,7 +27,7 @@ import net.perfectdreams.discordinteraktions.verifier.InteractionRequestVerifier
  *
  * @see InteractionsServer
  */
-fun Routing.installDiscordInteractions(
+public fun Routing.installDiscordInteractions(
     publicKey: String,
     path: String,
     handler: InteractionRequestHandler,
@@ -63,7 +63,7 @@ fun Routing.installDiscordInteractions(
         )
 
         if (!verified) {
-            call.respondText("", ContentType.Application.Json, HttpStatusCode.Unauthorized)
+            call.respondText("Unauthorized placeholder", ContentType.Application.Json, HttpStatusCode.Unauthorized)
             return@post
         }
 
@@ -73,18 +73,22 @@ fun Routing.installDiscordInteractions(
         // Kord still has some fields missing (like "deaf") so we need to decode the DiscordInteraction object while ignoring missing fields
         when (type) {
             InteractionType.Ping.type -> handler.onPing(call)
+
             InteractionType.ApplicationCommand.type -> {
                 val interaction = InteractionsServer.json.decodeFromString<DiscordInteraction>(text)
                 handler.onCommand(call, interaction)
             }
+
             InteractionType.Component.type -> {
                 val interaction = InteractionsServer.json.decodeFromString<DiscordInteraction>(text)
                 handler.onComponent(call, interaction)
             }
+
             InteractionType.AutoComplete.type -> {
                 val interaction = InteractionsServer.json.decodeFromString<DiscordInteraction>(text)
                 handler.onAutocomplete(call, interaction)
             }
+
             InteractionType.ModalSubmit.type -> {
                 val interaction = InteractionsServer.json.decodeFromString<DiscordInteraction>(text)
                 handler.onModalSubmit(call, interaction)

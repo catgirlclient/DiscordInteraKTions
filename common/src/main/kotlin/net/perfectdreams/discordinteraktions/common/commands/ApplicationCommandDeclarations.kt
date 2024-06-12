@@ -6,45 +6,45 @@ import dev.kord.common.entity.Permissions
 /**
  * Base class of every application declaration, because all interactions share a [name]
  */
-sealed class ApplicationCommandDeclaration {
-    abstract val name: String
-    abstract val nameLocalizations: Map<Locale, String>?
+public sealed class ApplicationCommandDeclaration {
+    public abstract val name: String
+    public abstract val nameLocalizations: Map<Locale, String>?
 }
 
-abstract class SlashCommandDeclaration : ApplicationCommandDeclaration() {
-    abstract val description: String
-    abstract val descriptionLocalizations: Map<Locale, String>?
-    abstract val executor: SlashCommandExecutor?
-    abstract val defaultMemberPermissions: Permissions?
-    abstract val dmPermission: Boolean?
-    abstract val subcommands: List<SlashCommandDeclaration>
-    abstract val subcommandGroups: List<SlashCommandGroupDeclaration>
-    abstract val nsfw: Boolean?
+public abstract class SlashCommandDeclaration : ApplicationCommandDeclaration() {
+    public abstract val description: String
+    public abstract val descriptionLocalizations: Map<Locale, String>?
+    public abstract val executor: SlashCommandExecutor?
+    public abstract val defaultMemberPermissions: Permissions?
+    public abstract val dmPermission: Boolean?
+    public abstract val subcommands: List<SlashCommandDeclaration>
+    public abstract val subcommandGroups: List<SlashCommandGroupDeclaration>
+    public abstract val nsfw: Boolean?
 }
 
-abstract class SlashCommandGroupDeclaration : ApplicationCommandDeclaration() {
-    abstract val description: String
-    abstract val descriptionLocalizations: Map<Locale, String>?
-    abstract val subcommands: List<SlashCommandDeclaration>
-    abstract val nsfw: Boolean?
+public abstract class SlashCommandGroupDeclaration : ApplicationCommandDeclaration() {
+    public abstract val description: String
+    public abstract val descriptionLocalizations: Map<Locale, String>?
+    public abstract val subcommands: List<SlashCommandDeclaration>
+    public abstract val nsfw: Boolean?
 }
 
-abstract class UserCommandDeclaration : ApplicationCommandDeclaration() {
-    abstract val defaultMemberPermissions: Permissions?
-    abstract val executor: UserCommandExecutor // User/Message commands always requires an executor, that's why it is not nullable!
-    abstract val dmPermission: Boolean?
-    abstract val nsfw: Boolean?
+public abstract class UserCommandDeclaration : ApplicationCommandDeclaration() {
+    public abstract val defaultMemberPermissions: Permissions?
+    public abstract val executor: UserCommandExecutor // User/Message commands always requires an executor, that's why it is not nullable!
+    public abstract val dmPermission: Boolean?
+    public abstract val nsfw: Boolean?
 }
 
-abstract class MessageCommandDeclaration : ApplicationCommandDeclaration() {
-    abstract val defaultMemberPermissions: Permissions?
-    abstract val executor: MessageCommandExecutor // User/Message commands always requires an executor, that's why it is not nullable!
-    abstract val dmPermission: Boolean?
-    abstract val nsfw: Boolean?
+public abstract class MessageCommandDeclaration : ApplicationCommandDeclaration() {
+    public abstract val defaultMemberPermissions: Permissions?
+    public abstract val executor: MessageCommandExecutor // User/Message commands always requires an executor, that's why it is not nullable!
+    public abstract val dmPermission: Boolean?
+    public abstract val nsfw: Boolean?
 }
 
 // ===[ DEFAULT IMPLEMENTATIONS ]===
-class InteraKTionsSlashCommandDeclaration(
+public class InteraKTionsSlashCommandDeclaration(
     override val name: String,
     override val nameLocalizations: Map<Locale, String>? = null,
     override val description: String,
@@ -57,7 +57,7 @@ class InteraKTionsSlashCommandDeclaration(
     override val nsfw: Boolean?
 ) : SlashCommandDeclaration()
 
-class InteraKTionsSlashCommandGroupDeclaration(
+public class InteraKTionsSlashCommandGroupDeclaration(
     override val name: String,
     override val nameLocalizations: Map<Locale, String>? = null,
     override val description: String,
@@ -66,7 +66,7 @@ class InteraKTionsSlashCommandGroupDeclaration(
     override val nsfw: Boolean?
 ) : SlashCommandGroupDeclaration()
 
-class InteraKTionsUserCommandDeclaration(
+public class InteraKTionsUserCommandDeclaration(
     override val name: String,
     override val nameLocalizations: Map<Locale, String>? = null,
     override val executor: UserCommandExecutor,
@@ -75,7 +75,7 @@ class InteraKTionsUserCommandDeclaration(
     override val nsfw: Boolean?
 ) : UserCommandDeclaration()
 
-class InteraKTionsMessageCommandDeclaration(
+public class InteraKTionsMessageCommandDeclaration(
     override val name: String,
     override val nameLocalizations: Map<Locale, String>? = null,
     override val executor: MessageCommandExecutor,

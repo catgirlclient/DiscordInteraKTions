@@ -1,0 +1,65 @@
+public final class net/perfectdreams/discordinteraktions/webserver/DefaultInteractionRequestHandler : net/perfectdreams/discordinteraktions/webserver/InteractionRequestHandler {
+	public static final field Companion Lnet/perfectdreams/discordinteraktions/webserver/DefaultInteractionRequestHandler$Companion;
+	public fun <init> (Lnet/perfectdreams/discordinteraktions/common/DiscordInteraKTions;)V
+	public final fun getInteraKTions ()Lnet/perfectdreams/discordinteraktions/common/DiscordInteraKTions;
+	public fun onAutocomplete (Lio/ktor/server/application/ApplicationCall;Ldev/kord/common/entity/DiscordInteraction;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun onCommand (Lio/ktor/server/application/ApplicationCall;Ldev/kord/common/entity/DiscordInteraction;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun onComponent (Lio/ktor/server/application/ApplicationCall;Ldev/kord/common/entity/DiscordInteraction;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun onModalSubmit (Lio/ktor/server/application/ApplicationCall;Ldev/kord/common/entity/DiscordInteraction;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun onPing (Lio/ktor/server/application/ApplicationCall;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class net/perfectdreams/discordinteraktions/webserver/DefaultInteractionRequestHandler$Companion {
+}
+
+public abstract class net/perfectdreams/discordinteraktions/webserver/InteractionRequestHandler {
+	public fun <init> ()V
+	public fun onAutocomplete (Lio/ktor/server/application/ApplicationCall;Ldev/kord/common/entity/DiscordInteraction;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun onCommand (Lio/ktor/server/application/ApplicationCall;Ldev/kord/common/entity/DiscordInteraction;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun onComponent (Lio/ktor/server/application/ApplicationCall;Ldev/kord/common/entity/DiscordInteraction;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun onModalSubmit (Lio/ktor/server/application/ApplicationCall;Ldev/kord/common/entity/DiscordInteraction;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun onPing (Lio/ktor/server/application/ApplicationCall;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class net/perfectdreams/discordinteraktions/webserver/InteractionsServer {
+	public static final field Companion Lnet/perfectdreams/discordinteraktions/webserver/InteractionsServer$Companion;
+	public fun <init> (Lnet/perfectdreams/discordinteraktions/common/DiscordInteraKTions;Ljava/lang/String;I)V
+	public synthetic fun <init> (Lnet/perfectdreams/discordinteraktions/common/DiscordInteraKTions;Ljava/lang/String;IILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun getInteraKTions ()Lnet/perfectdreams/discordinteraktions/common/DiscordInteraKTions;
+	public final fun getInteractionRequestHandler ()Lnet/perfectdreams/discordinteraktions/webserver/InteractionRequestHandler;
+	public final fun getInteractionsManager ()Lnet/perfectdreams/discordinteraktions/common/commands/InteractionsManager;
+	public final fun getPort ()I
+	public final fun getPublicKey ()Ljava/lang/String;
+	public final fun start ()V
+}
+
+public final class net/perfectdreams/discordinteraktions/webserver/InteractionsServer$Companion {
+	public final fun getJson ()Lkotlinx/serialization/json/Json;
+}
+
+public final class net/perfectdreams/discordinteraktions/webserver/KtorInteractionsKt {
+	public static final fun installDiscordInteractions (Lio/ktor/server/routing/Routing;Ljava/lang/String;Ljava/lang/String;Lnet/perfectdreams/discordinteraktions/webserver/InteractionRequestHandler;)V
+}
+
+public final class net/perfectdreams/discordinteraktions/webserver/requests/managers/WebServerRequestManager : net/perfectdreams/discordinteraktions/common/requests/managers/RequestManager {
+	public static final field Companion Lnet/perfectdreams/discordinteraktions/webserver/requests/managers/WebServerRequestManager$Companion;
+	public fun <init> (Lnet/perfectdreams/discordinteraktions/common/requests/RequestBridge;Ldev/kord/core/Kord;Ldev/kord/common/entity/Snowflake;Ljava/lang/String;Lio/ktor/server/application/ApplicationCall;)V
+	public fun deferChannelMessage (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun deferChannelMessageEphemerally (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun deferUpdateMessage (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun getApplicationId ()Ldev/kord/common/entity/Snowflake;
+	public final fun getCall ()Lio/ktor/server/application/ApplicationCall;
+	public final fun getInteractionToken ()Ljava/lang/String;
+	public final fun getKord ()Ldev/kord/core/Kord;
+	public fun sendEphemeralMessage (Lnet/perfectdreams/discordinteraktions/common/builder/message/create/InteractionOrFollowupMessageCreateBuilder;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun sendIntegerAutocomplete (Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun sendModal (Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun sendNumberAutocomplete (Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun sendPublicMessage (Lnet/perfectdreams/discordinteraktions/common/builder/message/create/InteractionOrFollowupMessageCreateBuilder;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun sendStringAutocomplete (Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun updateMessage (Lnet/perfectdreams/discordinteraktions/common/builder/message/modify/InteractionOrFollowupMessageModifyBuilder;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class net/perfectdreams/discordinteraktions/webserver/requests/managers/WebServerRequestManager$Companion {
+}
+

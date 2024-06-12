@@ -17,17 +17,17 @@ import net.perfectdreams.discordinteraktions.common.utils.Observable
  *
  * This is useful if you are trying to reply to an interaction where you only have its essential information (like the interaction token).
  */
-open class BarebonesInteractionContext(
-    var bridge: RequestBridge
+public open class BarebonesInteractionContext(
+    public var bridge: RequestBridge
 ) {
-    val isDeferred
+    public val isDeferred: Boolean
         get() = bridge.state.value != InteractionRequestState.NOT_REPLIED_YET
-    var wasInitiallyDeferredEphemerally = false
+    public var wasInitiallyDeferredEphemerally: Boolean = false
 
     /**
      * Defers the application command request message with a public message
      */
-    suspend fun deferChannelMessage() {
+    public suspend fun deferChannelMessage() {
         if (isDeferred)
             error("Trying to defer something that was already deferred!")
 
@@ -38,7 +38,7 @@ open class BarebonesInteractionContext(
     /**
      * Defers the application command request message with a ephemeral message
      */
-    suspend fun deferChannelMessageEphemerally() {
+    public suspend fun deferChannelMessageEphemerally() {
         if (isDeferred)
             error("Trying to defer something that was already deferred!")
 
@@ -46,13 +46,13 @@ open class BarebonesInteractionContext(
         wasInitiallyDeferredEphemerally = true
     }
 
-    suspend inline fun sendMessage(block: InteractionOrFollowupMessageCreateBuilder.() -> (Unit))
-            = sendPublicMessage(InteractionOrFollowupMessageCreateBuilder(false).apply(block))
+    public suspend inline fun sendMessage(block: InteractionOrFollowupMessageCreateBuilder.() -> (Unit)): EditableMessage =
+        sendPublicMessage(InteractionOrFollowupMessageCreateBuilder(false).apply(block))
 
-    suspend inline fun sendEphemeralMessage(block: InteractionOrFollowupMessageCreateBuilder.() -> (Unit))
-            = sendEphemeralMessage(InteractionOrFollowupMessageCreateBuilder(true).apply(block))
+    public suspend inline fun sendEphemeralMessage(block: InteractionOrFollowupMessageCreateBuilder.() -> (Unit)): EditableMessage =
+        sendEphemeralMessage(InteractionOrFollowupMessageCreateBuilder(true).apply(block))
 
-    suspend fun sendPublicMessage(message: InteractionOrFollowupMessageCreateBuilder): EditableMessage {
+    public suspend fun sendPublicMessage(message: InteractionOrFollowupMessageCreateBuilder): EditableMessage {
         // Check if state matches what we expect
         if (bridge.state.value == InteractionRequestState.DEFERRED_CHANNEL_MESSAGE)
             if (wasInitiallyDeferredEphemerally)
@@ -67,7 +67,7 @@ open class BarebonesInteractionContext(
         return bridge.manager.sendPublicMessage(message)
     }
 
-    suspend fun sendEphemeralMessage(message: InteractionOrFollowupMessageCreateBuilder): EditableMessage {
+    public suspend fun sendEphemeralMessage(message: InteractionOrFollowupMessageCreateBuilder): EditableMessage {
         // Check if state matches what we expect
         if (bridge.state.value == InteractionRequestState.DEFERRED_CHANNEL_MESSAGE)
             if (!wasInitiallyDeferredEphemerally)
@@ -82,10 +82,27 @@ open class BarebonesInteractionContext(
         return bridge.manager.sendEphemeralMessage(message)
     }
 
-    suspend fun sendModal(declaration: ModalExecutorDeclaration, title: String, builder: ModalBuilder.() -> (Unit)) = sendModal(declaration.id, title, builder)
-    suspend fun sendModal(declaration: ModalExecutorDeclaration, data: String, title: String, builder: ModalBuilder.() -> (Unit)) = sendModal(declaration.id, data, title, builder)
-    suspend fun sendModal(id: String, data: String, title: String, builder: ModalBuilder.() -> (Unit)) = sendModal("$id:$data", title, builder)
-    suspend fun sendModal(idWithData: String, title: String, builder: ModalBuilder.() -> (Unit)) {
+    public suspend fun sendModal(
+        declaration: ModalExecutorDeclaration,
+        title: String,
+        builder: ModalBuilder.() -> (Unit)
+    ): Unit = sendModal(declaration.id, title, builder)
+
+    public suspend fun sendModal(
+        declaration: ModalExecutorDeclaration,
+        data: String,
+        title: String,
+        builder: ModalBuilder.() -> (Unit)
+    ): Unit = sendModal(declaration.id, data, title, builder)
+
+    public suspend fun sendModal(
+        id: String,
+        data: String,
+        title: String,
+        builder: ModalBuilder.() -> (Unit)
+    ): Unit = sendModal("$id:$data", title, builder)
+
+    public suspend fun sendModal(idWithData: String, title: String, builder: ModalBuilder.() -> (Unit)) {
         return bridge.manager.sendModal(title, idWithData, builder)
     }
 }
@@ -95,7 +112,7 @@ open class BarebonesInteractionContext(
  *
  * This is useful if you are trying to reply to an interaction where you only have its essential information (like the interaction token).
  */
-fun BarebonesInteractionContext(
+public fun BarebonesInteractionContext(
     kord: Kord,
     applicationId: Snowflake,
     interactionToken: String,

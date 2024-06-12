@@ -1,0 +1,4 @@
+public final class net/perfectdreams/discordinteraktions/platforms/kord/GatewayKordInteractionsKt {
+	public static final fun installDiscordInteraKTions (Ldev/kord/gateway/Gateway;Lnet/perfectdreams/discordinteraktions/common/DiscordInteraKTions;)V
+}
+

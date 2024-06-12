@@ -5,21 +5,21 @@ import dev.kord.common.entity.DiscordInteraction
 import dev.kord.common.entity.TextInputStyle
 import dev.kord.rest.builder.interaction.BaseInputChatBuilder
 
-abstract class InteraKTionsModalComponent<T>(
-    val customId: String,
-    val required: Boolean
+public abstract class InteraKTionsModalComponent<T>(
+    public val customId: String,
+    public val required: Boolean
 ) {
-    abstract fun register(builder: BaseInputChatBuilder)
+    public abstract fun register(builder: BaseInputChatBuilder)
 
-    abstract fun parse(args: List<CommandArgument<*>>, interaction: DiscordInteraction): T?
+    public abstract fun parse(args: List<CommandArgument<*>>, interaction: DiscordInteraction): T?
 }
 
-class TextInputModalComponent(
+public class TextInputModalComponent(
     customId: String,
     required: Boolean,
-    val style: TextInputStyle,
-    val minLength: Int?,
-    val maxLength: Int?
+    public val style: TextInputStyle,
+    public val minLength: Int?,
+    public val maxLength: Int?
 ) : InteraKTionsModalComponent<String>(customId, required) {
     override fun register(builder: BaseInputChatBuilder) {
         TODO("Not yet implemented")

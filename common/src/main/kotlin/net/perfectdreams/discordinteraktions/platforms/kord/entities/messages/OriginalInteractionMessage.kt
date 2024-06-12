@@ -7,7 +7,7 @@ import dev.kord.core.entity.User
 import kotlinx.datetime.Instant
 import net.perfectdreams.discordinteraktions.common.entities.messages.Message
 
-open class OriginalInteractionMessage : Message {
+public open class OriginalInteractionMessage : Message {
     override val id: Snowflake
         get() = fail()
     override val channelId: Snowflake

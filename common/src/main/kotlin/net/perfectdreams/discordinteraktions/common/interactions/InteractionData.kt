@@ -1,3 +1,3 @@
 package net.perfectdreams.discordinteraktions.common.interactions
 
-class InteractionData(val resolved: ResolvedObjects?)
+public class InteractionData(public val resolved: ResolvedObjects?)

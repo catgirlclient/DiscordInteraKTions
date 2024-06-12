@@ -35,14 +35,14 @@ import net.perfectdreams.discordinteraktions.platforms.kord.entities.messages.Ko
  * @param interactionToken The request's token
  * @param request The Discord Interaction request
  */
-class InitialHttpRequestManager(
+public class InitialHttpRequestManager(
     bridge: RequestBridge,
-    val kord: Kord,
-    val applicationId: Snowflake,
-    val interactionId: Snowflake,
-    val interactionToken: String
+    public val kord: Kord,
+    public val applicationId: Snowflake,
+    public val interactionId: Snowflake,
+    public val interactionToken: String
 ) : RequestManager(bridge) {
-    companion object {
+    public companion object {
         private val logger = KotlinLogging.logger {}
     }
 
@@ -196,7 +196,7 @@ class InitialHttpRequestManager(
         )
     }
 
-    override suspend fun sendStringAutocomplete(list: List<Choice<String>>) {
+    override suspend fun sendStringAutocomplete(list: List<Choice.StringChoice>) {
         kord.rest.interaction.createAutoCompleteInteractionResponse(
             interactionId,
             interactionToken,
@@ -204,7 +204,7 @@ class InitialHttpRequestManager(
         )
     }
 
-    override suspend fun sendIntegerAutocomplete(list: List<Choice<Long>>) {
+    override suspend fun sendIntegerAutocomplete(list: List<Choice.IntegerChoice>) {
         kord.rest.interaction.createAutoCompleteInteractionResponse(
             interactionId,
             interactionToken,
@@ -212,7 +212,7 @@ class InitialHttpRequestManager(
         )
     }
 
-    override suspend fun sendNumberAutocomplete(list: List<Choice<Double>>) {
+    override suspend fun sendNumberAutocomplete(list: List<Choice.NumberChoice>) {
         kord.rest.interaction.createAutoCompleteInteractionResponse(
             interactionId,
             interactionToken,

@@ -1,23 +1,23 @@
 package net.perfectdreams.discordinteraktions.common.builder.message.modify
 
-import dev.kord.common.entity.DiscordAttachment
 import dev.kord.common.entity.optional.delegate.delegate
 import dev.kord.rest.NamedFile
 import dev.kord.rest.builder.component.MessageComponentBuilder
 import dev.kord.rest.builder.message.AllowedMentionsBuilder
+import dev.kord.rest.builder.message.AttachmentBuilder
 import dev.kord.rest.builder.message.EmbedBuilder
 import dev.kord.rest.builder.message.modify.FollowupMessageModifyBuilder
 import dev.kord.rest.builder.message.modify.InteractionResponseModifyBuilder
 import net.perfectdreams.discordinteraktions.platforms.kord.utils.runIfNotMissing
 
-// From Kord, however this is a interaction OR followup modify builder
-class InteractionOrFollowupMessageModifyBuilder : MessageModifyBuilder {
+// From Kord, however this is an interaction OR followup modify builder
+public class InteractionOrFollowupMessageModifyBuilder : MessageModifyBuilder {
     // We need to access the delegated stuff ourselves
-    var state = MessageModifyStateHolder()
+    public var state: MessageModifyStateHolder = MessageModifyStateHolder()
 
     override var files: MutableList<NamedFile>? by state::files.delegate()
 
-    override var attachments: MutableList<DiscordAttachment>? by state::attachments.delegate()
+    override var attachments: MutableList<AttachmentBuilder>? by state::attachments.delegate()
 
     override var content: String? by state::content.delegate()
 
@@ -33,8 +33,13 @@ class InteractionOrFollowupMessageModifyBuilder : MessageModifyBuilder {
             runIfNotMissing(state.allowedMentions) { this.allowedMentions = it }
             runIfNotMissing(state.components) { this.components = it }
             runIfNotMissing(state.embeds) { this.embeds = it }
+            runIfNotMissing(state.flags) { this.flags = it }
             runIfNotMissing(state.attachments) { this.attachments = it }
-            runIfNotMissing(state.files) { this.files = it }
+            // see https://github.com/kordlib/kord/commit/b6e878afe3a50d8251480febaf5e10fe6557cebd#diff-f2320acb4cd4c98c2766920d3a3693116b681c36d6ee373cc3f16a2065ca98ccR86
+            runIfNotMissing(state.files) {
+                this.files.clear()
+                this.files.addAll(it.orEmpty())
+            }
         }
     }
 
@@ -44,8 +49,13 @@ class InteractionOrFollowupMessageModifyBuilder : MessageModifyBuilder {
             runIfNotMissing(state.allowedMentions) { this.allowedMentions = it }
             runIfNotMissing(state.components) { this.components = it }
             runIfNotMissing(state.embeds) { this.embeds = it }
+            runIfNotMissing(state.flags) { this.flags = it }
             runIfNotMissing(state.attachments) { this.attachments = it }
-            runIfNotMissing(state.files) { this.files = it }
+            // see https://github.com/kordlib/kord/commit/b6e878afe3a50d8251480febaf5e10fe6557cebd#diff-f2320acb4cd4c98c2766920d3a3693116b681c36d6ee373cc3f16a2065ca98ccR86
+            runIfNotMissing(state.files) {
+                this.files.clear()
+                this.files.addAll(it.orEmpty())
+            }
         }
     }
 }

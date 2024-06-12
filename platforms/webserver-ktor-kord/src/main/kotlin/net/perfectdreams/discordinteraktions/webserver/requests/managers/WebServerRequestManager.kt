@@ -8,7 +8,6 @@ import dev.kord.rest.json.request.AutoCompleteResponseCreateRequest
 import dev.kord.rest.json.request.InteractionApplicationCommandCallbackData
 import dev.kord.rest.json.request.InteractionResponseCreateRequest
 import dev.kord.rest.json.request.ModalResponseCreateRequest
-import dev.kord.rest.service.RestClient
 import io.ktor.http.*
 import io.ktor.server.application.*
 import io.ktor.server.response.*
@@ -37,19 +36,21 @@ import net.perfectdreams.discordinteraktions.platforms.kord.entities.messages.Ko
  * @param interactionToken The request's token
  * @param call The request data
  */
-class WebServerRequestManager(
+public class WebServerRequestManager(
     bridge: RequestBridge,
-    val kord: Kord,
-    val applicationId: Snowflake,
-    val interactionToken: String,
-    val call: ApplicationCall,
+    public val kord: Kord,
+    public val applicationId: Snowflake,
+    public val interactionToken: String,
+    public val call: ApplicationCall,
 ) : RequestManager(bridge) {
-    companion object {
+    public companion object {
         private val logger = KotlinLogging.logger {}
     }
 
     init {
-        require(bridge.state.value == InteractionRequestState.NOT_REPLIED_YET) { "HttpRequestManager should be in the NOT_REPLIED_YET state!" }
+        require(bridge.state.value == InteractionRequestState.NOT_REPLIED_YET) {
+            "HttpRequestManager should be in the NOT_REPLIED_YET state!"
+        }
     }
 
     override suspend fun deferChannelMessage() {
@@ -219,7 +220,7 @@ class WebServerRequestManager(
         )
     }
 
-    override suspend fun sendStringAutocomplete(list: List<Choice<String>>) {
+    override suspend fun sendStringAutocomplete(list: List<Choice.StringChoice>) {
         call.respondText(
             Json.encodeToString(
                 AutoCompleteResponseCreateRequest(
@@ -233,7 +234,7 @@ class WebServerRequestManager(
         bridge.state.value = InteractionRequestState.ALREADY_REPLIED
     }
 
-    override suspend fun sendIntegerAutocomplete(list: List<Choice<Long>>) {
+    override suspend fun sendIntegerAutocomplete(list: List<Choice.IntegerChoice>) {
         call.respondText(
             Json.encodeToString(
                 AutoCompleteResponseCreateRequest(
@@ -247,7 +248,7 @@ class WebServerRequestManager(
         bridge.state.value = InteractionRequestState.ALREADY_REPLIED
     }
 
-    override suspend fun sendNumberAutocomplete(list: List<Choice<Double>>) {
+    override suspend fun sendNumberAutocomplete(list: List<Choice.NumberChoice>) {
         call.respondText(
             Json.encodeToString(
                 AutoCompleteResponseCreateRequest(
