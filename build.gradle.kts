@@ -12,10 +12,6 @@ buildscript {
     dependencies {
         classpath("org.jetbrains.dokka:dokka-base:1.9.20")
     }
-
-    tasks.withType<KotlinCompile> {
-        kotlinOptions.jvmTarget = "17"
-    }
 }
 
 group = Project.GROUP
