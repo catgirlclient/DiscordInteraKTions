@@ -3,7 +3,7 @@ package com.mrpowergamerbr.nicolebot
 import dev.kord.gateway.DefaultGateway
 import dev.kord.gateway.start
 import kotlinx.coroutines.runBlocking
-import net.perfectdreams.discordinteraktions.platforms.kord.installDiscordInteraKTions
+import live.shuuyu.discordinteraktions.platforms.kord.installDiscordInteraKTions
 import java.io.File
 
 object NicoleBotGatewayLauncher {

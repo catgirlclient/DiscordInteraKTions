@@ -1,7 +1,7 @@
 package com.mrpowergamerbr.nicolebot
 
 import kotlinx.coroutines.runBlocking
-import net.perfectdreams.discordinteraktions.webserver.InteractionsServer
+import live.shuuyu.discordinteraktions.webserver.InteractionsServer
 import java.io.File
 
 object NicoleBotWebServerLauncher {

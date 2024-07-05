@@ -1,4 +1,4 @@
-public final class net/perfectdreams/discordinteraktions/platforms/kord/GatewayKordInteractionsKt {
-	public static final fun installDiscordInteraKTions (Ldev/kord/gateway/Gateway;Lnet/perfectdreams/discordinteraktions/common/DiscordInteraKTions;)V
+public final class live/shuuyu/discordinteraktions/platforms/kord/GatewayKordInteractionsKt {
+	public static final fun installDiscordInteraKTions (Ldev/kord/gateway/Gateway;Llive/shuuyu/discordinteraktions/common/DiscordInteraKTions;)V
 }
 
