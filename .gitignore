@@ -131,3 +131,4 @@ fabric.properties
 token.txt
 applicationid.txt
 guildid.txt
+.env

@@ -8,6 +8,7 @@ import dev.kord.rest.json.request.AutoCompleteResponseCreateRequest
 import dev.kord.rest.json.request.InteractionApplicationCommandCallbackData
 import dev.kord.rest.json.request.InteractionResponseCreateRequest
 import dev.kord.rest.json.request.ModalResponseCreateRequest
+import io.github.oshai.kotlinlogging.KotlinLogging
 import io.ktor.http.*
 import io.ktor.server.application.*
 import io.ktor.server.response.*
@@ -16,7 +17,6 @@ import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.buildJsonObject
 import kotlinx.serialization.json.put
 import kotlinx.serialization.json.putJsonObject
-import mu.KotlinLogging
 import net.perfectdreams.discordinteraktions.common.builder.message.create.InteractionOrFollowupMessageCreateBuilder
 import net.perfectdreams.discordinteraktions.common.builder.message.modify.InteractionOrFollowupMessageModifyBuilder
 import net.perfectdreams.discordinteraktions.common.entities.messages.EditableMessage
@@ -32,6 +32,7 @@ import net.perfectdreams.discordinteraktions.platforms.kord.entities.messages.Ko
  * by directly interacting with the Discord Rest API.
  *
  * @param rest The application rest client
+ * @param kord The [Kord] instance
  * @param applicationId The bot's application id
  * @param interactionToken The request's token
  * @param call The request data

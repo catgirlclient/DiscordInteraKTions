@@ -1,12 +1,8 @@
 package net.perfectdreams.discordinteraktions.platforms.kord.commands
 
-import dev.kord.common.entity.CommandArgument
-import dev.kord.common.entity.CommandGroup
-import dev.kord.common.entity.DiscordInteraction
-import dev.kord.common.entity.Option
-import dev.kord.common.entity.SubCommand
+import dev.kord.common.entity.*
 import dev.kord.core.Kord
-import mu.KotlinLogging
+import io.github.oshai.kotlinlogging.KotlinLogging
 import net.perfectdreams.discordinteraktions.common.commands.*
 import net.perfectdreams.discordinteraktions.common.commands.options.OptionReference
 import kotlin.reflect.KClass
