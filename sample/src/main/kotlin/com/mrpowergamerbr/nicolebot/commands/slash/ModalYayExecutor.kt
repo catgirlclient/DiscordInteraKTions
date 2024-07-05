@@ -1,12 +1,12 @@
 package com.mrpowergamerbr.nicolebot.commands.slash
 
 import dev.kord.common.entity.TextInputStyle
-import net.perfectdreams.discordinteraktions.common.builder.message.embed
-import net.perfectdreams.discordinteraktions.common.modals.ModalContext
-import net.perfectdreams.discordinteraktions.common.modals.ModalExecutor
-import net.perfectdreams.discordinteraktions.common.modals.ModalExecutorDeclaration
-import net.perfectdreams.discordinteraktions.common.modals.components.ModalArguments
-import net.perfectdreams.discordinteraktions.common.modals.components.ModalComponents
+import live.shuuyu.discordinteraktions.common.builder.message.embed
+import live.shuuyu.discordinteraktions.common.modals.ModalContext
+import live.shuuyu.discordinteraktions.common.modals.ModalExecutor
+import live.shuuyu.discordinteraktions.common.modals.ModalExecutorDeclaration
+import live.shuuyu.discordinteraktions.common.modals.components.ModalArguments
+import live.shuuyu.discordinteraktions.common.modals.components.ModalComponents
 
 class ModalYayExecutor : ModalExecutor {
     companion object : ModalExecutorDeclaration("modal_submit_example") {

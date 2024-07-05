@@ -1,10 +1,10 @@
 package com.mrpowergamerbr.nicolebot.commands.slash
 
 import dev.kord.common.entity.ChannelType
-import net.perfectdreams.discordinteraktions.common.commands.ApplicationCommandContext
-import net.perfectdreams.discordinteraktions.common.commands.SlashCommandExecutor
-import net.perfectdreams.discordinteraktions.common.commands.options.ApplicationCommandOptions
-import net.perfectdreams.discordinteraktions.common.commands.options.SlashCommandArguments
+import live.shuuyu.discordinteraktions.common.commands.ApplicationCommandContext
+import live.shuuyu.discordinteraktions.common.commands.SlashCommandExecutor
+import live.shuuyu.discordinteraktions.common.commands.options.ApplicationCommandOptions
+import live.shuuyu.discordinteraktions.common.commands.options.SlashCommandArguments
 
 class RequiredOptionsExecutor : SlashCommandExecutor() {
     inner class Options : ApplicationCommandOptions() {

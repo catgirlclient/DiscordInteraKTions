@@ -2,9 +2,9 @@ package com.mrpowergamerbr.nicolebot.commands.slash
 
 import com.mrpowergamerbr.nicolebot.utils.Counter
 import dev.kord.core.entity.User
-import net.perfectdreams.discordinteraktions.common.components.ButtonExecutor
-import net.perfectdreams.discordinteraktions.common.components.ButtonExecutorDeclaration
-import net.perfectdreams.discordinteraktions.common.components.ComponentContext
+import live.shuuyu.discordinteraktions.common.components.ButtonExecutor
+import live.shuuyu.discordinteraktions.common.components.ButtonExecutorDeclaration
+import live.shuuyu.discordinteraktions.common.components.ComponentContext
 
 class CounterButtonExecutor(private val counter: Counter) : ButtonExecutor {
     // All buttons must have unique IDs!

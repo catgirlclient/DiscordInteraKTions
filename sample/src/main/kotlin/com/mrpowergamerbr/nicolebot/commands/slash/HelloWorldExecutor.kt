@@ -1,8 +1,8 @@
 package com.mrpowergamerbr.nicolebot.commands.slash
 
-import net.perfectdreams.discordinteraktions.common.commands.ApplicationCommandContext
-import net.perfectdreams.discordinteraktions.common.commands.SlashCommandExecutor
-import net.perfectdreams.discordinteraktions.common.commands.options.SlashCommandArguments
+import live.shuuyu.discordinteraktions.common.commands.ApplicationCommandContext
+import live.shuuyu.discordinteraktions.common.commands.SlashCommandExecutor
+import live.shuuyu.discordinteraktions.common.commands.options.SlashCommandArguments
 
 class HelloWorldExecutor : SlashCommandExecutor() {
     override suspend fun execute(context: ApplicationCommandContext, args: SlashCommandArguments) {

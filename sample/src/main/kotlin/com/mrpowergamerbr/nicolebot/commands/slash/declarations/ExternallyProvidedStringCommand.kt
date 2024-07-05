@@ -2,8 +2,8 @@ package com.mrpowergamerbr.nicolebot.commands.slash.declarations
 
 import com.mrpowergamerbr.nicolebot.commands.slash.ExternallyProvidedStringExecutor
 import com.mrpowergamerbr.nicolebot.utils.LanguageManager
-import net.perfectdreams.discordinteraktions.common.commands.SlashCommandDeclarationWrapper
-import net.perfectdreams.discordinteraktions.common.commands.slashCommand
+import live.shuuyu.discordinteraktions.common.commands.SlashCommandDeclarationWrapper
+import live.shuuyu.discordinteraktions.common.commands.slashCommand
 
 class ExternallyProvidedStringCommand(private val languageManager: LanguageManager) : SlashCommandDeclarationWrapper {
     override fun declaration() = slashCommand(languageManager.get("command_label"), languageManager.get("command_description")) {

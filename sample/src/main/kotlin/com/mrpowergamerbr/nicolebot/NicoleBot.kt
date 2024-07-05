@@ -9,7 +9,7 @@ import com.mrpowergamerbr.nicolebot.commands.user.declarations.ViewAvatarUserCom
 import com.mrpowergamerbr.nicolebot.utils.Counter
 import com.mrpowergamerbr.nicolebot.utils.LanguageManager
 import dev.kord.common.entity.Snowflake
-import net.perfectdreams.discordinteraktions.common.DiscordInteraKTions
+import live.shuuyu.discordinteraktions.common.DiscordInteraKTions
 import java.io.File
 
 // "Nicole" is an easter egg: Loritta's (https://loritta.website/) name was planned to be "Nicole" at one point

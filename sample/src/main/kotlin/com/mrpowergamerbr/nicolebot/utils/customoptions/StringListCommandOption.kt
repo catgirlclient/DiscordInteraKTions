@@ -6,7 +6,10 @@ import dev.kord.common.entity.DiscordInteraction
 import dev.kord.core.Kord
 import dev.kord.rest.builder.interaction.BaseInputChatBuilder
 import dev.kord.rest.builder.interaction.string
-import net.perfectdreams.discordinteraktions.common.commands.options.*
+import live.shuuyu.discordinteraktions.common.commands.options.ApplicationCommandOptions
+import live.shuuyu.discordinteraktions.common.commands.options.DiscordCommandOptionBuilder
+import live.shuuyu.discordinteraktions.common.commands.options.NameableCommandOption
+import live.shuuyu.discordinteraktions.common.commands.options.register
 
 // A custom "String List" command option implementation, showing off how to implement your own custom options
 // While for your code it looks like a List<String>, "behind the scenes" it is actually multiple string options

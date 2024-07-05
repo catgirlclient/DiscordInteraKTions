@@ -2,10 +2,10 @@ package com.mrpowergamerbr.nicolebot.commands.slash
 
 import dev.kord.common.Color
 import kotlinx.datetime.Clock
-import net.perfectdreams.discordinteraktions.common.builder.message.embed
-import net.perfectdreams.discordinteraktions.common.commands.ApplicationCommandContext
-import net.perfectdreams.discordinteraktions.common.commands.SlashCommandExecutor
-import net.perfectdreams.discordinteraktions.common.commands.options.SlashCommandArguments
+import live.shuuyu.discordinteraktions.common.builder.message.embed
+import live.shuuyu.discordinteraktions.common.commands.ApplicationCommandContext
+import live.shuuyu.discordinteraktions.common.commands.SlashCommandExecutor
+import live.shuuyu.discordinteraktions.common.commands.options.SlashCommandArguments
 
 class SendEmbedExecutor: SlashCommandExecutor() {
     override suspend fun execute(context: ApplicationCommandContext, args: SlashCommandArguments) {

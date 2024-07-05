@@ -4,8 +4,8 @@ import com.mrpowergamerbr.nicolebot.commands.slash.CustomOptionsExecutor
 import com.mrpowergamerbr.nicolebot.commands.slash.DSCustomOptionsExecutor
 import com.mrpowergamerbr.nicolebot.commands.slash.OptionalOptionsExecutor
 import com.mrpowergamerbr.nicolebot.commands.slash.RequiredOptionsExecutor
-import net.perfectdreams.discordinteraktions.common.commands.SlashCommandDeclarationWrapper
-import net.perfectdreams.discordinteraktions.common.commands.slashCommand
+import live.shuuyu.discordinteraktions.common.commands.SlashCommandDeclarationWrapper
+import live.shuuyu.discordinteraktions.common.commands.slashCommand
 
 object OptionsCommand : SlashCommandDeclarationWrapper {
     override fun declaration() = slashCommand("options", "Shows all supported options") {

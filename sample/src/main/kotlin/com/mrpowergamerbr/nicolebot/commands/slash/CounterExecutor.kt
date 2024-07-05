@@ -2,12 +2,12 @@ package com.mrpowergamerbr.nicolebot.commands.slash
 
 import com.mrpowergamerbr.nicolebot.utils.Counter
 import dev.kord.common.entity.ButtonStyle
-import net.perfectdreams.discordinteraktions.common.builder.message.MessageBuilder
-import net.perfectdreams.discordinteraktions.common.builder.message.actionRow
-import net.perfectdreams.discordinteraktions.common.commands.ApplicationCommandContext
-import net.perfectdreams.discordinteraktions.common.commands.SlashCommandExecutor
-import net.perfectdreams.discordinteraktions.common.commands.options.SlashCommandArguments
-import net.perfectdreams.discordinteraktions.common.components.interactiveButton
+import live.shuuyu.discordinteraktions.common.builder.message.MessageBuilder
+import live.shuuyu.discordinteraktions.common.builder.message.actionRow
+import live.shuuyu.discordinteraktions.common.commands.ApplicationCommandContext
+import live.shuuyu.discordinteraktions.common.commands.SlashCommandExecutor
+import live.shuuyu.discordinteraktions.common.commands.options.SlashCommandArguments
+import live.shuuyu.discordinteraktions.common.components.interactiveButton
 
 class CounterExecutor(private val counter: Counter) : SlashCommandExecutor() {
     companion object {

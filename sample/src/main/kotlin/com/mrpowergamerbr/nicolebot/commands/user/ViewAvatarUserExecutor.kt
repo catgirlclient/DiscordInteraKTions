@@ -2,9 +2,9 @@ package com.mrpowergamerbr.nicolebot.commands.user
 
 import dev.kord.core.entity.Member
 import dev.kord.core.entity.User
-import net.perfectdreams.discordinteraktions.common.builder.message.embed
-import net.perfectdreams.discordinteraktions.common.commands.ApplicationCommandContext
-import net.perfectdreams.discordinteraktions.common.commands.UserCommandExecutor
+import live.shuuyu.discordinteraktions.common.builder.message.embed
+import live.shuuyu.discordinteraktions.common.commands.ApplicationCommandContext
+import live.shuuyu.discordinteraktions.common.commands.UserCommandExecutor
 
 class ViewAvatarUserExecutor : UserCommandExecutor() {
     override suspend fun execute(

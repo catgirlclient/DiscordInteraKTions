@@ -1,11 +1,11 @@
 package com.mrpowergamerbr.nicolebot.commands.slash
 
 import dev.kord.common.entity.ButtonStyle
-import net.perfectdreams.discordinteraktions.common.builder.message.actionRow
-import net.perfectdreams.discordinteraktions.common.commands.ApplicationCommandContext
-import net.perfectdreams.discordinteraktions.common.commands.SlashCommandExecutor
-import net.perfectdreams.discordinteraktions.common.commands.options.SlashCommandArguments
-import net.perfectdreams.discordinteraktions.common.components.interactionButton
+import live.shuuyu.discordinteraktions.common.builder.message.actionRow
+import live.shuuyu.discordinteraktions.common.commands.ApplicationCommandContext
+import live.shuuyu.discordinteraktions.common.commands.SlashCommandExecutor
+import live.shuuyu.discordinteraktions.common.commands.options.SlashCommandArguments
+import live.shuuyu.discordinteraktions.common.components.interactionButton
 
 class ButtonsExecutor : SlashCommandExecutor() {
     override suspend fun execute(

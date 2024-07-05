@@ -7,7 +7,10 @@ import dev.kord.core.Kord
 import dev.kord.rest.builder.interaction.BaseInputChatBuilder
 import dev.kord.rest.builder.interaction.string
 import kotlinx.coroutines.delay
-import net.perfectdreams.discordinteraktions.common.commands.options.*
+import live.shuuyu.discordinteraktions.common.commands.options.ApplicationCommandOptions
+import live.shuuyu.discordinteraktions.common.commands.options.DiscordCommandOptionBuilder
+import live.shuuyu.discordinteraktions.common.commands.options.NameableCommandOption
+import live.shuuyu.discordinteraktions.common.commands.options.register
 
 // A custom "Delayed Suspendable" command option, showing off how you can parse options that may require a "suspend" call
 // This is useful if you need to pull information from the CommandContext, or if you need to call a suspend method
