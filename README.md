@@ -213,8 +213,8 @@ First, add the PerfectDreams repository to your project
 
 ```kotlin
 repositories {
+    mavenCentral()
     maven("https://oss.sonatype.org/content/repositories/snapshots") // Required by Kord
-    maven("https://repo.perfectdreams.net/")
 }
 ```
 
@@ -280,7 +280,7 @@ Add the Kord Gateway Support module to your project
 ```kotlin
 dependencies {
     ...
-    implementation("net.perfectdreams.discordinteraktions:gateway-kord:0.0.14-SNAPSHOT") // Check latest version in https://github.com/LorittaBot/DiscordInteraKTions/blob/main/settings.gradle.kts#L15
+    implementation("live.shuuyu.discordinteraktions:gateway-kord:0.1.0") // Check latest version in https://github.com/catgirlclient/DiscordInteraKTions/releases
     ...
 }
 ```
