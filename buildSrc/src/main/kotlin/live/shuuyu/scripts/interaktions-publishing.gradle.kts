@@ -9,7 +9,7 @@ plugins {
 
 publishing {
     publications {
-        create<MavenPublication>("maven") {
+        withType<MavenPublication>().configureEach {
             groupId = Project.GROUP
             version = Project.VERSION
         }
@@ -20,9 +20,9 @@ publishing {
     }
 
     repositories {
-        mavenCentral()
-        maven("https://maven.pkg.github.com/catgirlclient/DiscordInteraKTions/") {
+        maven {
             name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/catgirlclient/DiscordInteraKTions/")
             credentials {
                 username = System.getenv("MAVEN_USERNAME")
                 password = System.getenv("MAVEN_PASSWORD")
