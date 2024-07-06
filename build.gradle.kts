@@ -1,7 +1,7 @@
 import live.shuuyu.scripts.utils.Project
 import org.jetbrains.dokka.base.DokkaBase
 import org.jetbrains.dokka.base.DokkaBaseConfiguration
-import org.jetbrains.dokka.gradle.AbstractDokkaTask
+import org.jetbrains.dokka.gradle.DokkaMultiModuleTask
 import java.time.Year
 
 plugins {
@@ -18,7 +18,7 @@ group = Project.GROUP
 version = Project.VERSION
 
 allprojects {
-    tasks.withType<AbstractDokkaTask> {
+    tasks.withType<DokkaMultiModuleTask> {
         pluginConfiguration<DokkaBase, DokkaBaseConfiguration> {
             footerMessage = "© ${Year.now().value} Shuuyu"
         }

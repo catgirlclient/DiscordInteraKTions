@@ -47,10 +47,6 @@ tasks {
             jdkVersion.set(17)
             suppressGeneratedFiles = true
 
-            sourceLink {
-                localDirectory.set(projectDir)
-            }
-
             externalDocumentationLink("https://kotlinlang.org/")
         }
     }
