@@ -45,9 +45,15 @@ public open class BarebonesInteractionContext(
         wasInitiallyDeferredEphemerally = true
     }
 
+    /**
+     * Creates a message which publicly responds to the interaction.
+     */
     public suspend inline fun sendMessage(block: InteractionOrFollowupMessageCreateBuilder.() -> (Unit)): EditableMessage =
         sendPublicMessage(InteractionOrFollowupMessageCreateBuilder(false).apply(block))
 
+    /**
+     * Creates a message in which only the executor of the interaction can see.
+     */
     public suspend inline fun sendEphemeralMessage(block: InteractionOrFollowupMessageCreateBuilder.() -> (Unit)): EditableMessage =
         sendEphemeralMessage(InteractionOrFollowupMessageCreateBuilder(true).apply(block))
 
@@ -101,13 +107,16 @@ public open class BarebonesInteractionContext(
         builder: ModalBuilder.() -> (Unit)
     ): Unit = sendModal("$id:$data", title, builder)
 
-    public suspend fun sendModal(idWithData: String, title: String, builder: ModalBuilder.() -> (Unit)) {
-        return bridge.manager.sendModal(title, idWithData, builder)
-    }
+    public suspend fun sendModal(
+        idWithData: String,
+        title: String,
+        builder: ModalBuilder.() -> (Unit)
+    ): Unit = bridge.manager.sendModal(title, idWithData, builder)
+
 }
 
 /**
- * Creates a [BarebonesInteractionContext] with the [rest], [applicationId], [interactionToken] and [requestState].
+ * Creates a [BarebonesInteractionContext] with [kord], [applicationId], [interactionToken] and [requestState].
  *
  * This is useful if you are trying to reply to an interaction where you only have its essential information (like the interaction token).
  */
@@ -116,7 +125,7 @@ public fun BarebonesInteractionContext(
     applicationId: Snowflake,
     interactionToken: String,
     requestState: InteractionRequestState = InteractionRequestState.ALREADY_REPLIED
-): live.shuuyu.discordinteraktions.common.BarebonesInteractionContext {
+): BarebonesInteractionContext {
     val bridge = RequestBridge(Observable(requestState))
 
     bridge.manager = HttpRequestManager(
@@ -126,5 +135,5 @@ public fun BarebonesInteractionContext(
         interactionToken
     )
 
-    return live.shuuyu.discordinteraktions.common.BarebonesInteractionContext(bridge)
+    return BarebonesInteractionContext(bridge)
 }
