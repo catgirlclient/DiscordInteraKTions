@@ -1,7 +1,5 @@
 package live.shuuyu.scripts
 
-import gradle.kotlin.dsl.accessors._6dfd0906a4509b327c85862d9682362c.javadoc
-import gradle.kotlin.dsl.accessors._6dfd0906a4509b327c85862d9682362c.kotlinSourcesJar
 import live.shuuyu.scripts.utils.Project
 
 plugins {
@@ -46,12 +44,6 @@ publishing {
                     url = "https://github.com/catgirlclient/DiscordInteraKTions/issues"
                 }
             }
-        }
-
-        register(Project.NAME, MavenPublication::class.java) {
-            from(components["java"])
-            artifact(tasks.javadoc)
-            artifact(tasks.kotlinSourcesJar)
         }
     }
 

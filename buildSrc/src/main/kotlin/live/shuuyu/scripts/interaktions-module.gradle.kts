@@ -1,5 +1,6 @@
 package live.shuuyu.scripts
 
+import kotlinx.validation.ExperimentalBCVApi
 import live.shuuyu.scripts.utils.Project
 import org.jetbrains.dokka.gradle.AbstractDokkaLeafTask
 import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
@@ -50,4 +51,17 @@ tasks {
             externalDocumentationLink("https://kotlinlang.org/")
         }
     }
+}
+
+publishing {
+    publications.register<MavenPublication>(Project.NAME) {
+        from(components["java"])
+        artifact(tasks.javadoc)
+        artifact(tasks.kotlinSourcesJar)
+    }
+}
+
+@OptIn(ExperimentalBCVApi::class)
+apiValidation {
+    klib.enabled = true
 }
