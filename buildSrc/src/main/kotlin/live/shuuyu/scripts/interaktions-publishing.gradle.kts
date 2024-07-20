@@ -35,7 +35,7 @@ publishing {
 
                 developers {
                     developer {
-                        name = "yujin"
+                        name = "shuuyu"
                     }
                 }
 
@@ -49,21 +49,17 @@ publishing {
 
     repositories {
         maven {
-            name = "Sonatype"
-            url = if(Project.VERSION.endsWith("-SNAPSHOT")) {
-                uri(Project.SONATYPE_SNAPSHOT)
-            } else { uri(Project.SONATYPE_RELEASE) }
+            name = "Reposilite"
+            url = uri("https://maven.shuyu.me")
             credentials {
-                username = System.getenv("MAVEN_USERNAME")
-                password = System.getenv("MAVEN_PASSWORD")
+                username = System.getenv("MAVEN_USERNAME") ?: rootProject.findProject("MAVEN_USERNAME").toString()
+                password = System.getenv("MAVEN_PASSWORD") ?: rootProject.findProject("MAVEN_PASSWORD").toString()
             }
         }
     }
 }
 
 signing {
-    val signingKey = System.getenv("SIGNING_KEY")
-    val signingPassword = System.getenv("SIGNING_PASSWORD")
-    useInMemoryPgpKeys(signingKey, signingPassword)
+    useGpgCmd()
     sign(publishing.publications)
 }

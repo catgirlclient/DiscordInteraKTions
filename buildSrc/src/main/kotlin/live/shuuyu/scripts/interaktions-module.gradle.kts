@@ -34,6 +34,14 @@ kotlin {
     }
 }
 
+val javadoc: Javadoc by tasks
+
+val javadocJar = task<Jar>("javadocJar") {
+    from(javadoc.destinationDir)
+    archiveClassifier.set("javadoc")
+    dependsOn(javadoc)
+}
+
 tasks {
     withType<Test>().configureEach {
         useJUnitPlatform()
@@ -56,7 +64,7 @@ tasks {
 publishing {
     publications.register<MavenPublication>(Project.NAME) {
         from(components["java"])
-        artifact(tasks.javadoc)
+        artifact(tasks.getByName("javadocJar"))
         artifact(tasks.kotlinSourcesJar)
     }
 }
