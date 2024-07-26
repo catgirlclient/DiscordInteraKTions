@@ -49,8 +49,8 @@ publishing {
 
     repositories {
         maven {
-            name = "Reposilite"
-            url = uri("https://maven.shuyu.me")
+            name = "reposiliteRepositoryReleases"
+            url = uri("https://maven.shuyu.me/releases")
             credentials {
                 username = System.getenv("MAVEN_USERNAME") ?: rootProject.findProject("MAVEN_USERNAME").toString()
                 password = System.getenv("MAVEN_PASSWORD") ?: rootProject.findProject("MAVEN_PASSWORD").toString()
