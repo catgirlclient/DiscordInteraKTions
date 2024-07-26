@@ -214,6 +214,7 @@ First, add the PerfectDreams repository to your project
 ```kotlin
 repositories {
     mavenCentral()
+    maven("https://maven.shuyu.me") // For Discord InteraKTions
     maven("https://oss.sonatype.org/content/repositories/snapshots") // Required by Kord
 }
 ```
@@ -229,7 +230,7 @@ Add the Kord Web Server via Ktor Support module to your project
 ```kotlin
 dependencies {
     ...
-    implementation("net.perfectdreams.discordinteraktions:webserver-ktor-kord:0.0.14-SNAPSHOT") // Check latest version in https://github.com/LorittaBot/DiscordInteraKTions/blob/main/settings.gradle.kts#L15
+    implementation("live.shuuyu:discordinteraktions:webserver-ktor-kord:0.1.1") // Check latest version at https://github.com/catgirlclient/DiscordInteraKTions/releases
     ...
 }
 ```
@@ -280,7 +281,7 @@ Add the Kord Gateway Support module to your project
 ```kotlin
 dependencies {
     ...
-    implementation("live.shuuyu.discordinteraktions:gateway-kord:0.1.0") // Check latest version in https://github.com/catgirlclient/DiscordInteraKTions/releases
+    implementation("live.shuuyu.discordinteraktions:gateway-kord:0.1.1") // Check latest version in https://github.com/catgirlclient/DiscordInteraKTions/releases
     ...
 }
 ```
