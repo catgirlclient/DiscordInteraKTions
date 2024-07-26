@@ -128,6 +128,7 @@ public class DiscordInteraKTions(
                     }
                 }
             }
+
             is SlashCommandGroupDeclaration -> error("This should never be called because the convertCommandDeclarationToKord method is only called on a root!")
         }
     }

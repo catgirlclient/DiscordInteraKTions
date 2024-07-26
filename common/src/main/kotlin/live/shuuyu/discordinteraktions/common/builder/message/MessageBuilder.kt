@@ -63,7 +63,9 @@ public interface MessageBuilder {
     }
 }
 
-
+/**
+ * Creates an embed using Kord's [EmbedBuilder].
+ */
 @OptIn(ExperimentalContracts::class)
 public inline fun MessageBuilder.embed(block: EmbedBuilder.() -> (Unit)) {
     contract {

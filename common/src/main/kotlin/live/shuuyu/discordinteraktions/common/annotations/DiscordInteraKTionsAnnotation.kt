@@ -8,6 +8,9 @@ import kotlin.annotation.AnnotationTarget.*
 @Target(CLASS)
 public annotation class InteraKTionsDsl
 
+/**
+ * Marks the given component as experimental, requiring opt-in for usage.
+ */
 @MustBeDocumented
 @RequiresOptIn(
     "This is an experimental feature. You may experience issues in regards to the API changing or other " +

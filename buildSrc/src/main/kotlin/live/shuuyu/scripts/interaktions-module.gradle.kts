@@ -1,5 +1,6 @@
 package live.shuuyu.scripts
 
+import kotlinx.validation.ExperimentalBCVApi
 import live.shuuyu.scripts.utils.Project
 import org.jetbrains.dokka.gradle.AbstractDokkaLeafTask
 import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
@@ -33,6 +34,14 @@ kotlin {
     }
 }
 
+val javadoc: Javadoc by tasks
+
+val javadocJar = task<Jar>("javadocJar") {
+    from(javadoc.destinationDir)
+    archiveClassifier.set("javadoc")
+    dependsOn(javadoc)
+}
+
 tasks {
     withType<Test>().configureEach {
         useJUnitPlatform()
@@ -47,11 +56,20 @@ tasks {
             jdkVersion.set(17)
             suppressGeneratedFiles = true
 
-            sourceLink {
-                localDirectory.set(projectDir)
-            }
-
             externalDocumentationLink("https://kotlinlang.org/")
         }
     }
+}
+
+publishing {
+    publications.register<MavenPublication>(Project.NAME) {
+        from(components["java"])
+        artifact(tasks.getByName("javadocJar"))
+        artifact(tasks.kotlinSourcesJar)
+    }
+}
+
+@OptIn(ExperimentalBCVApi::class)
+apiValidation {
+    klib.enabled = true
 }

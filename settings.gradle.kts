@@ -21,6 +21,7 @@ dependencyResolutionManagement {
 rootProject.name = "DiscordInteraKTions"
 
 include(
+    ":bom",
     ":sample",
     ":common",
     ":requests-verifier",
