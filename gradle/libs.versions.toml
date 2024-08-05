@@ -1,6 +1,6 @@
 [versions]
 kotlin = "2.0.0"
-kord = "0.15.0-SNAPSHOT"
+kord = "experiments-inline-value-classes-SNAPSHOT"
 dokka = "1.9.20"
 binary-compatibility-validator = "0.15.0-Beta.2"
 # jda = "5.0.0-beta.20"

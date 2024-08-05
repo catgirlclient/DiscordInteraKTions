@@ -18,15 +18,15 @@ public class live/shuuyu/discordinteraktions/common/BarebonesInteractionContext 
 }
 
 public final class live/shuuyu/discordinteraktions/common/BarebonesInteractionContextKt {
-	public static final fun BarebonesInteractionContext (Ldev/kord/core/Kord;Ldev/kord/common/entity/Snowflake;Ljava/lang/String;Llive/shuuyu/discordinteraktions/common/requests/InteractionRequestState;)Llive/shuuyu/discordinteraktions/common/BarebonesInteractionContext;
-	public static synthetic fun BarebonesInteractionContext$default (Ldev/kord/core/Kord;Ldev/kord/common/entity/Snowflake;Ljava/lang/String;Llive/shuuyu/discordinteraktions/common/requests/InteractionRequestState;ILjava/lang/Object;)Llive/shuuyu/discordinteraktions/common/BarebonesInteractionContext;
+	public static final fun BarebonesInteractionContext-nMAJGj4 (Ldev/kord/core/Kord;JLjava/lang/String;Llive/shuuyu/discordinteraktions/common/requests/InteractionRequestState;)Llive/shuuyu/discordinteraktions/common/BarebonesInteractionContext;
+	public static synthetic fun BarebonesInteractionContext-nMAJGj4$default (Ldev/kord/core/Kord;JLjava/lang/String;Llive/shuuyu/discordinteraktions/common/requests/InteractionRequestState;ILjava/lang/Object;)Llive/shuuyu/discordinteraktions/common/BarebonesInteractionContext;
 }
 
 public final class live/shuuyu/discordinteraktions/common/DiscordInteraKTions {
-	public fun <init> (Ldev/kord/core/Kord;Ldev/kord/common/entity/Snowflake;)V
+	public synthetic fun <init> (Ldev/kord/core/Kord;JLkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun createGlobalApplicationCommandCreateRequests ()Ljava/util/List;
 	public final fun createGuildApplicationCommandCreateRequests ()Ljava/util/List;
-	public final fun getApplicationId ()Ldev/kord/common/entity/Snowflake;
+	public final fun getApplicationId-4_xYDEk ()J
 	public final fun getAutocompleteChecker ()Llive/shuuyu/discordinteraktions/platforms/kord/utils/KordAutocompleteChecker;
 	public final fun getCommandChecker ()Llive/shuuyu/discordinteraktions/platforms/kord/utils/KordCommandChecker;
 	public final fun getComponentChecker ()Llive/shuuyu/discordinteraktions/platforms/kord/utils/KordComponentChecker;
@@ -34,17 +34,17 @@ public final class live/shuuyu/discordinteraktions/common/DiscordInteraKTions {
 	public final fun getManager ()Llive/shuuyu/discordinteraktions/common/commands/InteractionsManager;
 	public final fun getModalChecker ()Llive/shuuyu/discordinteraktions/platforms/kord/utils/KordModalChecker;
 	public final fun getRest ()Ldev/kord/rest/service/RestClient;
-	public final fun updateAllCommandsInGuild (Ldev/kord/common/entity/Snowflake;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun updateAllCommandsInGuild-wYKCHeA (JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public final fun updateAllGlobalCommands (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 }
 
 public final class live/shuuyu/discordinteraktions/common/DiscordInteraKTionsKt {
-	public static final fun DiscordInteraKTions (Ljava/lang/String;Ldev/kord/common/entity/Snowflake;)Llive/shuuyu/discordinteraktions/common/DiscordInteraKTions;
+	public static final fun DiscordInteraKTions-Vn1WZo8 (Ljava/lang/String;J)Llive/shuuyu/discordinteraktions/common/DiscordInteraKTions;
 }
 
 public class live/shuuyu/discordinteraktions/common/InteractionContext : live/shuuyu/discordinteraktions/common/BarebonesInteractionContext {
-	public fun <init> (Llive/shuuyu/discordinteraktions/common/requests/RequestBridge;Ldev/kord/core/entity/User;Ldev/kord/common/entity/Snowflake;Llive/shuuyu/discordinteraktions/common/interactions/InteractionData;Ldev/kord/common/entity/DiscordInteraction;)V
-	public final fun getChannelId ()Ldev/kord/common/entity/Snowflake;
+	public synthetic fun <init> (Llive/shuuyu/discordinteraktions/common/requests/RequestBridge;Ldev/kord/core/entity/User;JLlive/shuuyu/discordinteraktions/common/interactions/InteractionData;Ldev/kord/common/entity/DiscordInteraction;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun getChannelId-4_xYDEk ()J
 	public final fun getDiscordInteraction ()Ldev/kord/common/entity/DiscordInteraction;
 	public final fun getInteractionData ()Llive/shuuyu/discordinteraktions/common/interactions/InteractionData;
 	public final fun getSender ()Ldev/kord/core/entity/User;
@@ -57,10 +57,10 @@ public abstract interface annotation class live/shuuyu/discordinteraktions/commo
 }
 
 public class live/shuuyu/discordinteraktions/common/autocomplete/AutocompleteContext {
-	public fun <init> (Ldev/kord/core/entity/User;Ldev/kord/common/entity/Snowflake;Llive/shuuyu/discordinteraktions/common/interactions/InteractionData;Ljava/util/List;Ldev/kord/common/entity/DiscordInteraction;)V
+	public synthetic fun <init> (Ldev/kord/core/entity/User;JLlive/shuuyu/discordinteraktions/common/interactions/InteractionData;Ljava/util/List;Ldev/kord/common/entity/DiscordInteraction;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun getArgument (Llive/shuuyu/discordinteraktions/common/commands/options/OptionReference;)Ljava/lang/Object;
 	public final fun getArguments ()Ljava/util/List;
-	public final fun getChannelId ()Ldev/kord/common/entity/Snowflake;
+	public final fun getChannelId-4_xYDEk ()J
 	public final fun getData ()Llive/shuuyu/discordinteraktions/common/interactions/InteractionData;
 	public final fun getDiscordInteraction ()Ldev/kord/common/entity/DiscordInteraction;
 	public final fun getSender ()Ldev/kord/core/entity/User;
@@ -84,9 +84,9 @@ public final class live/shuuyu/discordinteraktions/common/autocomplete/FocusedCo
 }
 
 public class live/shuuyu/discordinteraktions/common/autocomplete/GuildAutocompleteContext : live/shuuyu/discordinteraktions/common/autocomplete/AutocompleteContext {
-	public fun <init> (Ldev/kord/core/entity/User;Ldev/kord/common/entity/Snowflake;Llive/shuuyu/discordinteraktions/common/interactions/InteractionData;Ljava/util/List;Ldev/kord/common/entity/DiscordInteraction;Ldev/kord/common/entity/Snowflake;Ldev/kord/core/entity/Member;)V
-	public final fun getAppPermissions ()Ldev/kord/common/entity/Permissions;
-	public final fun getGuildId ()Ldev/kord/common/entity/Snowflake;
+	public synthetic fun <init> (Ldev/kord/core/entity/User;JLlive/shuuyu/discordinteraktions/common/interactions/InteractionData;Ljava/util/List;Ldev/kord/common/entity/DiscordInteraction;JLdev/kord/core/entity/Member;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun getAppPermissions-1GAEPLc ()Ldev/kord/common/DiscordBitSet;
+	public final fun getGuildId-4_xYDEk ()J
 	public final fun getMember ()Ldev/kord/core/entity/Member;
 }
 
@@ -203,7 +203,7 @@ public final class live/shuuyu/discordinteraktions/common/builder/message/modify
 }
 
 public class live/shuuyu/discordinteraktions/common/commands/ApplicationCommandContext : live/shuuyu/discordinteraktions/common/InteractionContext {
-	public fun <init> (Llive/shuuyu/discordinteraktions/common/requests/RequestBridge;Ldev/kord/core/entity/User;Ldev/kord/common/entity/Snowflake;Llive/shuuyu/discordinteraktions/common/interactions/InteractionData;Ldev/kord/common/entity/DiscordInteraction;Llive/shuuyu/discordinteraktions/common/commands/ApplicationCommandDeclaration;)V
+	public synthetic fun <init> (Llive/shuuyu/discordinteraktions/common/requests/RequestBridge;Ldev/kord/core/entity/User;JLlive/shuuyu/discordinteraktions/common/interactions/InteractionData;Ldev/kord/common/entity/DiscordInteraction;Llive/shuuyu/discordinteraktions/common/commands/ApplicationCommandDeclaration;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun getApplicationCommandDeclaration ()Llive/shuuyu/discordinteraktions/common/commands/ApplicationCommandDeclaration;
 }
 
@@ -226,16 +226,16 @@ public abstract class live/shuuyu/discordinteraktions/common/commands/Applicatio
 }
 
 public class live/shuuyu/discordinteraktions/common/commands/GuildApplicationCommandContext : live/shuuyu/discordinteraktions/common/commands/ApplicationCommandContext {
-	public fun <init> (Llive/shuuyu/discordinteraktions/common/requests/RequestBridge;Ldev/kord/core/entity/User;Ldev/kord/common/entity/Snowflake;Llive/shuuyu/discordinteraktions/common/interactions/InteractionData;Ldev/kord/common/entity/DiscordInteraction;Llive/shuuyu/discordinteraktions/common/commands/ApplicationCommandDeclaration;Ldev/kord/common/entity/Snowflake;Ldev/kord/core/entity/Member;)V
-	public final fun getAppPermissions ()Ldev/kord/common/entity/Permissions;
-	public final fun getGuildId ()Ldev/kord/common/entity/Snowflake;
+	public synthetic fun <init> (Llive/shuuyu/discordinteraktions/common/requests/RequestBridge;Ldev/kord/core/entity/User;JLlive/shuuyu/discordinteraktions/common/interactions/InteractionData;Ldev/kord/common/entity/DiscordInteraction;Llive/shuuyu/discordinteraktions/common/commands/ApplicationCommandDeclaration;JLdev/kord/core/entity/Member;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun getAppPermissions-1GAEPLc ()Ldev/kord/common/DiscordBitSet;
+	public final fun getGuildId-4_xYDEk ()J
 	public final fun getMember ()Ldev/kord/core/entity/Member;
 }
 
 public final class live/shuuyu/discordinteraktions/common/commands/InteraKTionsMessageCommandDeclaration : live/shuuyu/discordinteraktions/common/commands/MessageCommandDeclaration {
-	public fun <init> (Ljava/lang/String;Ljava/util/Map;Llive/shuuyu/discordinteraktions/common/commands/MessageCommandExecutor;Ldev/kord/common/entity/Permissions;Ljava/lang/Boolean;Ljava/lang/Boolean;)V
-	public synthetic fun <init> (Ljava/lang/String;Ljava/util/Map;Llive/shuuyu/discordinteraktions/common/commands/MessageCommandExecutor;Ldev/kord/common/entity/Permissions;Ljava/lang/Boolean;Ljava/lang/Boolean;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-	public fun getDefaultMemberPermissions ()Ldev/kord/common/entity/Permissions;
+	public synthetic fun <init> (Ljava/lang/String;Ljava/util/Map;Llive/shuuyu/discordinteraktions/common/commands/MessageCommandExecutor;Ldev/kord/common/DiscordBitSet;Ljava/lang/Boolean;Ljava/lang/Boolean;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/util/Map;Llive/shuuyu/discordinteraktions/common/commands/MessageCommandExecutor;Ldev/kord/common/DiscordBitSet;Ljava/lang/Boolean;Ljava/lang/Boolean;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun getDefaultMemberPermissions-hXs3ujQ ()Ldev/kord/common/DiscordBitSet;
 	public fun getDmPermission ()Ljava/lang/Boolean;
 	public fun getExecutor ()Llive/shuuyu/discordinteraktions/common/commands/MessageCommandExecutor;
 	public fun getName ()Ljava/lang/String;
@@ -244,9 +244,9 @@ public final class live/shuuyu/discordinteraktions/common/commands/InteraKTionsM
 }
 
 public final class live/shuuyu/discordinteraktions/common/commands/InteraKTionsSlashCommandDeclaration : live/shuuyu/discordinteraktions/common/commands/SlashCommandDeclaration {
-	public fun <init> (Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/util/Map;Llive/shuuyu/discordinteraktions/common/commands/SlashCommandExecutor;Ldev/kord/common/entity/Permissions;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/List;Ljava/lang/Boolean;)V
-	public synthetic fun <init> (Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/util/Map;Llive/shuuyu/discordinteraktions/common/commands/SlashCommandExecutor;Ldev/kord/common/entity/Permissions;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/List;Ljava/lang/Boolean;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-	public fun getDefaultMemberPermissions ()Ldev/kord/common/entity/Permissions;
+	public synthetic fun <init> (Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/util/Map;Llive/shuuyu/discordinteraktions/common/commands/SlashCommandExecutor;Ldev/kord/common/DiscordBitSet;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/List;Ljava/lang/Boolean;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/util/Map;Llive/shuuyu/discordinteraktions/common/commands/SlashCommandExecutor;Ldev/kord/common/DiscordBitSet;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/List;Ljava/lang/Boolean;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun getDefaultMemberPermissions-hXs3ujQ ()Ldev/kord/common/DiscordBitSet;
 	public fun getDescription ()Ljava/lang/String;
 	public fun getDescriptionLocalizations ()Ljava/util/Map;
 	public fun getDmPermission ()Ljava/lang/Boolean;
@@ -270,9 +270,9 @@ public final class live/shuuyu/discordinteraktions/common/commands/InteraKTionsS
 }
 
 public final class live/shuuyu/discordinteraktions/common/commands/InteraKTionsUserCommandDeclaration : live/shuuyu/discordinteraktions/common/commands/UserCommandDeclaration {
-	public fun <init> (Ljava/lang/String;Ljava/util/Map;Llive/shuuyu/discordinteraktions/common/commands/UserCommandExecutor;Ldev/kord/common/entity/Permissions;Ljava/lang/Boolean;Ljava/lang/Boolean;)V
-	public synthetic fun <init> (Ljava/lang/String;Ljava/util/Map;Llive/shuuyu/discordinteraktions/common/commands/UserCommandExecutor;Ldev/kord/common/entity/Permissions;Ljava/lang/Boolean;Ljava/lang/Boolean;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-	public fun getDefaultMemberPermissions ()Ldev/kord/common/entity/Permissions;
+	public synthetic fun <init> (Ljava/lang/String;Ljava/util/Map;Llive/shuuyu/discordinteraktions/common/commands/UserCommandExecutor;Ldev/kord/common/DiscordBitSet;Ljava/lang/Boolean;Ljava/lang/Boolean;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/util/Map;Llive/shuuyu/discordinteraktions/common/commands/UserCommandExecutor;Ldev/kord/common/DiscordBitSet;Ljava/lang/Boolean;Ljava/lang/Boolean;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun getDefaultMemberPermissions-hXs3ujQ ()Ldev/kord/common/DiscordBitSet;
 	public fun getDmPermission ()Ljava/lang/Boolean;
 	public fun getExecutor ()Llive/shuuyu/discordinteraktions/common/commands/UserCommandExecutor;
 	public fun getName ()Ljava/lang/String;
@@ -306,7 +306,7 @@ public class live/shuuyu/discordinteraktions/common/commands/InteractionsManager
 
 public abstract class live/shuuyu/discordinteraktions/common/commands/MessageCommandDeclaration : live/shuuyu/discordinteraktions/common/commands/ApplicationCommandDeclaration {
 	public fun <init> ()V
-	public abstract fun getDefaultMemberPermissions ()Ldev/kord/common/entity/Permissions;
+	public abstract fun getDefaultMemberPermissions-hXs3ujQ ()Ldev/kord/common/DiscordBitSet;
 	public abstract fun getDmPermission ()Ljava/lang/Boolean;
 	public abstract fun getExecutor ()Llive/shuuyu/discordinteraktions/common/commands/MessageCommandExecutor;
 	public abstract fun getNsfw ()Ljava/lang/Boolean;
@@ -315,13 +315,13 @@ public abstract class live/shuuyu/discordinteraktions/common/commands/MessageCom
 public final class live/shuuyu/discordinteraktions/common/commands/MessageCommandDeclarationBuilder {
 	public fun <init> (Ljava/lang/String;Llive/shuuyu/discordinteraktions/common/commands/MessageCommandExecutor;)V
 	public final fun build ()Llive/shuuyu/discordinteraktions/common/commands/MessageCommandDeclaration;
-	public final fun getDefaultMemberPermissions ()Ldev/kord/common/entity/Permissions;
+	public final fun getDefaultMemberPermissions-hXs3ujQ ()Ldev/kord/common/DiscordBitSet;
 	public final fun getDmPermission ()Ljava/lang/Boolean;
 	public final fun getExecutor ()Llive/shuuyu/discordinteraktions/common/commands/MessageCommandExecutor;
 	public final fun getName ()Ljava/lang/String;
 	public final fun getNameLocalizations ()Ljava/util/Map;
 	public final fun getNsfw ()Ljava/lang/Boolean;
-	public final fun setDefaultMemberPermissions (Ldev/kord/common/entity/Permissions;)V
+	public final fun setDefaultMemberPermissions-VcIKrZU (Ldev/kord/common/DiscordBitSet;)V
 	public final fun setDmPermission (Ljava/lang/Boolean;)V
 	public final fun setNameLocalizations (Ljava/util/Map;)V
 	public final fun setNsfw (Ljava/lang/Boolean;)V
@@ -338,7 +338,7 @@ public abstract class live/shuuyu/discordinteraktions/common/commands/MessageCom
 
 public abstract class live/shuuyu/discordinteraktions/common/commands/SlashCommandDeclaration : live/shuuyu/discordinteraktions/common/commands/ApplicationCommandDeclaration {
 	public fun <init> ()V
-	public abstract fun getDefaultMemberPermissions ()Ldev/kord/common/entity/Permissions;
+	public abstract fun getDefaultMemberPermissions-hXs3ujQ ()Ldev/kord/common/DiscordBitSet;
 	public abstract fun getDescription ()Ljava/lang/String;
 	public abstract fun getDescriptionLocalizations ()Ljava/util/Map;
 	public abstract fun getDmPermission ()Ljava/lang/Boolean;
@@ -351,7 +351,7 @@ public abstract class live/shuuyu/discordinteraktions/common/commands/SlashComma
 public final class live/shuuyu/discordinteraktions/common/commands/SlashCommandDeclarationBuilder {
 	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
 	public final fun build ()Llive/shuuyu/discordinteraktions/common/commands/SlashCommandDeclaration;
-	public final fun getDefaultMemberPermissions ()Ldev/kord/common/entity/Permissions;
+	public final fun getDefaultMemberPermissions-hXs3ujQ ()Ldev/kord/common/DiscordBitSet;
 	public final fun getDescription ()Ljava/lang/String;
 	public final fun getDescriptionLocalizations ()Ljava/util/Map;
 	public final fun getDmPermission ()Ljava/lang/Boolean;
@@ -361,7 +361,7 @@ public final class live/shuuyu/discordinteraktions/common/commands/SlashCommandD
 	public final fun getNsfw ()Ljava/lang/Boolean;
 	public final fun getSubcommandGroups ()Ljava/util/List;
 	public final fun getSubcommands ()Ljava/util/List;
-	public final fun setDefaultMemberPermissions (Ldev/kord/common/entity/Permissions;)V
+	public final fun setDefaultMemberPermissions-VcIKrZU (Ldev/kord/common/DiscordBitSet;)V
 	public final fun setDescriptionLocalizations (Ljava/util/Map;)V
 	public final fun setDmPermission (Ljava/lang/Boolean;)V
 	public final fun setExecutor (Llive/shuuyu/discordinteraktions/common/commands/SlashCommandExecutor;)V
@@ -406,7 +406,7 @@ public final class live/shuuyu/discordinteraktions/common/commands/SlashCommandG
 
 public abstract class live/shuuyu/discordinteraktions/common/commands/UserCommandDeclaration : live/shuuyu/discordinteraktions/common/commands/ApplicationCommandDeclaration {
 	public fun <init> ()V
-	public abstract fun getDefaultMemberPermissions ()Ldev/kord/common/entity/Permissions;
+	public abstract fun getDefaultMemberPermissions-hXs3ujQ ()Ldev/kord/common/DiscordBitSet;
 	public abstract fun getDmPermission ()Ljava/lang/Boolean;
 	public abstract fun getExecutor ()Llive/shuuyu/discordinteraktions/common/commands/UserCommandExecutor;
 	public abstract fun getNsfw ()Ljava/lang/Boolean;
@@ -415,13 +415,13 @@ public abstract class live/shuuyu/discordinteraktions/common/commands/UserComman
 public final class live/shuuyu/discordinteraktions/common/commands/UserCommandDeclarationBuilder {
 	public fun <init> (Ljava/lang/String;Llive/shuuyu/discordinteraktions/common/commands/UserCommandExecutor;)V
 	public final fun build ()Llive/shuuyu/discordinteraktions/common/commands/UserCommandDeclaration;
-	public final fun getDefaultMemberPermissions ()Ldev/kord/common/entity/Permissions;
+	public final fun getDefaultMemberPermissions-hXs3ujQ ()Ldev/kord/common/DiscordBitSet;
 	public final fun getDmPermission ()Ljava/lang/Boolean;
 	public final fun getExecutor ()Llive/shuuyu/discordinteraktions/common/commands/UserCommandExecutor;
 	public final fun getName ()Ljava/lang/String;
 	public final fun getNameLocalizations ()Ljava/util/Map;
 	public final fun getNsfw ()Ljava/lang/Boolean;
-	public final fun setDefaultMemberPermissions (Ldev/kord/common/entity/Permissions;)V
+	public final fun setDefaultMemberPermissions-VcIKrZU (Ldev/kord/common/DiscordBitSet;)V
 	public final fun setDmPermission (Ljava/lang/Boolean;)V
 	public final fun setNameLocalizations (Ljava/util/Map;)V
 	public final fun setNsfw (Ljava/lang/Boolean;)V
@@ -1105,7 +1105,7 @@ public class live/shuuyu/discordinteraktions/common/components/ButtonExecutorDec
 }
 
 public class live/shuuyu/discordinteraktions/common/components/ComponentContext : live/shuuyu/discordinteraktions/common/InteractionContext {
-	public fun <init> (Llive/shuuyu/discordinteraktions/common/requests/RequestBridge;Ldev/kord/core/entity/User;Ldev/kord/common/entity/Snowflake;Llive/shuuyu/discordinteraktions/common/components/ComponentExecutorDeclaration;Llive/shuuyu/discordinteraktions/common/entities/messages/Message;Ljava/lang/String;Llive/shuuyu/discordinteraktions/common/interactions/InteractionData;Ldev/kord/common/entity/DiscordInteraction;)V
+	public synthetic fun <init> (Llive/shuuyu/discordinteraktions/common/requests/RequestBridge;Ldev/kord/core/entity/User;JLlive/shuuyu/discordinteraktions/common/components/ComponentExecutorDeclaration;Llive/shuuyu/discordinteraktions/common/entities/messages/Message;Ljava/lang/String;Llive/shuuyu/discordinteraktions/common/interactions/InteractionData;Ldev/kord/common/entity/DiscordInteraction;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun deferUpdateMessage (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public final fun getComponentExecutorDeclaration ()Llive/shuuyu/discordinteraktions/common/components/ComponentExecutorDeclaration;
 	public final fun getData ()Ljava/lang/String;
@@ -1166,9 +1166,9 @@ public final class live/shuuyu/discordinteraktions/common/components/ComponentHe
 }
 
 public class live/shuuyu/discordinteraktions/common/components/GuildComponentContext : live/shuuyu/discordinteraktions/common/components/ComponentContext {
-	public fun <init> (Llive/shuuyu/discordinteraktions/common/requests/RequestBridge;Ldev/kord/core/entity/User;Ldev/kord/common/entity/Snowflake;Llive/shuuyu/discordinteraktions/common/components/ComponentExecutorDeclaration;Llive/shuuyu/discordinteraktions/common/entities/messages/Message;Ljava/lang/String;Llive/shuuyu/discordinteraktions/common/interactions/InteractionData;Ldev/kord/common/entity/DiscordInteraction;Ldev/kord/common/entity/Snowflake;Ldev/kord/core/entity/Member;)V
-	public final fun getAppPermissions ()Ldev/kord/common/entity/Permissions;
-	public final fun getGuildId ()Ldev/kord/common/entity/Snowflake;
+	public synthetic fun <init> (Llive/shuuyu/discordinteraktions/common/requests/RequestBridge;Ldev/kord/core/entity/User;JLlive/shuuyu/discordinteraktions/common/components/ComponentExecutorDeclaration;Llive/shuuyu/discordinteraktions/common/entities/messages/Message;Ljava/lang/String;Llive/shuuyu/discordinteraktions/common/interactions/InteractionData;Ldev/kord/common/entity/DiscordInteraction;JLdev/kord/core/entity/Member;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun getAppPermissions-1GAEPLc ()Ldev/kord/common/DiscordBitSet;
+	public final fun getGuildId-4_xYDEk ()J
 	public final fun getMember ()Ldev/kord/core/entity/Member;
 }
 
@@ -1200,11 +1200,11 @@ public abstract interface class live/shuuyu/discordinteraktions/common/entities/
 public abstract interface class live/shuuyu/discordinteraktions/common/entities/messages/Message {
 	public abstract fun getAttachments ()Ljava/util/List;
 	public abstract fun getAuthor ()Ldev/kord/core/entity/User;
-	public abstract fun getChannelId ()Ldev/kord/common/entity/Snowflake;
+	public abstract fun getChannelId-4_xYDEk ()J
 	public abstract fun getContent ()Ljava/lang/String;
 	public abstract fun getEditedTimestamp ()Lkotlinx/datetime/Instant;
-	public abstract fun getGuildId ()Ldev/kord/common/entity/Snowflake;
-	public abstract fun getId ()Ldev/kord/common/entity/Snowflake;
+	public abstract fun getGuildId-eUG9VGM ()Ldev/kord/common/entity/Snowflake;
+	public abstract fun getId-4_xYDEk ()J
 	public abstract fun getMember ()Ldev/kord/core/entity/Member;
 	public abstract fun getTimestamp ()Lkotlinx/datetime/Instant;
 }
@@ -1228,14 +1228,14 @@ public final class live/shuuyu/discordinteraktions/common/interactions/ResolvedO
 }
 
 public class live/shuuyu/discordinteraktions/common/modals/GuildModalContext : live/shuuyu/discordinteraktions/common/modals/ModalContext {
-	public fun <init> (Llive/shuuyu/discordinteraktions/common/requests/RequestBridge;Ldev/kord/core/entity/User;Ldev/kord/common/entity/Snowflake;Llive/shuuyu/discordinteraktions/common/modals/ModalExecutorDeclaration;Ljava/lang/String;Llive/shuuyu/discordinteraktions/common/interactions/InteractionData;Ldev/kord/common/entity/DiscordInteraction;Ldev/kord/common/entity/Snowflake;Ldev/kord/core/entity/Member;)V
-	public final fun getAppPermissions ()Ldev/kord/common/entity/Permissions;
-	public final fun getGuildId ()Ldev/kord/common/entity/Snowflake;
+	public synthetic fun <init> (Llive/shuuyu/discordinteraktions/common/requests/RequestBridge;Ldev/kord/core/entity/User;JLlive/shuuyu/discordinteraktions/common/modals/ModalExecutorDeclaration;Ljava/lang/String;Llive/shuuyu/discordinteraktions/common/interactions/InteractionData;Ldev/kord/common/entity/DiscordInteraction;JLdev/kord/core/entity/Member;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun getAppPermissions-1GAEPLc ()Ldev/kord/common/DiscordBitSet;
+	public final fun getGuildId-4_xYDEk ()J
 	public final fun getMember ()Ldev/kord/core/entity/Member;
 }
 
 public class live/shuuyu/discordinteraktions/common/modals/ModalContext : live/shuuyu/discordinteraktions/common/InteractionContext {
-	public fun <init> (Llive/shuuyu/discordinteraktions/common/requests/RequestBridge;Ldev/kord/core/entity/User;Ldev/kord/common/entity/Snowflake;Llive/shuuyu/discordinteraktions/common/modals/ModalExecutorDeclaration;Ljava/lang/String;Llive/shuuyu/discordinteraktions/common/interactions/InteractionData;Ldev/kord/common/entity/DiscordInteraction;)V
+	public synthetic fun <init> (Llive/shuuyu/discordinteraktions/common/requests/RequestBridge;Ldev/kord/core/entity/User;JLlive/shuuyu/discordinteraktions/common/modals/ModalExecutorDeclaration;Ljava/lang/String;Llive/shuuyu/discordinteraktions/common/interactions/InteractionData;Ldev/kord/common/entity/DiscordInteraction;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun getData ()Ljava/lang/String;
 	public final fun getDataOrNull ()Ljava/lang/String;
 	public final fun getModalExecutorDeclaration ()Llive/shuuyu/discordinteraktions/common/modals/ModalExecutorDeclaration;
@@ -1377,11 +1377,11 @@ public final class live/shuuyu/discordinteraktions/common/requests/RequestBridge
 
 public final class live/shuuyu/discordinteraktions/common/requests/managers/HttpRequestManager : live/shuuyu/discordinteraktions/common/requests/managers/RequestManager {
 	public static final field Companion Llive/shuuyu/discordinteraktions/common/requests/managers/HttpRequestManager$Companion;
-	public fun <init> (Llive/shuuyu/discordinteraktions/common/requests/RequestBridge;Ldev/kord/core/Kord;Ldev/kord/common/entity/Snowflake;Ljava/lang/String;)V
+	public synthetic fun <init> (Llive/shuuyu/discordinteraktions/common/requests/RequestBridge;Ldev/kord/core/Kord;JLjava/lang/String;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public fun deferChannelMessage (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public fun deferChannelMessageEphemerally (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public fun deferUpdateMessage (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public final fun getApplicationId ()Ldev/kord/common/entity/Snowflake;
+	public final fun getApplicationId-4_xYDEk ()J
 	public final fun getInteractionToken ()Ljava/lang/String;
 	public final fun getKord ()Ldev/kord/core/Kord;
 	public fun sendEphemeralMessage (Llive/shuuyu/discordinteraktions/common/builder/message/create/InteractionOrFollowupMessageCreateBuilder;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
@@ -1398,12 +1398,12 @@ public final class live/shuuyu/discordinteraktions/common/requests/managers/Http
 
 public final class live/shuuyu/discordinteraktions/common/requests/managers/InitialHttpRequestManager : live/shuuyu/discordinteraktions/common/requests/managers/RequestManager {
 	public static final field Companion Llive/shuuyu/discordinteraktions/common/requests/managers/InitialHttpRequestManager$Companion;
-	public fun <init> (Llive/shuuyu/discordinteraktions/common/requests/RequestBridge;Ldev/kord/core/Kord;Ldev/kord/common/entity/Snowflake;Ldev/kord/common/entity/Snowflake;Ljava/lang/String;)V
+	public synthetic fun <init> (Llive/shuuyu/discordinteraktions/common/requests/RequestBridge;Ldev/kord/core/Kord;JJLjava/lang/String;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public fun deferChannelMessage (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public fun deferChannelMessageEphemerally (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public fun deferUpdateMessage (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public final fun getApplicationId ()Ldev/kord/common/entity/Snowflake;
-	public final fun getInteractionId ()Ldev/kord/common/entity/Snowflake;
+	public final fun getApplicationId-4_xYDEk ()J
+	public final fun getInteractionId-4_xYDEk ()J
 	public final fun getInteractionToken ()Ljava/lang/String;
 	public final fun getKord ()Ldev/kord/core/Kord;
 	public fun sendEphemeralMessage (Llive/shuuyu/discordinteraktions/common/builder/message/create/InteractionOrFollowupMessageCreateBuilder;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
@@ -1485,17 +1485,17 @@ public final class live/shuuyu/discordinteraktions/platforms/kord/commands/Comma
 }
 
 public final class live/shuuyu/discordinteraktions/platforms/kord/entities/messages/KordEditedOriginalInteractionEphemeralMessage : live/shuuyu/discordinteraktions/platforms/kord/entities/messages/KordEphemeralMessage, live/shuuyu/discordinteraktions/common/entities/messages/EditableMessage {
-	public fun <init> (Ldev/kord/core/Kord;Ldev/kord/common/entity/Snowflake;Ljava/lang/String;Ldev/kord/common/entity/DiscordMessage;)V
+	public synthetic fun <init> (Ldev/kord/core/Kord;JLjava/lang/String;Ldev/kord/common/entity/DiscordMessage;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public fun editMessage (Llive/shuuyu/discordinteraktions/common/builder/message/modify/InteractionOrFollowupMessageModifyBuilder;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 }
 
 public final class live/shuuyu/discordinteraktions/platforms/kord/entities/messages/KordEditedOriginalInteractionPublicMessage : live/shuuyu/discordinteraktions/platforms/kord/entities/messages/KordPublicMessage, live/shuuyu/discordinteraktions/common/entities/messages/EditableMessage {
-	public fun <init> (Ldev/kord/core/Kord;Ldev/kord/common/entity/Snowflake;Ljava/lang/String;Ldev/kord/common/entity/DiscordMessage;)V
+	public synthetic fun <init> (Ldev/kord/core/Kord;JLjava/lang/String;Ldev/kord/common/entity/DiscordMessage;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public fun editMessage (Llive/shuuyu/discordinteraktions/common/builder/message/modify/InteractionOrFollowupMessageModifyBuilder;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 }
 
 public class live/shuuyu/discordinteraktions/platforms/kord/entities/messages/KordEphemeralFollowupMessage : live/shuuyu/discordinteraktions/platforms/kord/entities/messages/KordEphemeralMessage, live/shuuyu/discordinteraktions/common/entities/messages/EditableMessage {
-	public fun <init> (Ldev/kord/core/Kord;Ldev/kord/common/entity/Snowflake;Ljava/lang/String;Ldev/kord/common/entity/DiscordMessage;)V
+	public synthetic fun <init> (Ldev/kord/core/Kord;JLjava/lang/String;Ldev/kord/common/entity/DiscordMessage;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public fun editMessage (Llive/shuuyu/discordinteraktions/common/builder/message/modify/InteractionOrFollowupMessageModifyBuilder;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 }
 
@@ -1507,32 +1507,32 @@ public class live/shuuyu/discordinteraktions/platforms/kord/entities/messages/Ko
 	public fun <init> (Ldev/kord/core/Kord;Ldev/kord/common/entity/DiscordMessage;)V
 	public fun getAttachments ()Ljava/util/List;
 	public fun getAuthor ()Ldev/kord/core/entity/User;
-	public fun getChannelId ()Ldev/kord/common/entity/Snowflake;
+	public fun getChannelId-4_xYDEk ()J
 	public fun getContent ()Ljava/lang/String;
 	public final fun getData ()Ldev/kord/common/entity/DiscordMessage;
 	public fun getEditedTimestamp ()Lkotlinx/datetime/Instant;
-	public fun getGuildId ()Ldev/kord/common/entity/Snowflake;
-	public fun getId ()Ldev/kord/common/entity/Snowflake;
+	public fun getGuildId-eUG9VGM ()Ldev/kord/common/entity/Snowflake;
+	public fun getId-4_xYDEk ()J
 	public final fun getKord ()Ldev/kord/core/Kord;
 	public fun getMember ()Ldev/kord/core/entity/Member;
 	public fun getTimestamp ()Lkotlinx/datetime/Instant;
 }
 
 public final class live/shuuyu/discordinteraktions/platforms/kord/entities/messages/KordOriginalInteractionEphemeralMessage : live/shuuyu/discordinteraktions/platforms/kord/entities/messages/OriginalInteractionMessage, live/shuuyu/discordinteraktions/common/entities/messages/EditableMessage, live/shuuyu/discordinteraktions/common/entities/messages/EphemeralMessage {
-	public fun <init> (Ldev/kord/core/Kord;Ldev/kord/common/entity/Snowflake;Ljava/lang/String;)V
+	public synthetic fun <init> (Ldev/kord/core/Kord;JLjava/lang/String;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public fun editMessage (Llive/shuuyu/discordinteraktions/common/builder/message/modify/InteractionOrFollowupMessageModifyBuilder;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 }
 
 public final class live/shuuyu/discordinteraktions/platforms/kord/entities/messages/KordOriginalInteractionPublicMessage : live/shuuyu/discordinteraktions/platforms/kord/entities/messages/OriginalInteractionMessage, live/shuuyu/discordinteraktions/common/entities/messages/EditableMessage, live/shuuyu/discordinteraktions/common/entities/messages/PublicMessage {
-	public fun <init> (Ldev/kord/core/Kord;Ldev/kord/common/entity/Snowflake;Ljava/lang/String;)V
+	public synthetic fun <init> (Ldev/kord/core/Kord;JLjava/lang/String;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public fun editMessage (Llive/shuuyu/discordinteraktions/common/builder/message/modify/InteractionOrFollowupMessageModifyBuilder;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 }
 
 public final class live/shuuyu/discordinteraktions/platforms/kord/entities/messages/KordPublicFollowupMessage : live/shuuyu/discordinteraktions/platforms/kord/entities/messages/KordPublicMessage, live/shuuyu/discordinteraktions/common/entities/messages/EditableMessage {
-	public fun <init> (Ldev/kord/core/Kord;Ldev/kord/common/entity/Snowflake;Ljava/lang/String;Ldev/kord/common/entity/DiscordMessage;)V
+	public synthetic fun <init> (Ldev/kord/core/Kord;JLjava/lang/String;Ldev/kord/common/entity/DiscordMessage;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public fun editMessage (Llive/shuuyu/discordinteraktions/common/builder/message/modify/InteractionOrFollowupMessageModifyBuilder;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public fun getContent ()Ljava/lang/String;
-	public fun getId ()Ldev/kord/common/entity/Snowflake;
+	public fun getId-4_xYDEk ()J
 }
 
 public class live/shuuyu/discordinteraktions/platforms/kord/entities/messages/KordPublicMessage : live/shuuyu/discordinteraktions/platforms/kord/entities/messages/KordMessage {
@@ -1543,11 +1543,11 @@ public class live/shuuyu/discordinteraktions/platforms/kord/entities/messages/Or
 	public fun <init> ()V
 	public fun getAttachments ()Ljava/util/List;
 	public fun getAuthor ()Ldev/kord/core/entity/User;
-	public fun getChannelId ()Ldev/kord/common/entity/Snowflake;
+	public fun getChannelId-4_xYDEk ()J
 	public fun getContent ()Ljava/lang/String;
 	public fun getEditedTimestamp ()Lkotlinx/datetime/Instant;
-	public fun getGuildId ()Ldev/kord/common/entity/Snowflake;
-	public fun getId ()Ldev/kord/common/entity/Snowflake;
+	public fun getGuildId-eUG9VGM ()Ldev/kord/common/entity/Snowflake;
+	public fun getId-4_xYDEk ()J
 	public fun getMember ()Ldev/kord/core/entity/Member;
 	public fun getTimestamp ()Lkotlinx/datetime/Instant;
 }
@@ -1583,7 +1583,7 @@ public final class live/shuuyu/discordinteraktions/platforms/kord/utils/KordComp
 
 public final class live/shuuyu/discordinteraktions/platforms/kord/utils/KordConversionUtilsKt {
 	public static final fun runIfNotMissing (Ldev/kord/common/entity/optional/Optional;Lkotlin/jvm/functions/Function1;)V
-	public static final fun toDiscordInteraKTionsResolvedObjects (Ldev/kord/common/entity/ResolvedObjects;Ldev/kord/core/Kord;Ldev/kord/common/entity/Snowflake;)Llive/shuuyu/discordinteraktions/common/interactions/ResolvedObjects;
+	public static final fun toDiscordInteraKTionsResolvedObjects-CjZJgt0 (Ldev/kord/common/entity/ResolvedObjects;Ldev/kord/core/Kord;Ldev/kord/common/entity/Snowflake;)Llive/shuuyu/discordinteraktions/common/interactions/ResolvedObjects;
 }
 
 public final class live/shuuyu/discordinteraktions/platforms/kord/utils/KordModalChecker {

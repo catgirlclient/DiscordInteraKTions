@@ -43,11 +43,11 @@ public final class live/shuuyu/discordinteraktions/webserver/KtorInteractionsKt 
 
 public final class live/shuuyu/discordinteraktions/webserver/requests/manager/WebServerRequestManager : live/shuuyu/discordinteraktions/common/requests/managers/RequestManager {
 	public static final field Companion Llive/shuuyu/discordinteraktions/webserver/requests/manager/WebServerRequestManager$Companion;
-	public fun <init> (Llive/shuuyu/discordinteraktions/common/requests/RequestBridge;Ldev/kord/core/Kord;Ldev/kord/common/entity/Snowflake;Ljava/lang/String;Lio/ktor/server/application/ApplicationCall;)V
+	public synthetic fun <init> (Llive/shuuyu/discordinteraktions/common/requests/RequestBridge;Ldev/kord/core/Kord;JLjava/lang/String;Lio/ktor/server/application/ApplicationCall;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public fun deferChannelMessage (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public fun deferChannelMessageEphemerally (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public fun deferUpdateMessage (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public final fun getApplicationId ()Ldev/kord/common/entity/Snowflake;
+	public final fun getApplicationId-4_xYDEk ()J
 	public final fun getCall ()Lio/ktor/server/application/ApplicationCall;
 	public final fun getInteractionToken ()Ljava/lang/String;
 	public final fun getKord ()Ldev/kord/core/Kord;
