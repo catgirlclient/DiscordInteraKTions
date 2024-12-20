@@ -14,6 +14,7 @@ pluginManagement {
 dependencyResolutionManagement {
     repositories {
         mavenCentral()
+        maven("https://repo.kord.dev/snapshots")
         maven("https://oss.sonatype.org/content/repositories/snapshots")
     }
 }

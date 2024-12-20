@@ -16,7 +16,7 @@ publishing {
 
             pom {
                 name = "Discord InteraKTions"
-                description = "Kotlin Library for Receiving and Handling Discord Interactions via Web Servers/Gateway with Kord"
+                description = "Kotlin Library for Receiving and Handling Discord Interactions via Web Servers/Gateway with Kord."
                 url = Project.URL
                 packaging = "jar"
 

@@ -1,13 +1,12 @@
 [versions]
-kotlin = "2.0.0"
-kord = "0.15.0-SNAPSHOT"
-dokka = "1.9.20"
-binary-compatibility-validator = "0.15.0-Beta.2"
-# jda = "5.0.0-beta.20"
-ktor = "2.3.11"
-serialization = "1.7.0"
-coroutines = "1.9.0-RC"
-kotlin-logging = "6.0.9"
+kotlin = "2.0.20"
+kord = "0.16.0-SNAPSHOT"
+dokka = "2.0.0-Beta"
+binary-compatibility-validator = "0.16.3"
+ktor = "3.0.0"
+serialization = "1.7.3"
+coroutines = "1.9.0"
+kotlin-logging = "7.0.0"
 logback = "1.4.12"
 
 [libraries]
