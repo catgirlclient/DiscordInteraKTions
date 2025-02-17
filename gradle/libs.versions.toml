@@ -1,13 +1,13 @@
 [versions]
-kotlin = "2.0.20"
+kotlin = "2.1.10"
 kord = "0.16.0-SNAPSHOT"
-dokka = "2.0.0-Beta"
-binary-compatibility-validator = "0.16.3"
-ktor = "3.0.0"
-serialization = "1.7.3"
-coroutines = "1.9.0"
-kotlin-logging = "7.0.0"
-logback = "1.4.12"
+dokka = "2.0.0"
+binary-compatibility-validator = "0.17.0"
+ktor = "3.1.0"
+serialization = "1.8.0"
+coroutines = "1.10.1"
+kotlin-logging = "7.0.4"
+logback = "1.5.16"
 
 [libraries]
 kord-core = { module = "dev.kord:kord-core", version.ref = "kord" }
